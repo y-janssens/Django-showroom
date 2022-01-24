@@ -1,6 +1,6 @@
 {% load static %}
 <div id="footer">
   {% if user.is_authenticated == True and user.is_superuser %}
-  <a id="admin" href="/admin">Panneau d'administration</a>
+  <a id="admin" href="{% url 'admin' %}">Panneau d'administration</a>
   {% endif %}
 </div>
