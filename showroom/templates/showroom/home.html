@@ -1,0 +1,21 @@
+{% extends "showroom/index.html" %}
+{% load static %}
+
+{% block content %}
+    <div id="showcase">
+        <div id="content">
+            <div class="wrap">
+                <a class="thumbnail" href="{% url 'scene_1' %}"><img src="{% static 'images/real1.jpg' %}" alt="" /></a>
+            </div>
+            <div class="wrap">
+                <a class="thumbnail" href=""></a>
+            </div>
+            <div class="wrap">
+                <a class="thumbnail" href=""></a>
+            </div>
+            <div class="wrap">
+                <a class="thumbnail" href=""></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

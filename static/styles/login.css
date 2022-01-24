@@ -1,0 +1,102 @@
+#loginwrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#loginwrapper form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginwrapper input {
+  width: 90%;
+  height: 5vh;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-size: 16px;
+  letter-spacing: 3px;
+  background-color: transparent;
+}
+
+::placeholder {
+  color: #3a557c;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+#label {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 35px;
+  color: #3a557c;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+#loginwrapper button {
+  width: 60%;
+  height: 5vh;
+  margin-top: 50px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 3px;
+  background-color: rgba(58, 85, 124, 1);
+  cursor: pointer;
+}
+
+#loginheader {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(58, 85, 124, 1);
+  margin-bottom: 30px;
+}
+
+.title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 40px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 6px;
+  text-align: center;
+  justify-content: center;
+}
+
+hr {
+  background-color: rgba(58, 85, 124, 1);
+  width: 90%;
+  height: 1px;
+  margin-bottom: 30px;
+}
+
+.link {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #3a557c;
+  font-size: 14px;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

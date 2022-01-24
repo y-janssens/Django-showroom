@@ -1,0 +1,28 @@
+{% extends "showroom/index.html" %}
+
+{% block content %}
+    <div id="loginwrapper">
+        <div id="loginheader">
+            <span class="title">Register</span>
+        </div>
+        {% comment %} <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <input id="label" name="username" type="text" placeholder="Nom d'utilisateur" />
+            <hr>
+
+            <input id="label" name="password" type="password" placeholder="*********" />
+            <hr>
+            <button type="submit">Enregistrement</button>
+            <a class="link" href="{% url 'login' %}">Connexion</a>
+        </form> {% endcomment %}
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}            
+            {{field}}
+            <hr>
+            {% endfor %}
+            <button type="submit">Sign up</button>
+            <a class="link" href="{% url 'login' %}">Connexion</a>
+          </form>
+    </div>
+{% endblock %}

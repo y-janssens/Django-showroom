@@ -1,0 +1,10 @@
+{% load static %}
+<div id="header">
+  {% if user.is_authenticated == True %}
+  <a id="logout" href="{% url 'logout' %}">Déconnexion</a>
+  {% else %}
+  <a id="logout" href="{% url 'login' %}">Connexion</a>
+  {% endif %}
+  <span class="nav_title">Showroom</span>
+  <a id="home" href="{% url 'home' %}">Accueil</a>
+</div>

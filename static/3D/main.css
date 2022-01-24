@@ -1,0 +1,660 @@
+html, body {
+      height: calc(100% - 100px);
+      width: 100%;
+      margin-top: 75px;
+      overflow: hidden;
+      }
+  
+  body {
+      background-color: transparent;
+      position: absolute;
+      color: #000;
+      margin: 0 !important;
+      overflow: hidden;
+      display: -webkit-box;
+      display: flex;
+      cursor: url(cursor.png), auto !important;
+      font-family: 'Share Tech Mono', monospace;
+      }
+
+  button {
+      cursor: pointer;
+  }    
+     
+  a {
+      color: #080;
+      }
+      
+  canvas {
+      display: block;      
+      }
+  
+  #ui {
+      display: visible;
+      width: 100%;
+      height: 100%;
+  }    
+
+  .panel {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    left: -180px;
+  }
+
+.panel_open {
+    transform: translateX(180px);
+    transition: 2s;
+    transition-delay: 150ms;   
+}
+
+  .panel_close {
+    transform: translateX(0px);
+    transition: 2s;
+  }
+
+  .button29 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 35px;
+    left: 150px;
+    border-style: solid;
+    border-width: 0 50px 50px 0;
+    border-color: transparent rgba(25, 29, 46, 0.2) transparent transparent;
+    z-index: 5;
+    display: none;    
+  } 
+  
+  #lateral {
+      position: absolute;
+      width: 180px;
+      height: 100%;
+      box-shadow: 5px 5px 5px 0px rgba(0,0,0,0);
+      z-index: 1;
+      background-color:rgba(41, 48, 76, 0.4);
+      backdrop-filter: blur(5px); 
+  }
+
+  #lateral2 {
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(-45deg, #343b45 12.50%, #3b424c 12.50%, #3b424c 25%, #5a6169 25%, #5a6169 37.50%, #7b8086 37.50%, #7b8086 50%, #343b45 50%, #343b45 62.50%, #3b424c 62.50%, #3b424c 75%, #5a6169 75%, #5a6169 87.50%, #7b8086 87.50%, #7b8086 100%);
+    background-size: 1550px 1550px;
+    background-position: 120px;
+    opacity: 0.25;
+  }
+    
+  .title1 {
+      position: relative;
+      left: 50%;
+      top: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 20px;
+      color: #8ea5f4;
+  }
+  
+  .button1 {
+      position: absolute;
+      top: 75px;
+      left: 15px;
+      height: 45px;
+      width: 150px;
+      background-color: #29304c;
+      z-index: 3;
+      border-radius: 20px;
+      border-style: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 15px;
+      color: #8ea5f4;
+      z-index: 4 !important;
+      outline:none;
+      }
+      
+  .button1:hover {
+      transition: .5s ease;
+      background-color: #586695;
+      }
+
+   .item1 {
+      position: absolute;
+      width: 148px;
+      height: 40px;
+      bottom: 0px;
+      left: 16px;
+      border-radius: 10px 10px 0px 0px;
+      z-index: 1 !important;
+      background-color:rgba(192, 204, 243, 0.25);
+      backdrop-filter: blur(10px);       
+      }      
+  
+  .button2 {
+      position: absolute;
+      top: 2.5px;
+      left: 2px;
+      height: 35px;
+      width: 35px;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 3;
+      border-radius: 10px;
+      border-style: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 20px;
+      color: #8ea5f4;
+      z-index: 4 !important;
+      outline:none;
+      transform: scale(0.9);
+      }
+  
+  .button2:hover {
+      transition: .5s ease;
+      background-color:rgba(41, 48, 76, 0.75);
+      }
+      
+  .button8 {
+      position: absolute;
+      top: 2.5px;
+      left: 38px;
+      height: 35px;
+      width: 35px;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 3;
+      border-radius: 10px;
+      border-style: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 20px;
+      color: #8ea5f4;
+      z-index: 4 !important;
+      outline:none;
+      transform: scale(0.9);
+      }
+      
+  .button8:hover {
+      transition: .5s ease;
+      background-color:rgba(41, 48, 76, 0.75);
+      }	
+      
+  .button9 {
+      position: absolute;
+      top: 2.5px;
+      left: 74px;
+      height: 35px;
+      width: 35px;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 3;
+      border-radius: 10px;
+      border-style: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 20px;
+      color: #8ea5f4;
+      z-index: 4 !important;
+      outline:none;
+      transform: scale(0.9);
+      }
+      
+  .button9:hover {
+      transition: .5s ease;
+      background-color:rgba(41, 48, 76, 0.75);
+      }
+      
+  .button10 {
+      position: absolute;
+      top: 2.5px;
+      left: 110px;
+      height: 35px;
+      width: 35px;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 3;
+      border-radius: 10px;
+      border-style: none;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 20px;
+      color: #8ea5f4;
+      z-index: 4 !important;
+      outline:none;
+      transform: scale(0.9);
+      }
+      
+  .button10:hover {
+      transition: .5s ease;
+      background-color:rgba(41, 48, 76, 0.75);
+      }
+            
+  #menu {
+      position: absolute;
+      width: 148px;
+      height: 385px;
+      left: 16px;
+      top: 85px;
+      border-radius: 10px;
+      z-index: 1 !important;
+      background-color:rgba(192, 204, 243, 0.25);
+      backdrop-filter: blur(10px);      
+      }
+              
+  #icon {
+      position: absolute;
+      top: -29px;
+      left: -20px;
+      transform: scale(0.2);
+      }
+      
+  #icon2 {
+      position: absolute;
+      transform: scale(0.5);
+      left: -5px;
+      top: -8px;
+      }
+      
+  #icon3 {
+      position: absolute;
+      top: -34px;
+      left: -32.5px;
+      transform: scale(0.3);
+      }
+      
+  #icon4 {
+      position: absolute;
+      top: -34px;
+      left: -31px;
+      transform: scale(0.3);
+      }
+      
+  #icon5 {
+      position: absolute;
+      top: -34px;
+      left: -32px;
+      transform: scale(0.3);
+      }	
+
+  #icon6 {
+      position: absolute;
+      top: -14px;
+      left: -4px;
+      transform: scale(0.45);
+    }	 
+    
+  #icon7 {
+      position: absolute;
+      top: -14px;
+      left: -4px;
+      transform: scale(0.45);
+      }	    
+      
+  .button3{
+      position: absolute;
+      top: 50px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+            
+  .button5 {
+      position: absolute;
+      top: 80px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+            
+  .button7 {
+      position: absolute;
+      top: 110px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      z-index: 5;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+      
+  .button12{
+      position: absolute;
+      top: 140px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      z-index: 5;
+      border-bottom: 2px solid #3f496c;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+      
+  .button14{
+      position: absolute;
+      top: 170px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+  
+  .button16{
+      position: absolute;
+      top: 200px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+    
+  .item13 {
+      position: absolute;
+      top: 230px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+  
+  .button18 {
+      margin-left: 42.5px;
+      margin-top: 3px;
+      color: #f5f5dc;
+      font-size: 10px;
+      background-color: #f5f5dc;
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;	
+  }	
+  
+  .button19 {
+      color: #fff2d6;
+      font-size: 10px;
+      background-color: #fff2d6;
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;	
+  }	
+  
+  .button20 {
+      color: #fff1dd;
+      font-size: 10px;
+      background-color: #fff1dd;
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;	
+  }
+  
+  .item14 {
+      position: absolute;
+      top: 260px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+  
+  .button21 {
+      margin-left: 42.5px;
+      margin-top: 3px;
+      color: #48382c;
+      font-size: 10px;
+      background-color: #48382c;
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;	
+      }	
+  
+  .button22 {
+      color: #96533d;
+      font-size: 10px;
+      background-color: #96533d;
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;	
+      }		
+  
+  .button23 {
+      color: #bd7245;
+      font-size: 10px;
+      background-color: #bd7245;
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;	
+      }
+  
+  .button24{
+      position: absolute;
+      top: 290px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+  
+  .button25{
+      position: absolute;
+      top: 500px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+  
+  .button26{
+      position: absolute;
+      top: 320px;
+      left: 5px;
+      width: 138px;
+      height: 20px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }
+  
+  .button27{
+      position: absolute;
+      top: 350px;
+      left: 5px;
+      width: 40px;
+      height: 25px;
+      color: #8ea5f4;
+      background-color:rgba(25, 29, 46, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 5;
+      border: none;
+      border-radius: 20px;
+      outline:none;
+      }	
+
+  .button28{
+        position: absolute;
+        top: 350px;
+        left: 103px;
+        width: 40px;
+        height: 25px;
+        color: #8ea5f4;
+        background-color:rgba(25, 29, 46, 0.5);
+        backdrop-filter: blur(5px);
+        z-index: 5;
+        border: none;
+        border-radius: 20px;
+        outline:none;
+        }	
+  
+      * {
+      box-sizing: border-box;
+      margin: 0;
+  }
+  
+  h1, p, h2, h3, h4, ul, li, div {
+      margin: 0;
+      padding: 0;
+  }
+  
+  .loading-page {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(13, 13, 13, 0.25);
+      backdrop-filter: blur(5px);
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+       -webkit-box-align: center;
+      align-items: center;
+  }
+
+  #loading-glass {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(-45deg, #343b45 12.50%, #3b424c 12.50%, #3b424c 25%, #5a6169 25%, #5a6169 37.50%, #7b8086 37.50%, #7b8086 50%, #343b45 50%, #343b45 62.50%, #3b424c 62.50%, #3b424c 75%, #5a6169 75%, #5a6169 87.50%, #7b8086 87.50%, #7b8086 100%);
+    background-size: 2650px 2650px;
+    background-position: 655px;
+    filter: blur(10px);
+    opacity: 0.2;
+    display: visible;
+}   
+  
+  #loading-screen {
+      position: absolute;
+      z-index: 0;
+      background-image: url(./assets/ui/fond.jpg);
+      background-position: center;
+      background-size: cover;
+      width: 100vw;
+      height: 100vh;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      opacity: 1;
+      transition: 1s opacity;
+      transition-timing-function: ease-in-out;
+  }
+  
+  #loading-screen.fade-out {
+      opacity: 0;
+  }
+  
+  .loading-page .counter {
+       text-align: center;
+      left: 5%;
+  }
+  .loading-page .counter h1 {
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      margin-top: -10px;
+  }
+  .loading-page .counter hr {
+      margin-top: 5px;
+      background: #8ea5f4;
+      height: 3px;
+      border-radius: 35px;
+      border-color: #8ea5f4;
+  }
+  .loading-page .counter {
+      position: relative;
+      width: 300px;
+  }
+  .loading-page .counter h1.abs {
+      position: absolute;
+      top: 0;
+      width: 100%;
+  }
+
+  #gui { 
+      margin-top: 50px;
+}

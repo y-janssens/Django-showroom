@@ -1,0 +1,28 @@
+#footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 25px;
+    background-color: rgba(58, 85, 124, 1);
+    color: #fff;
+    z-index: 100;
+}
+
+#admin {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    display: flex;
+    left: 50%;
+    font-size: 12px;
+    transform: translateX(-50%);
+    align-items: center;
+    color: rgba(255, 255, 255, 0.25);
+    font-family: "Share Tech Mono", monospace;
+    text-decoration: none;
+  }
+  
+  #admin:hover {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.5);
+  }
