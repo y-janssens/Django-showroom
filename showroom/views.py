@@ -87,12 +87,23 @@ def scene_1(request):
 @admin_required(login_url='login')
 def admin_panel(request):
     users = User.objects.all()
+    number = 1
     page_title = "Gestion des utilisateurs"
-    context = {'users': users, 'page_title': page_title}
+    context = {'users': users, 'page_title': page_title, 'number': number}
     return render(request, 'showroom/admin.html', context)
 
-def activate(request):
-    user = User.objects.all()
-    if user.is_active == True:
-        user.is_active = False
+def activate(request, pk):
+    user = User.objects.get(id=pk)
+    if user.is_superuser == False:
+        if user.is_active == True:        
+            user.is_active = False
+        else:        
+            user.is_active = True
     user.save()
+    return redirect('admin')
+
+def delete(request, pk):
+    user = User.objects.get(id=pk)
+    if user.is_superuser == False:        
+        user.delete()
+    return redirect('admin')

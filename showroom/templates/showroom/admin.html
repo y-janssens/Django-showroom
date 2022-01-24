@@ -2,15 +2,22 @@
 <div id="admin_wrapper">
   <div id="admin_title">Utilisateurs</div>
   {% for user in users %}
+  {% if user.is_superuser == False %}
   <ul>
-    <span class="users">Utilisateur: <span class="user">{{user}}</span>
+    <span class="users">Utilisateur:<span class="user">{{user.username}}</span>
+
     {% if user.is_active %}
-    <a href="{% url 'activate' %}"><input class="user_valid" type="checkbox" checked></a></span>
+    <span class="btn_grp">
+    <a class="crud" href="{% url 'activate' user.id %}"><input class="user_valid" type="checkbox" checked></a>
+    <a class="crud" href="{% url 'delete' user.id %}"><button class="user_delete">X</button></a></span></span>
     {% else %}
-    <a href="{% url 'activate' %}"><input class="user_valid" type="checkbox"></a></span>
+    <span class="btn_grp">
+    <a class="crud" href="{% url 'activate' user.id %}"><input class="user_valid" type="checkbox"></a>
+    <a class="crud" href="{% url 'delete' user.id %}"><button class="user_delete">X</button></a></span></span>
     {% endif %}
     <hr class="hr1" />
   </ul>
+  {% endif %}
   {% endfor %}
 </div>
 {% endblock %}

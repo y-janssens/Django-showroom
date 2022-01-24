@@ -8,5 +8,6 @@ urlpatterns = [
     path('logout/', views.logoutUser, name="logout"),
     path('showroom/scene/1', views.scene_1, name="scene_1"),
     path('staff', views.admin_panel, name="admin"),
-    path('activate', views.activate, name="activate"),
+    path('activate/<str:pk>/', views.activate, name="activate"),
+    path('delete/<str:pk>/', views.delete, name="delete"),
 ]
