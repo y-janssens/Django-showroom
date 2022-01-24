@@ -1,0 +1,50 @@
+#admin_wrapper {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-top: 75px;
+}
+
+#admin_title {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #3a557c;
+    font-family: "Share Tech Mono", monospace;
+}
+
+ul {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.users {
+    display: flex;
+    width: 500px;
+    height: 25px;
+    flex-direction: row;
+    color: #3a557c;
+    font-size: 16px;
+    justify-content: space-between;
+    font-family: "Share Tech Mono", monospace;
+}
+
+.user {
+    font-size: 14px;
+    font-family: "Share Tech Mono", monospace;
+}
+
+.user_valid {
+    margin-top: 5px;
+    pointer-events: none;
+}
+
+hr.hr1 {
+    width: 500px;
+    border-top: 1.5px solid rgba(58, 85, 124, 1);
+    margin-bottom: 10px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}

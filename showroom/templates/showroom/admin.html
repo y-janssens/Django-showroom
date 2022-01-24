@@ -1,0 +1,16 @@
+{% extends "showroom/index.html" %} {% load static %} {% block content %}
+<div id="admin_wrapper">
+  <div id="admin_title">Utilisateurs</div>
+  {% for user in users %}
+  <ul>
+    <span class="users">Utilisateur: <span class="user">{{user}}</span>
+    {% if user.is_active %}
+    <a href="{% url 'activate' %}"><input class="user_valid" type="checkbox" checked></a></span>
+    {% else %}
+    <a href="{% url 'activate' %}"><input class="user_valid" type="checkbox"></a></span>
+    {% endif %}
+    <hr class="hr1" />
+  </ul>
+  {% endfor %}
+</div>
+{% endblock %}
