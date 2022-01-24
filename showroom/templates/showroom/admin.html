@@ -4,8 +4,11 @@
   {% for user in users %}
   {% if user.is_superuser == False %}
   <ul>
-    <span class="users">Utilisateur:<span class="user">{{user.username}}</span>
-
+      {% if user.is_active == True %}
+    <span class="users">Utilisateur:<span class="user">{{user.username}} - activé</span>
+    {% else %}
+    <span class="users">Utilisateur:<span class="user">{{user.username}} - inactif</span>
+    {% endif %}
     {% if user.is_active %}
     <span class="btn_grp">
     <a class="crud" href="{% url 'activate' user.id %}"><input class="user_valid" type="checkbox" checked></a>

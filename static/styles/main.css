@@ -1,64 +1,20 @@
-body, html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(117, 153, 179, 0.1);
+* {
+  margin: 0;
+  padding: 0;
 }
 
-/* .alert {
-    display: inline-flex;
-    gap: 3rem;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2.5rem;
-    border-radius: 3px;
-    border: 1px solid var(--color-white-light);
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-  }
-  
-  .alert,
-  .alert > .alert__message {
-    background-color: var(--color-main-light);
-    color: var(--color-main);
-    font-size: 1.4rem;
-    font-weight: var(--font-medium);
-  }
-  
-  .alert.alert--error,
-  .alert.alert--error > .alert__message {
-    background-color: var(--color-error-bg);
-    color: var(--color-error);
-  }
-  
-  .alert.alert--success,
-  .alert.alert--success > .alert__message {
-    background-color: var(--color-success-bg);
-    color: var(--color-success);
-  }
-  
-  .alert > .alert__close {
-    background: transparent;
-    cursor: pointer;
-    border: none;
-    outline: transparent;
-    font-size: 2rem;
-    transition: var(--generic-transition);
-  }
-  
-  .alert > .alert__close:hover {
-    opacity: 0.85;
-  } */
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(117, 153, 179, 0.1);
+  background-size: 50%;
+}
 
-  
 .alert {
-    position: fixed;
-    left: 50%;
-    top: 120px;
-    transform: translate(-50%, -50%);
-  
-  
-    z-index: 99999;
-  }
+  position: fixed;
+  left: 50%;
+  top: 120px;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}

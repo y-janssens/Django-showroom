@@ -8,6 +8,5 @@
 
 /* Mumble UI Styles */
 @import url('./modules/_variables.css');
-@import url('./modules/_base.css');
 @import url('./modules/_typography.css');
 @import url('./modules/_alert.css');
