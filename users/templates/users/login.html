@@ -7,10 +7,10 @@
         </div>
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
-            <input id="label" name="username" type="text" placeholder="Nom d'utilisateur" />
+            <input class="label" name="username" type="text" placeholder="Nom d'utilisateur" />
             <hr>
 
-            <input id="label" name="password" type="password" placeholder="*********" />
+            <input class="label" name="password" type="password" placeholder="*********" />
             <hr>
             <button type="submit">Connexion</button>
             <a class="link" href="{% url 'register' %}">Créer un compte</a>

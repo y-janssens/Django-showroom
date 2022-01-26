@@ -1,80 +1,195 @@
 #admin_wrapper {
-    position: fixed;
-    width: 100%;
-    height: calc(100% - 100px);
-    margin-top: 75px;
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 100px);
+  margin-top: 75px;
 }
 
 #admin_title {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
-    margin-top: 10px;
-    color: #3a557c;
-    font-family: "Share Tech Mono", monospace;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #3a557c;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#users_header {
+  color: #3a557c !important;
+  font-size: 14px !important;
+  padding-bottom: 5px;
+}
+
+#users_list {
+  position: relative;
+  width: 90%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  left: 50%;
+  margin-top: 10px;
+  transform: translateX(-50%);
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#users_list tr,
+td {
+  display: flex;
+  justify-content: space-between;
+  line-height: 35px;
+}
+
+#users_list tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+tr.user_bg_1 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+td.user_id {
+  width: 35px;
+  margin-left: 15px;
+}
+
+td.user_user {
+  width: 150px;
+  justify-content: center;
+}
+
+td.user_phone {
+  width: 80px;
+  justify-content: center;
+}
+
+td.user_phone a{
+  color:rgba(58, 85, 124, 1);
+  text-decoration: none;
+}
+
+td.user_phone a:hover{
+  text-decoration: underline;
+}
+
+td.user_mail {
+  width: 150px;
+  justify-content: center;
+}
+
+td.user_mail a{
+  color:rgba(58, 85, 124, 1);
+  text-decoration: none;
+}
+
+td.user_mail a:hover{
+  text-decoration: underline;
+}
+
+td.user_fname {
+  width: 150px;
+  justify-content: center;
+}
+
+td.user_lname {
+  width: 150px;
+  justify-content: center;
+}
+
+td.user_status {
+  width: 70px;
+  justify-content: center;
+}
+
+td.user_actions {
+  width: 70px;
+  justify-content: center;
 }
 
 ul {
-    margin-top: 25px;
-    margin-left: 10px;
+  margin-top: 25px;
+  margin-left: 10px;
 }
 
 .users {
-    display: flex;
-    width: 500px;
-    height: 25px;
-    flex-direction: row;
-    color: #3a557c;
-    font-size: 16px;
-    justify-content: space-between;
-    font-family: "Share Tech Mono", monospace;    
+  display: flex;
+  width: 500px;
+  height: 25px;
+  flex-direction: row;
+  color: #3a557c;
+  font-size: 16px;
+  justify-content: space-between;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .crud {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .user {
-    font-size: 14px;
-    font-family: "Share Tech Mono", monospace;
+  font-size: 14px;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .btn_grp {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
 }
-.user_valid {
-    display: flex;
-    justify-content: right !important;
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
+
+.user_valid_btn {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+  font-family: "Comic Neue", cursive;
+  outline: none;
+  color: #44b840;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #fff;
+  border: 1.35px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
 }
 
 .user_delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0px;
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-    font-family: 'Comic Neue', cursive;
-    outline: none;
-    color: #b84040;
-    font-weight: 700;
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  font-family: "Comic Neue", cursive;
+  outline: none;
+  color: #b84040;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
 }
 
 hr.hr1 {
-    width: 500px;
-    border-top: 1.5px solid rgba(58, 85, 124, 1);
-    margin-bottom: 10px;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
+  width: 500px;
+  border-top: 1.5px solid rgba(58, 85, 124, 1);
+  margin-bottom: 10px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+::-webkit-scrollbar {
+  position: absolute;
+  width: 5px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  position: absolute;
+  background-color: rgba(120, 120, 120, 0.5);
+  border-radius: 0.2em;
 }

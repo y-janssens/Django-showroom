@@ -16,7 +16,7 @@
   display: grid;
   grid-gap: 50px;
   margin: 0px 50px 0px 50px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));  
 }
 
 .wrap {
@@ -40,4 +40,16 @@
 
 .wrap:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 750px) { 
+  #content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));  
+  }
+}
+
+@media (max-width: 500px) { 
+  #content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));  
+  }
 }

@@ -34,23 +34,22 @@
   text-decoration: none;
 }
 
-#home:hover {
-  text-decoration: underline;
-}
-
-#logout {
+#links_group {
   position: absolute;
   top: 50px;
   right: 5px;
   width: 50px;
   display: flex;
   justify-content: flex-end;
+}
+
+.header_link {
   margin-right: 10px;
   color: #fff;
   font-family: "Share Tech Mono", monospace;
   text-decoration: none;
 }
 
-#logout:hover {
+#home:hover, .header_link:hover {
   text-decoration: underline;
 }

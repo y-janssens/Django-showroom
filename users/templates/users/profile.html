@@ -1,0 +1,22 @@
+{% extends "showroom/index.html" %}
+ {% load static %} 
+ {% block content %}
+
+<div id="profile_wrapper">
+
+  <div id="profil_title">Profil de {{user.username}}</div>
+
+  <form action="{% url 'edit_profile' user.id %}" method="POST">
+    {% csrf_token %}
+
+    {% for field in form %}   
+    {{field.label}}            
+            {{field}}
+            <hr>
+            {% endfor %}
+
+    <button type="submit">Valider</button>
+  </form>
+</div>
+
+{% endblock %}
