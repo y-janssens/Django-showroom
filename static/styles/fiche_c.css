@@ -1,0 +1,16 @@
+#fiche_wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 75px;
+    overflow-y: scroll;
+}
+
+#fiche_title {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #3a557c;
+    font-family: "Share Tech Mono", monospace;
+}

@@ -42,6 +42,10 @@
   transform: scale(1.05);
 }
 
+#showroom_thumb_bg {
+  opacity: 0.25;
+}
+
 @media (max-width: 750px) { 
   #content {
     grid-template-columns: repeat(3, minmax(0, 1fr));  

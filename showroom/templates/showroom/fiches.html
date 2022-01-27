@@ -1,0 +1,34 @@
+{% extends "showroom/index.html" %} 
+{% load static %} 
+{% block content %}
+
+<div id="fiches_wrapper">
+    <div id="fiches_title">Fiches de chantier</div>
+    <div id="fiches_search_bar">
+        <button id="search_icon">
+            <img src="{% static 'images/search-button.svg' %}">
+        </button>
+            <input id="search_bar_input" type="text" placeholder="Rechercher...">
+    </div>
+
+    <div id="fiches_content">
+        {% for fiche in fiches reversed %}
+
+    <div class="fiches_wrap">
+
+        {% if user.is_superuser %}
+        <a class="fiches_crud" href="{% url 'delete_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
+        {% endif %}
+
+        <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
+        <a class="fiches_thumbnail" href="{% url 'fiche_chantier' fiche.id %}">
+            <div class="fiches_customer">{{fiche.customer}}</div>
+            <div class="fiches_created">{{fiche.created|date:'d-m-Y'}}                
+            </div>
+        </a>     
+    </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

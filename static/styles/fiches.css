@@ -1,0 +1,161 @@
+#fiches_wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 75px;
+    overflow-y: scroll;
+}
+
+#fiches_title {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    margin-top: 10px;
+    color: #3a557c;
+    font-family: "Share Tech Mono", monospace;
+}
+
+#fiches_search_bar {
+    position: absolute;
+    left: 50%;
+    width: calc(60% - 10px);
+    height: 20px;
+    transform: translateX(-50%);
+}
+
+#search_bar_input {
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: #3a557c;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-indent: 30px;
+}
+
+#search_icon {
+    position: absolute;
+    height: 100%;
+    margin: 20px 0px 0px 10px;
+    background-color: transparent;
+    border: none;
+    filter: sepia(1) contrast(0.3) saturate(12) invert(1) hue-rotate(-20deg) brightness(0.85) opacity(0.95);
+}
+
+#fiches_content {
+    position: relative;
+    display: grid;
+    grid-gap: 50px;
+    margin: 70px 50px 0px 50px;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.fiches_wrap {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 250ms all;
+    overflow: hidden;
+}
+
+.fiches_wrap:after {
+    content: "";
+    position: absolute;
+    margin: -20px;
+    margin-left: 80px;
+    width: 40px;
+    height: 40px;
+    transform: rotate(-45deg);
+    background-color: #3a557c;
+}
+
+.fiches_wrap:hover {
+    transform: scale(1.05);
+}
+
+.fiches_thumbnail {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#thumb_bg {
+    position: fixed;
+    width: inherit;
+    height: inherit;
+    opacity: 0.15;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.fiches_customer {
+    justify-content: center;
+    width: 100px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    font-family: "Share Tech Mono", monospace;
+    color: #3a557c;
+    font-size: 14px;
+}
+
+.fiches_created {
+    justify-content: center;
+    width: 100px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    font-family: "Share Tech Mono", monospace;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    opacity: 0;
+    transition: 250ms all;
+    z-index: 10;
+}
+
+.fiches_thumbnail:hover .fiches_created {
+    opacity: 1;
+}
+
+.fiches_crud {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-left: 80px;
+    text-decoration: none;
+    transition: 250ms all;
+}
+
+.fiches_crud:hover {
+    transform: scale(1.25);
+}
+
+.fiche_delete {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    font-family: "Comic Neue", cursive;
+    outline: none;
+    color: #b84040;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+  }
