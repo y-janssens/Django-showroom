@@ -87,12 +87,17 @@ td.user_mail a:hover{
 }
 
 td.user_fname {
-  width: 150px;
+  width: 100px;
   justify-content: center;
 }
 
 td.user_lname {
-  width: 150px;
+  width: 100px;
+  justify-content: center;
+}
+
+td.user_role {
+  width: 80px;
   justify-content: center;
 }
 

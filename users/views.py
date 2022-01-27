@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from decorators import login_required
-from django.contrib.auth import REDIRECT_FIELD_NAME
 from django.contrib.auth.models import User
 from django.contrib import messages
 from .forms import RegisterForm, ProfileForm
@@ -55,7 +54,6 @@ def loginUser(request):
     return render(request, 'users/login.html', {'page_title': page_title})
 
 
-
 def logoutUser(request):
     if request.user.is_authenticated:
         username = request.user.username
@@ -63,33 +61,19 @@ def logoutUser(request):
     messages.info(request, f'À bientôt {username}!')
     return redirect('login')
 
+
 @login_required
 def profile(request, pk):
+    profile = request.user.profile
     user = User.objects.get(id=pk)
-    form = ProfileForm(instance=user)
+    form = ProfileForm(instance=profile)
 
     if request.method == "POST":
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
+        form = ProfileForm(request.POST, instance=profile)
         if form.is_valid:
             form.save()
-            return redirect('profile')
+            return redirect('home')
 
     page_title = "Profil"
-    context = {'page_title': page_title, 'form': form}
-
-    return render(request, 'users/profile.html', context)
-
-@login_required
-def editProfile(request, pk):
-    user = User.objects.get(id=pk)
-    form = ProfileForm(instance=user)
-
-    if request.method == "POST":
-        form = ProfileForm(request.POST, request.FILES, instance=profile)
-        if form.is_valid:
-            form.save()
-            return redirect('profile')
-
-    page_title = "Profil"
-    context = {'page_title': page_title, 'form': form}
+    context = {'page_title': page_title, 'form': form, 'user': user}
     return render(request, 'users/profile.html', context)

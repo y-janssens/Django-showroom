@@ -13,3 +13,57 @@
   color: #3a557c;
   font-family: "Share Tech Mono", monospace;
 }
+
+#profile_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#profile_form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile_form input, #id_role  {
+  width: 90%;
+  height: 5vh;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-size: 16px;
+  letter-spacing: 3px;
+  background-color: transparent;
+}
+
+#profile_form_header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(58, 85, 124, 1);
+  margin-bottom: 30px;
+}
+
+#profile_form button {
+  width: 60%;
+  height: 5vh;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 3px;
+  background-color: rgba(58, 85, 124, 1);
+  cursor: pointer;
+}

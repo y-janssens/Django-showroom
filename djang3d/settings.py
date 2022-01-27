@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'showroom.apps.ShowroomConfig',
     'dashboard.apps.DashboardConfig',
     'users.apps.UsersConfig',
+    
 ]
 
 MIDDLEWARE = [

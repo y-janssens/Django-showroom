@@ -6,18 +6,19 @@
   <table id="users_list">
     <tr id="users_header">
     <td class="user_id">Id</td>
-    <td class="user_user">Utilisateur</td>
-    
+    <td class="user_user">Utilisateur</td>    
     <td class="user_fname">Prénom</td>
     <td class="user_lname">Nom</td>
     <td class="user_phone">Téléphone</td>
     <td class="user_mail">E-mail</td>
+    <td class="user_role">Rôle</td>
     <td class="user_status">Status</td>
     <td class="user_actions">Actions</td>
     </tr>
   
-  {% for user in users %}
-  {% if user.is_superuser == False %}  
+  {% for user, profile in group  %} 
+
+  {% comment %} {% if user.is_superuser == False %} {% endcomment %}  
 
   {% if forloop.counter|divisibleby:2 %}
   <tr class="user_bg_1">
@@ -25,17 +26,19 @@
     <tr class="user_bg_2">
       {% endif %}
     <td class="user_id">{{forloop.counter}}</td>
-    <td class="user_user">{{user.username}}</td>    
-    <td class="user_fname">{{user.first_name}}</td>
-    <td class="user_lname">{{user.last_name}}</td> 
-    <td class="user_phone"><a href="tel:0631224313">0631224313</a></td>   
-    <td class="user_mail"><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+    <td class="user_user">{{profile.username}}</td>    
+    <td class="user_fname">{{profile.first_name}}</td>
+    <td class="user_lname">{{profile.last_name}}</td> 
+    <td class="user_phone"><a href="tel:0631224313">{{profile.phone}}</a></td>   
+    <td class="user_mail"><a href="mailto:{{profile.email}}">{{profile.email}}</a></td>
+    <td class="user_role">{{profile.role}}</td>
     <td class="user_status">{% if user.is_active == True %}
       activé
       {% else %}
       inactif
       {% endif %}
     </td>
+
     
     <td class="user_actions">
   <span class="btn_grp">
@@ -43,7 +46,7 @@
   <a class="crud" href="{% url 'delete' user.id %}"><button class="user_delete">X</button></a></span></span>
   </td>
     </tr>  
-  {% endif %}
+  {% comment %} {% endif %} {% endcomment %}
   {% endfor %}
 </table>
 </div>
