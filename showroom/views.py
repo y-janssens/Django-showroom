@@ -37,8 +37,15 @@ def fiche_chantier(request, pk):
     return render(request, 'showroom/fiche_c.html', context)
 
 @login_required(login_url='login')
+def create_fiche_chantier(request):
+    page_title = "Création de fiche"
+    context = {'page_title': page_title}
+    return render(request, 'showroom/fiche_n.html', context)
+
+@login_required(login_url='login')
 @admin_required(login_url='login')
 def delete_fiche_chantier(request, pk):
     fiche = Fiche.objects.get(id=pk)
     fiche.delete()
     return redirect('fiches')
+

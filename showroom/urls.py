@@ -9,6 +9,7 @@ urlpatterns = [
     path('fiches', views.fiches, name="fiches"),
     path('fiches/<pk>', views.fiche_chantier, name="fiche_chantier"),
     path('delete_fiche/<pk>', views.delete_fiche_chantier, name="delete_fiche"),
+    path('create_fiche', views.create_fiche_chantier, name="create_fiche"),
 ]
 
 

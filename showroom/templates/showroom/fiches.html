@@ -12,6 +12,15 @@
     </div>
 
     <div id="fiches_content">
+
+        <div class="fiches_wrap_c">
+            <div id="icon_bg">✎</div>    
+            <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
+            <a class="fiches_thumbnail" href="{% url 'create_fiche' %}">
+                <div class="fiches_customer_c">Nouvelle fiche</div>                
+            </a>     
+        </div>
+
         {% for fiche in fiches reversed %}
 
     <div class="fiches_wrap">
@@ -31,4 +40,18 @@
         {% endfor %}
     </div>
 </div>
+
+{% comment %} <script type="text/javascript">
+    //var inputElement = document.getElementsByClassName("fiche_delete")
+    $(".fiches_crud").click(function(){
+        if (confirm('Are you sure you want to save this thing into the database?')) {
+            // Save it!
+            console.log('Thing was saved to the database.');
+          } else {
+            // Do nothing!
+            console.log('Thing was not saved to the database.');
+          }
+    });
+</script> {% endcomment %}
+
 {% endblock %}
