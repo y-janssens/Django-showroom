@@ -14,7 +14,7 @@
 
             <div id="sub_row1_1">
                 <div class="infos">Nom du client: <div class="infos_content">{{fiche.first_name}} {{fiche.last_name}}</div></div>
-                <div class="infos">Adresse: <div class="infos_content">{{fiche.adress}}</div></div>
+                <div class="infos">Adresse: <div class="infos_content"><a href="https://www.google.fr/maps/place/{{fiche.adress}},+{{fiche.post_code}}+{{fiche.city}}/">{{fiche.adress}}</a></div></div>
                 <div class="infos">Localité: <div class="infos_content">{{fiche.city}}</div></div>
                 <div class="infos">Code postal: <div class="infos_content">{{fiche.post_code}}</div> Téléphone: <div class="infos_content"><a href="tel:{{fiche.phone}}">{{fiche.phone}}</a></div></div>
                 <div class="infos">Commercial: <div class="infos_content"><a href="tel:{{fiche.owner.phone}}">{{fiche.owner.first_name}} {{fiche.owner.last_name}}</a></div></div>
@@ -34,47 +34,47 @@
             <div id="sub_row2_1">
                 <div class="sub_title">Traitement de charpente</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Traitement: <div class="infos_content">{{fiche.last_name}}</div></div>                
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Accès: <div class="infos_content">{{fiche.charpente_access}}</div></div>
+                <div class="infos">Surface: <div class="infos_content">{{fiche.charpente_area}}</div></div>
+                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.charpente_height}}</div></div>
+                <div class="infos">Traitement: <div class="infos_content">{{fiche.charpente_job}}</div></div>                
+                <div class="infos">Encombrement: <div class="infos_content">{{fiche.charpente_mess}}</div></div>
+                <div class="infos">Plancher: <div class="infos_content">{{fiche.charpente_floor}}</div></div>
             </div>
 
             <div id="sub_row2_2">
                 <div class="sub_title">Soufflage laine de roche</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Débarras: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Accès: <div class="infos_content">{{fiche.soufflage_access}}</div></div>
+                <div class="infos">Surface: <div class="infos_content">{{fiche.soufflage_area}}</div></div>
+                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.soufflage_height}}</div></div>
+                <div class="infos">Débarras: <div class="infos_content">{{fiche.soufflage_trash}}</div></div>
+                <div class="infos">Encombrement: <div class="infos_content">{{fiche.soufflage_mess}}</div></div>
+                <div class="infos">Plancher: <div class="infos_content">{{fiche.soufflage_floor}}</div></div>
 
             </div>
 
             <div id="sub_row2_3">
                 <div class="sub_title">Thermoréflexion</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Débarras: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Accès: <div class="infos_content">{{fiche.thermo_access}}</div></div>
+                <div class="infos">Surface: <div class="infos_content">{{fiche.thermo_area}}</div></div>
+                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.thermo_height}}</div></div>
+                <div class="infos">Débarras: <div class="infos_content">{{fiche.thermo_trash}}</div></div>
+                <div class="infos">Encombrement: <div class="infos_content">{{fiche.thermo_mess}}</div></div>
+                <div class="infos">Plancher: <div class="infos_content">{{fiche.thermo_floor}}</div></div>
 
             </div>
 
             <div id="sub_row2_4">
                 <div class="sub_title">Isolation rampants</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Épaisseur: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Accès: <div class="infos_content">{{fiche.isol_access}}</div></div>
+                <div class="infos">Surface: <div class="infos_content">{{fiche.isol_area}}</div></div>
+                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.isol_height}}</div></div>
+                <div class="infos">Épaisseur: <div class="infos_content">{{fiche.isol_trash}}</div></div>
+                <div class="infos">Encombrement: <div class="infos_content">{{fiche.isol_mess}}</div></div>
+                <div class="infos">Plancher: <div class="infos_content">{{fiche.isol_floor}}</div></div>
 
             </div>
 
@@ -85,60 +85,69 @@
             <div id="sub_row3_1">
                 <div class="sub_title">Hydrofuge</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Épaisseur: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Type: <div class="infos_content">{{fiche.hydro_type}}</div></div>
+                <div class="infos">Surface: <div class="infos_content">{{fiche.hydro_area}}</div></div>
+                <div class="infos">Toiture: <div class="infos_content">{{fiche.hydro_roof}}</div></div>
+                <div class="infos">Couleur de la tuile: <div class="infos_content">{{fiche.hydro_color}}</div></div>
+                <div class="infos">Modèle de la tuile: <div class="infos_content">{{fiche.hydro_model}}</div></div>
 
             </div>
 
             <div id="sub_row3_2">
                 <div class="sub_title">Faîtage / Arrêtiers</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Épaisseur: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Toiture: <div class="infos_content">{{fiche.fait_roof}}</div></div>
+                <div class="infos">Longueur: <div class="infos_content">{{fiche.fait_length}}</div></div>
+                <div class="infos">Nombre de longueurs: <div class="infos_content">{{fiche.fait_length_num}}</div></div>
+                <div class="infos">Couleur de la tuile: <div class="infos_content">{{fiche.fait_color}}</div></div>
+                <div class="infos">Maçonnerie: <div class="infos_content">{{fiche.fait_masonry}}</div></div>              
 
             </div>
 
             <div id="sub_row3_3">
                 <div class="sub_title">Remontées capillaires</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Épaisseur: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Accès: <div class="infos_content">{{fiche.cap_access}}</div></div>
+                <div class="infos">Longueur: <div class="infos_content">{{fiche.cap_length}}</div></div>
+                <div class="infos">Type de mur: <div class="infos_content">{{fiche.cap_type}}</div></div>
+                <div class="infos">Couleur du mur: <div class="infos_content">{{fiche.cap_color}}</div></div>
+                <div class="infos">Encombrement: <div class="infos_content">{{fiche.cap_mess}}</div></div>
 
             </div>
 
             <div id="sub_row3_4">
                 <div class="sub_title">Étanchéité</div>
 
-                <div class="infos">Accès: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Surface: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Épaisseur: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Encombrement: <div class="infos_content">{{fiche.last_name}}</div></div>
-                <div class="infos">Plancher: <div class="infos_content">{{fiche.last_name}}</div></div>
+                <div class="infos">Type: <div class="infos_content">{{fiche.waterproof_type}}</div></div>
+                <div class="infos">Toiture: <div class="infos_content">{{fiche.waterproof_roof}}</div></div>
+                <div class="infos">Longueur: <div class="infos_content">{{fiche.waterproof_length}}</div></div>
+                <div class="infos">Maçonnerie: <div class="infos_content">{{fiche.waterproof_masonry}}</div></div>
+                <div class="infos">Nombre d'éléments: <div class="infos_content">{{fiche.waterproof_length_num}}</div></div>
 
             </div>
 
         </div>
 
-        <div id="fiche_btns_grp">
-            <button class="fiche_btn" id="fiche_save">Enregistrer</button>
-            <button class="fiche_btn" id="fiche_send">Envoyer</button>
-            <button class="fiche_btn" id="fiche_print">Imprimer</button>
+        <div id="row4">
+            <div id="sub_row4_1">
+                <div class="sub_title">Informations complémentaires</div>
+
+                <div class="infos"><div class="infos_content">{{fiche.infos}}</div></div>
+
+            </div>
+
+            <div id="fiche_btns_grp">
+                <button class="fiche_btn" id="fiche_save">Enregistrer</button>
+                <button class="fiche_btn" id="fiche_send">Envoyer</button>
+                <button class="fiche_btn" id="fiche_print">Imprimer</button>
+            </div>
+
         </div>
+
+        
         <div id="fiche_background"><svg width="100%" height="100%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,600 C 0,600 0,120 0,120 C 82.95774647887325,108.7935417382343 165.9154929577465,97.58708347646858 237,91 C 308.0845070422535,84.41291652353142 367.2957746478873,82.44520783236001 422,80 C 476.7042253521127,77.55479216763999 526.9014084507043,74.63208519409139 606,93 C 685.0985915492957,111.36791480590861 793.0985915492957,151.0264513912745 854,161 C 914.9014084507043,170.9735486087255 928.7042253521129,151.26210924081073 997,128 C 1065.2957746478871,104.73789075918928 1188.0845070422533,77.92511164548266 1271,76 C 1353.9154929577467,74.07488835451734 1396.9577464788733,97.03744417725866 1440,120 C 1440,120 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="#3a557c44" class="transition-all duration-300 ease-in-out delay-150 path-0"></path><path d="M 0,600 C 0,600 0,240 0,240 C 66.70422535211267,246.6829268292683 133.40845070422534,253.3658536585366 204,264 C 274.59154929577466,274.6341463414634 349.0704225352112,289.219512195122 424,282 C 498.9295774647888,274.780487804878 574.3098591549297,245.75609756097558 649,241 C 723.6901408450703,236.24390243902442 797.6901408450705,255.7560975609756 857,262 C 916.3098591549295,268.2439024390244 960.9295774647887,261.2195121951219 1026,263 C 1091.0704225352113,264.7804878048781 1176.5915492957745,275.3658536585366 1249,273 C 1321.4084507042255,270.6341463414634 1380.7042253521126,255.3170731707317 1440,240 C 1440,240 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="#3a557c66" class="transition-all duration-300 ease-in-out delay-150 path-1"></path><path d="M 0,600 C 0,600 0,360 0,360 C 71.06286499484713,359.4215046375816 142.12572998969426,358.8430092751632 202,349 C 261.87427001030574,339.1569907248368 310.5599450360701,320.0494675369289 376,330 C 441.4400549639299,339.9505324630711 523.6344898660254,378.95912057712127 601,395 C 678.3655101339746,411.04087942287873 750.9020954998281,404.11405015458604 816,386 C 881.0979045001719,367.88594984541396 938.7571281346618,338.5846788045345 1011,344 C 1083.2428718653382,349.4153211954655 1170.0693919615253,389.5472346272759 1244,398 C 1317.9306080384747,406.4527653727241 1378.9653040192375,383.22638268636206 1440,360 C 1440,360 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="#3a557c88" class="transition-all duration-300 ease-in-out delay-150 path-2"></path><path d="M 0,600 C 0,600 0,480 0,480 C 78.22535211267606,469.8722088629337 156.45070422535213,459.74441772586744 227,471 C 297.5492957746479,482.25558227413256 360.4225352112676,514.8945379594641 420,518 C 479.5774647887324,521.1054620405359 535.8591549295775,494.67743043627627 600,477 C 664.1408450704225,459.32256956372373 736.1408450704226,450.395740295431 821,461 C 905.8591549295774,471.604259704569 1003.5774647887322,501.73960838199935 1062,510 C 1120.4225352112678,518.2603916180007 1139.5492957746478,504.64582617657163 1196,496 C 1252.4507042253522,487.35417382342837 1346.225352112676,483.6770869117142 1440,480 C 1440,480 1440,600 1440,600 Z" stroke="none" stroke-width="0" fill="#3a557cff" class="transition-all duration-300 ease-in-out delay-150 path-3"></path></svg></div>
     </div>    
+
 </div>
 
 {% endblock %}
