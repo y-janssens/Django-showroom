@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.admin_panel, name="admin"),
+    path('logs', views.admin_logs, name="logs"),
     path('activate/<str:pk>/', views.activate, name="activate"),
     path('delete/<str:pk>/', views.delete, name="delete"),
 ]

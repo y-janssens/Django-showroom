@@ -2,7 +2,7 @@
 {% load static %} 
 {% block content %}
 <div id="admin_wrapper">
-  <div id="admin_title">Utilisateurs</div>
+  <div id="admin_title"><a href="{% url 'admin' %}">Utilisateurs</a> - <a href="{% url 'logs' %}">Historique</a> - <a href="/admin">Console</a></div>
   <table id="users_list">
     <tr id="users_header">
     <td class="user_id">Id</td>

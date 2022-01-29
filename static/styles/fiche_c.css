@@ -236,14 +236,14 @@
 @media (max-width: 800px) {
     
     #fiche_content {
-        transform: translate(-50%, -50%) scale(0.75) rotateZ(-90deg);
+        transform: translate(-50%, -50%) scale(0.7) rotateZ(-90deg);
     }
     
 }
 
 @media (max-width: 750px) {
     #fiche_content {
-        transform: translate(-50%, -50%) scale(0.5) rotateZ(-90deg);
+        transform: translate(-50%, -50%) scale(0.4) rotateZ(-90deg);
     }
 }
 

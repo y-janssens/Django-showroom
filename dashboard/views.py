@@ -16,7 +16,15 @@ def admin_panel(request):
     context = {'users': users, 'page_title': page_title, 'group': group}
     return render(request, 'dashboard/admin.html', context)
 
+@login_required(login_url='login')
+@admin_required(login_url='login')
+def admin_logs(request):
+    page_title = "Historique d'utilisation"
+    context = {'page_title': page_title}
+    return render(request, 'dashboard/logs.html', context)
 
+@login_required(login_url='login')
+@admin_required(login_url='login')
 def activate(request, pk):
     user = User.objects.get(id=pk)
     if user.is_superuser == False:
@@ -27,7 +35,8 @@ def activate(request, pk):
     user.save()
     return redirect('admin')
 
-
+@login_required(login_url='login')
+@admin_required(login_url='login')
 def delete(request, pk):
     user = User.objects.get(id=pk)
     if user.is_superuser == False:
