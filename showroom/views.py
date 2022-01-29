@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from decorators import login_required, admin_required
 from .models import Fiche
+from .forms import FicheForm
 from users.models import User
 from showroom.models import Fiche
 
@@ -38,8 +39,23 @@ def fiche_chantier(request, pk):
 
 @login_required(login_url='login')
 def create_fiche_chantier(request):
-    page_title = "Création de fiche"
-    context = {'page_title': page_title}
+    page_title = "Création de fiche"   
+    profile = request.user.profile
+    form = FicheForm()
+
+    if request.method == "POST":
+        form = FicheForm(request.POST)
+        if form.is_valid():
+            fiche = form.save(commit=False)
+            fiche.owner = profile
+            form.save()
+            print('success')
+            return redirect('fiches')
+        else:
+            print('error')
+            
+
+    context = {'page_title': page_title, 'form': form}
     return render(request, 'showroom/fiche_n.html', context)
 
 @login_required(login_url='login')

@@ -34,7 +34,7 @@
     box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
         rgb(0 0 0 / 50%) 0px 16px 10px -10px;
     overflow: hidden;
-    background: linear-gradient(155deg, rgba(58, 85, 124, 0.25) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(155deg, rgba(58, 85, 124, 0.25) 0%, rgba(255, 255, 255, 1) 100%),linear-gradient(155deg, rgba(247, 167, 93, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 #fiche_content:after {
@@ -61,7 +61,7 @@
 #row2, #row3, #row4 {
     box-shadow: inset 0px 40px 0px 0px rgba(255, 255, 255, 0.25);
     margin-top: 20px;
-    padding-top: 8px;
+    padding-top: 8px;           
 }
 
 #row3 {
@@ -121,7 +121,7 @@
 
 #sub_row2_1, #sub_row2_2, #sub_row2_3, #sub_row2_4, #sub_row3_1, #sub_row3_2, #sub_row3_3, #sub_row3_4 {
     width: 250px;
-    height: 200px;
+    height: 200px;    
 }
 
 .sub_title {
@@ -129,12 +129,15 @@
     height: 35px;
     text-align: left;
     font-size: 16px;
+    font-weight: 400;
     color: #3a557c;
     font-family: "Share Tech Mono", monospace;
     text-decoration: underline;
     margin-bottom: 10px;
     text-decoration-thickness: 2px;
     text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 85, 124, 0.55);
+    filter: saturate(1.5);
 }
 
 .infos {
@@ -167,7 +170,7 @@
     position: absolute;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%);    
 }
 
 .fiche_btn {
@@ -181,11 +184,13 @@
     letter-spacing: 3px;
     cursor: pointer;
     border-radius: 4px;
-    transition: 250ms all;
+    opacity: 0.25;
+    transition: 350ms all;
 }
 
 .fiche_btn:hover {
     transform: scale(1.05);
+    opacity: 1;
 }
 
 #fiche_save {
@@ -197,7 +202,7 @@
 }
 
 #fiche_print {
-    background-color: rgb(124, 88, 58);
+    background-color: rgb(175, 95, 29);
 }
 
 #fiche_background {
@@ -210,4 +215,5 @@
     pointer-events: none;
     opacity: 0.25;
     transform: rotateZ(-25deg) scaleX(1.25) scaleY(1.65);
+    filter: hue-rotate(-45deg);
 }

@@ -68,7 +68,7 @@ class Fiche(models.Model):
     waterproof_length_num = models.CharField(max_length=50, blank=True, null=False)
     waterproof_masonry = models.CharField(max_length=50, choices=OUI_NON, blank=True, null=False)
 
-    infos = models.CharField(max_length=500, blank=True, null=False)
+    infos = models.TextField(max_length=500, blank=True, null=False)
 
     created = models.DateTimeField(auto_now_add=True, null=True)
     owner = models.ForeignKey(Profile, null=True, blank=True, on_delete=models.SET_NULL)

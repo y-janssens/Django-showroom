@@ -200,3 +200,31 @@
     background-color: transparent;
     border: none;
   }
+
+@media (max-width: 1000px) {
+    
+    #fiches_content {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }   
+}
+
+@media (max-width: 800px) {
+    
+    #fiches_content {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }   
+}
+
+@media (max-width: 650px) {
+    
+    #fiches_content {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }   
+}
+
+@media (max-width: 500px) {
+    
+    #fiches_content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }   
+}
