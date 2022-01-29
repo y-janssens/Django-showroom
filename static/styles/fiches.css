@@ -3,7 +3,7 @@
     width: 100%;
     height: 100vh;
     top: 75px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #fiches_title {
@@ -51,6 +51,7 @@
     display: grid;
     grid-gap: 50px;
     margin: 70px 50px 0px 50px;
+    justify-items: center;
     grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
@@ -112,7 +113,7 @@
 }
 
 #icon_bg {
-    position: fixed;
+    position: absolute;
     width: inherit;
     height: inherit;
     display: flex;
@@ -126,7 +127,7 @@
 }
 
 #thumb_bg {
-    position: fixed;
+    position: absolute;
     width: inherit;
     height: inherit;
     opacity: 0.15;
@@ -226,5 +227,12 @@
     
     #fiches_content {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }   
+}
+
+@media (max-width: 350px) {
+    
+    #fiches_content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }   
 }

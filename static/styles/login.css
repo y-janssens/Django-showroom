@@ -24,7 +24,7 @@
 
 #loginwrapper input {
   width: 90%;
-  height: 5vh;
+  height: 64px;
   border: none;
   outline: none;
   color: #3a557c;
@@ -52,7 +52,7 @@
 
 #loginwrapper button {
   width: 60%;
-  height: 5vh;
+  height: 64px;
   margin-top: 50px;
   border: none;
   color: #ffffff;
@@ -99,4 +99,10 @@ hr {
 
 .link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 500px) { 
+  #loginwrapper {    
+    transform: translate(-50%, -50%) scale(0.75);
+}
 }

@@ -46,7 +46,7 @@ def loginUser(request):
             if user.is_superuser:
                 return redirect('admin')
             else:
-                return redirect('/')
+                return redirect('fiches')
 
         else:
             messages.error(

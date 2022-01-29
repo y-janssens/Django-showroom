@@ -38,9 +38,9 @@
   align-items: center;
 }
 
-#profile_form input, #id_role  {
+#profile_form input, #id_role {
   width: 90%;
-  height: 5vh;
+  height: 64px;
   border: none;
   outline: none;
   color: #3a557c;
@@ -58,7 +58,7 @@
 
 #profile_form button {
   width: 60%;
-  height: 5vh;
+  height: 64px;
   border: none;
   color: #ffffff;
   font-size: 20px;
@@ -66,4 +66,10 @@
   letter-spacing: 3px;
   background-color: rgba(58, 85, 124, 1);
   cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  #profile_form {
+    transform: translate(-50%, -50%) scale(0.75);
+  }
 }

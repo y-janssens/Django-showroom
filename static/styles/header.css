@@ -53,3 +53,21 @@
 #home:hover, .header_link:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 750px) {
+  .nav_title {
+    font-size: 30px;
+  }
+
+  a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav_title {
+    font-size: 25px;
+    margin-top: -10px;
+    letter-spacing: 12px;
+  }
+}

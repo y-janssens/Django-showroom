@@ -16,7 +16,7 @@ class RegisterForm(UserCreationForm):
         
         super(RegisterForm, self).__init__(*args, **kwags)
         for i in self.fields:
-            self.fields[i].widget.attrs.update({'class':'input'})
+            self.fields[i].widget.attrs.update({'class':'label'})
 
 
 

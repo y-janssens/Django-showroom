@@ -4,16 +4,18 @@
 {% block content %}
     <div id="showcase">
         <div id="content">
-            <div class="wrap">
-                <a class="thumbnail" href="{% url 'scene_1' %}"><img src="{% static 'images/real1.jpg' %}" alt="" /></a>
+            <div class="wrap" id="th_1">
+                <img class="showroom_thumb" src="{% static 'images/real1.jpg' %}" alt="" />
+                <a class="thumbnail" href="{% url 'scene_1' %}"></a>
             </div>
-            <div class="wrap">
-                <a class="thumbnail" href="{% url 'fiches' %}"><img id="showroom_thumb_bg" src="{% static 'images/doc-icon.png' %}" alt="" /></a>
+            <div class="wrap" id="th_2">
+                <div id="fiche_icon_bg">✎</div> 
+                <a class="thumbnail" href="{% url 'fiches' %}"><img class="showroom_thumb" id="showroom_thumb_bg" src="{% static 'images/doc-icon.png' %}" alt="" /></a>
             </div>
-            <div class="wrap">
+            <div class="wrap" id="th_3">
                 <a class="thumbnail" href=""></a>
             </div>
-            <div class="wrap">
+            <div class="wrap" id="th_4">
                 <a class="thumbnail" href=""></a>
             </div>
         </div>
