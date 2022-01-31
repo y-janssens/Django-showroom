@@ -1,11 +1,54 @@
-{% extends "showroom/index.html" %} 
-{% load static %} 
-{% block content %}
+{% extends "index/index.html" %} 
 
+{% load static %} 
+
+{% block content %}
 <div id="logs_wrapper">
 
-    <div id="logs_title">Logs</div>
+    {% include "dashboard/admin_navbar.html" %}  
 
+    <table id="logs_list">
+        <tr id="users_header">
+        <td class="log_id">Id</td>
+        <td class="log_user">Utilisateur</td>   
+        <td class="log_role">Rôle</td> 
+        <td class="log_action">Action</td>
+        <td class="log_element">Élément</td>
+        <td class="log_time">Date</td>
+        </tr>
+    
+        {% for log in logs %}
+
+        {% if forloop.counter|divisibleby:2 %}
+        <tr class="user_bg_1">
+          {% else %}
+          <tr class="user_bg_2">
+            {% endif %}
+            <td class="log_id">{{forloop.counter}}</td>
+            <td class="log_user">{{log.user.first_name|capfirst}} {{ log.user.last_name|capfirst }}</td>
+            <td class="log_role">{{log.user.profile.role|capfirst}}</td>
+
+            {% if log.action_flag == 1 %}
+            <td class="log_action" style="color: green">Création</td> 
+            {% elif log.action_flag == 2 %}
+            <td class="log_action" style="color: orange">Modification</td>
+            {% elif log.action_flag == 3 %}
+            <td class="log_action" style="color: red">Suppression</td>
+            {% endif %}
+
+            {% if log.content_type.model == "user" %}
+            <td class="log_element">utilisateur: {{ log.object_repr }}</td>
+            {% elif log.content_type.model == "profile" %}
+            <td class="log_element">profil: {{ log.object_repr }}</td>
+            {% else %}
+            <td class="log_element">{{log.content_type.model}}: {{ log.object_repr }}</td>
+            {% endif %}
+
+            <td class="log_time">{{ log.action_time|date:"d/m/Y - H:i" }}</td>           
+                    
+            {% endfor %}
+
+        </table>
 </div>
 
 {% endblock %}

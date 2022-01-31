@@ -1,4 +1,4 @@
-{% extends "showroom/index.html" %} {% load static %} {% block content %}
+d{% extends "index/index.html" %} {% load static %} {% block content %}
 
 <div id="profile_wrapper">
   <div id="profil_title">Profil de {{user.username}}</div>
@@ -7,7 +7,7 @@
     <div id="profile_form_header">
       <span class="title">Profil</span>
     </div>
-    <form action="{% url 'profile' user.id %}" method="POST">
+    <form action="{% url 'profile' %}" method="POST">
       {% csrf_token %}
        {% for field in form %}
         
@@ -21,3 +21,4 @@
 </div>
 
 {% endblock %}
+

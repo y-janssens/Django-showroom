@@ -5,10 +5,9 @@
 
 body, html {
   width: 100%;
-  height: 100%;
+  height: 100%;  
   background-color: rgba(117, 153, 179, 0.1);
   background-size: 50%;
-  
 
 }
 
@@ -16,7 +15,6 @@ body, html {
   width: 100%;
   height: 100%;
   background: linear-gradient(-25deg, rgba(58, 85, 124, 0.25) 0%, rgba(255, 255, 255, 0.5) 100%),linear-gradient(155deg, rgba(247, 167, 93, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
-  
 }
 
 .alert {
@@ -25,4 +23,16 @@ body, html {
   top: 120px;
   transform: translate(-50%, -50%);
   z-index: 99999;
+}
+
+::-webkit-scrollbar {
+  position: absolute;
+  width: 5px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  position: absolute;
+  background-color: rgba(120, 120, 120, 0.5);
+  border-radius: 0.2em;
 }

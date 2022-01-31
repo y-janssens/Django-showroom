@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from decorators import login_required
+from decorators import login_required, admin_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import RegisterForm, ProfileForm
+from .forms import RegisterForm, ProfileForm, Profile
 
 
 def registerUser(request):
@@ -62,10 +62,9 @@ def logoutUser(request):
     return redirect('login')
 
 
-@login_required
-def profile(request, pk):
+@login_required(login_url='login')
+def profile(request):
     profile = request.user.profile
-    user = User.objects.get(id=pk)
     form = ProfileForm(instance=profile)
 
     if request.method == "POST":
@@ -75,5 +74,5 @@ def profile(request, pk):
             return redirect('home')
 
     page_title = "Profil"
-    context = {'page_title': page_title, 'form': form, 'user': user}
+    context = {'page_title': page_title, 'form': form, 'profile': profile}
     return render(request, 'users/profile.html', context)

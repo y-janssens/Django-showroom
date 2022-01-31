@@ -8,6 +8,7 @@ urlpatterns = [
     path('logs', views.admin_logs, name="logs"),
     path('activate/<str:pk>/', views.activate, name="activate"),
     path('delete/<str:pk>/', views.delete, name="delete"),
+    #path('role/<str:pk>/', views.role, name="role"),
 ]
 
 

@@ -1,0 +1,38 @@
+{% extends "index/index.html" %}
+{% load static %}
+
+{% block content %}
+    <div id="showcase">
+
+        <div id="content">
+
+            <div class="wrap" id="th_2">
+                <span class="wrap_title">Fiches de chantier</span>
+                <div id="fiche_icon_bg">✎</div> 
+                <a class="thumbnail" href="{% url 'fiches' %}"><img class="showroom_thumb" id="showroom_thumb_bg" src="{% static 'images/doc-icon.png' %}" alt="" /></a>
+            </div>
+
+            <div class="wrap" id="th_1">
+                <span class="wrap_title"></span>
+                <a class="thumbnail" href=""></a>
+            </div>  
+
+            <div class="wrap" id="th_3">
+                <span class="wrap_title"></span>
+                <a class="thumbnail" href=""></a>
+            </div>
+
+            <div class="wrap" id="th_4">
+                <span class="wrap_title"></span>
+                <a class="thumbnail" href=""></a>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
+
+{% comment %} <div class="wrap" id="th_1">
+                <img class="showroom_thumb" src="{% static 'images/real1.jpg' %}" alt="" />
+                <a class="thumbnail" href="{% url 'scene_1' %}"></a>
+            </div> {% endcomment %}

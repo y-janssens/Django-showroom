@@ -1,15 +1,65 @@
 #logs_wrapper {
     position: fixed;
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100vh - 100px);
+    overflow-y: auto;
     margin-top: 75px;
   }
   
-  #logs_title {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
+  #logs_list {
+    position: relative;
+    width: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    left: 50%;
     margin-top: 10px;
-    color: #3a557c;
+    transform: translateX(-50%);
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
     font-family: "Share Tech Mono", monospace;
   }
+
+  #logs_list tr,
+td {
+  display: flex;
+  justify-content: space-between;
+  line-height: 35px;
+}
+
+#logs_list tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+tr.log_bg_1 {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+td.log_id {
+  width: 35px;
+  margin-left: 15px;
+}
+
+td.log_user {
+  width: 150px;
+  justify-content: center;
+}
+
+td.log_role {
+  width: 100px;
+  justify-content: center;
+}
+
+td.log_action {
+  width: 150px;
+  justify-content: left;
+}
+
+td.log_element {
+  width: 200px;
+  justify-content: left;
+}
+
+td.log_time {
+  width: 150px;
+  justify-content: center;
+}

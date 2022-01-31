@@ -1,7 +1,0 @@
-#visu {
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 100px);
-    margin-top: 75px;
-    z-index: 0;
-}

@@ -1,8 +1,8 @@
-{% extends "showroom/index.html" %} 
+{% extends "index/index.html" %} 
 {% load static %} 
 {% block content %}
 <div id="admin_wrapper">
-  <div id="admin_title"><a href="{% url 'admin' %}">Utilisateurs</a> - <a href="{% url 'logs' %}">Historique</a> - <a href="/admin">Console</a></div>
+{% include "dashboard/admin_navbar.html" %}
   <table id="users_list">
     <tr id="users_header">
     <td class="user_id">Id</td>
@@ -31,7 +31,10 @@
     <td class="user_lname">{{profile.last_name}}</td> 
     <td class="user_phone"><a href="tel:0631224313">{{profile.phone}}</a></td>   
     <td class="user_mail"><a href="mailto:{{profile.email}}">{{profile.email}}</a></td>
+    
     <td class="user_role">{{profile.role}}</td>
+      
+
     <td class="user_status">{% if user.is_active == True %}
       activé
       {% else %}
@@ -49,5 +52,18 @@
   {% comment %} {% endif %} {% endcomment %}
   {% endfor %}
 </table>
+
+
+
 </div>
+
+
+<script type="text/javascript">
+  
+    $('.user_role').on('change', function() {
+      document.forms['role_submit'].submit();
+        console.log('submit');
+    });
+
+</script>
   {% endblock %}

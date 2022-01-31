@@ -18,12 +18,11 @@
   transform: translateX(-50%);
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.25);
+  color: #fff;
   font-family: "Share Tech Mono", monospace;
   text-decoration: none;
 }
 
 #admin:hover {
   text-decoration: underline;
-  color: rgba(255, 255, 255, 0.5);
 }

@@ -5,15 +5,6 @@
   margin-top: 75px;
 }
 
-#admin_title {
-  display: flex;
-  justify-content: center;
-  font-size: 18px;
-  margin-top: 10px;
-  color: #3a557c;
-  font-family: "Share Tech Mono", monospace;
-}
-
 #users_header {
   color: #3a557c !important;
   font-size: 14px !important;
@@ -63,12 +54,12 @@ td.user_phone {
   justify-content: center;
 }
 
-td.user_phone a{
+td.user_phone a, td.user_user a{
   color:rgba(58, 85, 124, 1);
   text-decoration: none;
 }
 
-td.user_phone a:hover{
+td.user_phone a:hover, td.user_user a:hover{
   text-decoration: underline;
 }
 
@@ -97,17 +88,28 @@ td.user_lname {
 }
 
 td.user_role {
-  width: 80px;
+  width: 100px;
   justify-content: center;
 }
 
+td.user_role #id_role {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  width: inherit;
+  letter-spacing: initial;
+  font-size: 12px;
+  text-align: left;
+  font-family: "Share Tech Mono", monospace;
+}
+
 td.user_status {
-  width: 70px;
+  width: 60px;
   justify-content: center;
 }
 
 td.user_actions {
-  width: 70px;
+  width: 50px;
   justify-content: center;
 }
 
@@ -141,7 +143,7 @@ ul {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50px;
+  width: 40px;
 }
 
 .user_valid_btn {
@@ -187,14 +189,4 @@ hr.hr1 {
   border-right: none;
 }
 
-::-webkit-scrollbar {
-  position: absolute;
-  width: 5px;
-  height: 7px;
-}
 
-::-webkit-scrollbar-thumb {
-  position: absolute;
-  background-color: rgba(120, 120, 120, 0.5);
-  border-radius: 0.2em;
-}

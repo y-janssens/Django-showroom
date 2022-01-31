@@ -1,0 +1,15 @@
+{% load static %}
+<div id="header">
+  <div id="links_group">
+  {% if user.is_authenticated == True %}
+  
+  <a class="header_link" href="{% url 'profile' %}">Profil</a>
+  <a class="header_link"  href="{% url 'logout' %}">Déconnexion</a>
+
+  {% else %}
+  <a class="header_link"  href="{% url 'login' %}">Connexion</a>
+  {% endif %}
+  </div>
+  <span class="nav_title">Gestion</span>
+  <a id="home" href="{% url 'home' %}">Accueil</a>
+</div>

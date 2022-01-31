@@ -1,0 +1,60 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+  <title>{{page_title}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;500;600;700;800;900&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/header.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/footer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/index.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/login.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/profile.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/admin.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/logs.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/admin_navbar.css' %}">
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/fiches.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/fiche_c.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/fiche_form.css' %}">
+
+  <link rel="stylesheet" href="{% static 'uikit/styles/uikit.css' %}" />
+  
+
+  <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+</head>
+
+<body>  
+  {% include "index/header.html" %}
+
+  {% if messages %}
+        {% for message in messages %}
+
+            <div class="alert alert--{{message.tags}}">
+                <p class="alert__message">{{message}}</p>
+                <button class="alert__close">⨯</button>
+            </div>
+
+        {% endfor %}
+    {% endif %}
+    
+  {% block content %}
+
+  {% endblock %}
+
+  {% include "index/footer.html" %}
+  <div id="main_background"></div>
+</body>
+<script src="{% static 'uikit/app.js' %}"></script>
+</html>
