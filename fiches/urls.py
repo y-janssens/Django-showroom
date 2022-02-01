@@ -10,6 +10,7 @@ urlpatterns = [
     path('create_fiche', views.create_fiche_chantier, name="create_fiche"),
     path('save_fiche/<pk>', views.save_fiche, name="save_fiche"),
     path('print_fiche/<pk>', views.print_fiche, name="print_fiche"),
+    path('test/<pk>', views.test_fiche, name="test"),
 ]
 
 

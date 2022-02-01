@@ -14,6 +14,12 @@ try:
 except OSError:
     pdfkit_config = {}
 
+@login_required(login_url='login')
+def test_fiche(request, pk):
+    page_title = f"Fiche de chantier N°{pk}"
+    fiche = Fiche.objects.get(id=pk)
+    context = {'page_title': page_title, 'fiche': fiche}
+    return render(request, 'fiches/fiche_export.html', context)
 
 @login_required(login_url='login')
 def save_fiche(request, pk):
