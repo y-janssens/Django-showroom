@@ -20,18 +20,21 @@ def save_fiche(request, pk):
     fiche = Fiche.objects.get(id=pk)
     page_title = f"Fiche de chantier {fiche.last_name}"
     name = fiche.last_name
-    html_content = render_to_string(
-        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-    options = {'page-height': '223', 'page-width': '277'}
-    pdf_content = pdfkit.from_string(
-        html_content, False, configuration=pdfkit_config, options=options)
-    response = HttpResponse(content_type="application/pdf;")
-    response[
-        "Content-Disposition"
-    ] = f"attachment; filename=Fiche de chantier {name}.pdf"
-    response["Content-Transfer-Encoding"] = "binary"
-    response.write(pdf_content)
-    return response
+    try:
+        html_content = render_to_string(
+            'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
+        options = {'page-height': '223', 'page-width': '277'}
+        pdf_content = pdfkit.from_string(
+            html_content, False, configuration=pdfkit_config, options=options)
+        response = HttpResponse(content_type="application/pdf;")
+        response[
+            "Content-Disposition"
+        ] = f"attachment; filename=Fiche de chantier {name}.pdf"
+        response["Content-Transfer-Encoding"] = "binary"
+        response.write(pdf_content)
+        return response
+    except:
+        return HttpResponse(status=204)
 
 
 @login_required(login_url='login')
@@ -39,18 +42,21 @@ def print_fiche(request, pk):
     fiche = Fiche.objects.get(id=pk)
     page_title = f"Fiche de chantier {fiche.last_name}"
     name = fiche.last_name
-    html_content = render_to_string(
-        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-    options = {'page-height': '223', 'page-width': '277'}
-    pdf_content = pdfkit.from_string(
-        html_content, False, configuration=pdfkit_config, options=options)
-    response = HttpResponse(content_type="application/pdf;")
-    response[
-        "Content-Disposition"
-    ] = f"inline; filename=Fiche de chantier {name}.pdf"
-    response["Content-Transfer-Encoding"] = "binary"
-    response.write(pdf_content)
-    return response
+    try:
+        html_content = render_to_string(
+            'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
+        options = {'page-height': '223', 'page-width': '277'}
+        pdf_content = pdfkit.from_string(
+            html_content, False, configuration=pdfkit_config, options=options)
+        response = HttpResponse(content_type="application/pdf;")
+        response[
+            "Content-Disposition"
+        ] = f"inline; filename=Fiche de chantier {name}.pdf"
+        response["Content-Transfer-Encoding"] = "binary"
+        response.write(pdf_content)
+        return response
+    except:
+        return HttpResponse(status=204)
 
 
 @login_required(login_url='login')
