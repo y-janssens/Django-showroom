@@ -5,9 +5,11 @@ from . import views
 
 urlpatterns = [
     path('', views.fiches, name="fiches"),
-    path('fiches/<pk>', views.fiche_chantier, name="fiche_chantier"),
+    path('fiche/<pk>', views.fiche_chantier, name="fiche_chantier"),
     path('delete_fiche/<pk>', views.delete_fiche_chantier, name="delete_fiche"),
     path('create_fiche', views.create_fiche_chantier, name="create_fiche"),
+    path('save_fiche/<pk>', views.save_fiche, name="save_fiche"),
+    path('print_fiche/<pk>', views.print_fiche, name="print_fiche"),
 ]
 
 

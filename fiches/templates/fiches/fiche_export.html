@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>{{page_title}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;500;600;700;800;900&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"/>
+
+    <style type="text/css">
+#fiche_header {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+#fiche_title {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    display: -webkit-box;
+    margin-top: 10px;
+    -webkit-box-pack: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #ffffff;
+    font-family: "Share Tech Mono", monospace;
+}
+
+#fiche_content {
+    position: relative;
+    width: 1200px;
+    height: 950px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background-image: url('https://i.imgur.com/gJmKLbn.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;  
+}
+
+#row1 , #row2, #row3, #row4  {
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    margin-left: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    -webkit-justify-content: space-between;
+    -webkit-box-pack: justify;
+    width: 1000px;
+    height: 260px;
+    padding-top: 30px;
+}
+
+#row2, #row3, #row4 {
+    margin-top: 20px;
+    padding-top: 8px;           
+}
+
+#row3 {
+    margin-top: -10px;
+}
+
+#row4 {
+    margin-top: -40px;
+    height: 100px;
+    overflow: hidden;
+}
+
+#fiche_logo {
+    width: 200px;
+    height: 200px;
+    margin-top: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+#sub_row1_1 {
+    position: relative;
+    display: flex;
+    display: -webkit-box-flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-pack: justify;
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+}
+
+#sub_row1_2 {
+    position: relative;
+    display: flex;
+    display: -webkit-box-flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-box-pack: justify;
+    width: 250px;
+    height: 200px;
+    margin-top: 40px;
+}
+
+#sub_row4_1 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+#sub_row4_1 .sub_title {
+    margin-bottom: 20px;
+}
+
+#sub_row4_1 .infos_content {
+    width: 1030px;
+    display: flex;
+    text-align: justify;
+    align-items: flex-start;
+}
+
+#sub_row2_1, #sub_row2_2, #sub_row2_3, #sub_row2_4, #sub_row3_1, #sub_row3_2, #sub_row3_3, #sub_row3_4 {
+    width: 250px;
+    height: 200px;    
+}
+
+.sub_title {
+    width: 100%;
+    height: 35px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+    color: #3a557c;
+    font-family: "Share Tech Mono", monospace;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(58, 85, 124, 0.55);
+    filter: saturate(1.5);
+}
+
+.infos {
+    display: flex;
+    flex-direction: row;
+    display: -webkit-box;    
+    font-size: 14px;
+    color: #3a557c;    
+    font-family: "Share Tech Mono", monospace;
+    padding: 5px;
+}
+
+.infos_content {
+    font-size: 14px;
+    line-height: 14px;
+    padding-right: 5px;
+    letter-spacing: 6px;  
+    padding-bottom: 6px;  
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.infos_content a{
+    position: absolute;
+    color: #004fbd;    
+    text-decoration: none;    
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="fiche_wrapper"> 
+
+        <div id="fiche_content">            
+            <div id="fiche_header">
+                <div id="fiche_title">{{page_title}}</div>
+            </div>
+    
+            <div id="row1">
+                <div id="fiche_logo"></div>                
+                <div id="sub_row1_1">                    
+                    
+                <div class="infos">Nom du client: <div class="infos_content">{{fiche.first_name}} {{fiche.last_name}}</div></div>
+                <div class="infos">Adresse: <div class="infos_content"><a href="https://www.google.fr/maps/place/{{fiche.adress}},+{{fiche.post_code}}+{{fiche.city}}" target="_blank">{{fiche.adress}}</a></div></div>
+                <div class="infos">Localité: <div class="infos_content">{{fiche.city}}</div></div>
+                <div class="infos">Code postal: <div class="infos_content">{{fiche.post_code}}</div> Téléphone: <div class="infos_content"><a href="tel:{{fiche.phone}}">{{fiche.phone}}</a></div></div>
+                <div class="infos">Commercial: <div class="infos_content"><a href="tel:{{fiche.owner.phone}}">{{fiche.owner.first_name}} {{fiche.owner.last_name}}</a></div></div>
+                <div class="infos">Source: <div class="infos_content">{{fiche.source}}</div></div>
+                </div>
+    
+                <div id="sub_row1_2">
+                    <div class="infos">N° devis: <div class="infos_content">{{fiche.invoice_number}}</div></div>            
+                    <div class="infos">Surface toiture: <div class="infos_content">{{fiche.area}}</div></div>
+                    <div class="infos">Nombre de pans: <div class="infos_content">{{fiche.roof}}</div></div>
+                    <div class="infos">Hauteur à la gouttière: <div class="infos_content">{{fiche.height}}</div></div>
+                    <div class="infos">Degré de pente: <div class="infos_content">{{fiche.slant}}</div></div>
+                </div>
+            </div>
+    
+            <div id="row2">
+
+                <div id="sub_row2_1">
+                    <div class="sub_title">Traitement de charpente</div>
+    
+                    <div class="infos">Accès: <div class="infos_content">{{fiche.charpente_access}}</div></div>
+                    <div class="infos">Surface: <div class="infos_content">{{fiche.charpente_area}}</div></div>
+                    <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.charpente_height}}</div></div>
+                    <div class="infos">Traitement: <div class="infos_content">{{fiche.charpente_job}}</div></div>                
+                    <div class="infos">Encombrement: <div class="infos_content">{{fiche.charpente_mess}}</div></div>
+                    <div class="infos">Plancher: <div class="infos_content">{{fiche.charpente_floor}}</div></div>
+                </div>
+    
+                <div id="sub_row2_2">
+                    <div class="sub_title">Soufflage laine de roche</div>
+    
+                    <div class="infos">Accès: <div class="infos_content">{{fiche.soufflage_access}}</div></div>
+                    <div class="infos">Surface: <div class="infos_content">{{fiche.soufflage_area}}</div></div>
+                    <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.soufflage_height}}</div></div>
+                    <div class="infos">Débarras: <div class="infos_content">{{fiche.soufflage_trash}}</div></div>
+                    <div class="infos">Encombrement: <div class="infos_content">{{fiche.soufflage_mess}}</div></div>
+                    <div class="infos">Plancher: <div class="infos_content">{{fiche.soufflage_floor}}</div></div>
+    
+                </div>
+    
+                <div id="sub_row2_3">
+                    <div class="sub_title">Thermoréflexion</div>
+    
+                    <div class="infos">Accès: <div class="infos_content">{{fiche.thermo_access}}</div></div>
+                    <div class="infos">Surface: <div class="infos_content">{{fiche.thermo_area}}</div></div>
+                    <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.thermo_height}}</div></div>
+                    <div class="infos">Débarras: <div class="infos_content">{{fiche.thermo_trash}}</div></div>
+                    <div class="infos">Encombrement: <div class="infos_content">{{fiche.thermo_mess}}</div></div>
+                    <div class="infos">Plancher: <div class="infos_content">{{fiche.thermo_floor}}</div></div>
+    
+                </div>
+    
+                <div id="sub_row2_4">
+                    <div class="sub_title">Isolation rampants</div>
+    
+                    <div class="infos">Accès: <div class="infos_content">{{fiche.isol_access}}</div></div>
+                    <div class="infos">Surface: <div class="infos_content">{{fiche.isol_area}}</div></div>
+                    <div class="infos">Hauteur de flèche: <div class="infos_content">{{fiche.isol_height}}</div></div>
+                    <div class="infos">Épaisseur: <div class="infos_content">{{fiche.isol_trash}}</div></div>
+                    <div class="infos">Encombrement: <div class="infos_content">{{fiche.isol_mess}}</div></div>
+                    <div class="infos">Plancher: <div class="infos_content">{{fiche.isol_floor}}</div></div>
+    
+                </div>
+    
+            </div>
+    
+            <div id="row3">
+    
+                <div id="sub_row3_1">
+                    <div class="sub_title">Hydrofuge</div>
+    
+                    <div class="infos">Type: <div class="infos_content">{{fiche.hydro_type}}</div></div>
+                    <div class="infos">Surface: <div class="infos_content">{{fiche.hydro_area}}</div></div>
+                    <div class="infos">Toiture: <div class="infos_content">{{fiche.hydro_roof}}</div></div>
+                    <div class="infos">Couleur de la tuile: <div class="infos_content">{{fiche.hydro_color}}</div></div>
+                    <div class="infos">Modèle de la tuile: <div class="infos_content">{{fiche.hydro_model}}</div></div>
+    
+                </div>
+    
+                <div id="sub_row3_2">
+                    <div class="sub_title">Faîtage / Arrêtiers</div>
+    
+                    <div class="infos">Toiture: <div class="infos_content">{{fiche.fait_roof}}</div></div>
+                    <div class="infos">Longueur: <div class="infos_content">{{fiche.fait_length}}</div></div>
+                    <div class="infos">Nombre de longueurs: <div class="infos_content">{{fiche.fait_length_num}}</div></div>
+                    <div class="infos">Couleur de la tuile: <div class="infos_content">{{fiche.fait_color}}</div></div>
+                    <div class="infos">Maçonnerie: <div class="infos_content">{{fiche.fait_masonry}}</div></div>              
+    
+                </div>
+    
+                <div id="sub_row3_3">
+                    <div class="sub_title">Remontées capillaires</div>
+    
+                    <div class="infos">Accès: <div class="infos_content">{{fiche.cap_access}}</div></div>
+                    <div class="infos">Longueur: <div class="infos_content">{{fiche.cap_length}}</div></div>
+                    <div class="infos">Type de mur: <div class="infos_content">{{fiche.cap_type}}</div></div>
+                    <div class="infos">Couleur du mur: <div class="infos_content">{{fiche.cap_color}}</div></div>
+                    <div class="infos">Encombrement: <div class="infos_content">{{fiche.cap_mess}}</div></div>
+    
+                </div>
+    
+                <div id="sub_row3_4">
+                    <div class="sub_title">Étanchéité</div>
+    
+                    <div class="infos">Type: <div class="infos_content">{{fiche.waterproof_type}}</div></div>
+                    <div class="infos">Toiture: <div class="infos_content">{{fiche.waterproof_roof}}</div></div>
+                    <div class="infos">Longueur: <div class="infos_content">{{fiche.waterproof_length}}</div></div>
+                    <div class="infos">Maçonnerie: <div class="infos_content">{{fiche.waterproof_masonry}}</div></div>
+                    <div class="infos">Nombre d'éléments: <div class="infos_content">{{fiche.waterproof_length_num}}</div></div>
+    
+                </div>
+    
+            </div>
+    
+            <div id="row4">
+                <div id="sub_row4_1">
+                    <div class="sub_title">Informations complémentaires</div>
+    
+                    <div class="infos"><div class="infos_content">{{fiche.infos}}</div></div>
+    
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

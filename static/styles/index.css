@@ -32,6 +32,7 @@
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(320deg, rgba(255,255,255,0.5) 30%, rgba(0, 0, 0, 0.025) 70%);
 }
 
 .wrap_title {
@@ -44,6 +45,7 @@
   font-family: "Share Tech Mono", monospace;
   color: #427C3A;
   font-size: 24px;
+  transition: 250ms all;
 }
 
 .thumbnail {
@@ -63,12 +65,41 @@
   transform: scale(1.05);
 }
 
+.wrap:hover .wrap_title{
+  letter-spacing: 3px;
+}
+
+.wrap:hover #fiche_icon_bg{
+  transform: scaleX(-1) rotate(-360deg);
+}
+
 #showroom_thumb_bg {
   opacity: 0.15;
 }
 
 #th_1, #th_3, #th_4 {
   opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#th_1 {
+  box-shadow: inset 0px 0px 0px 2px #3a557c, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+  rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+}
+
+#th_2 {
+  box-shadow: inset 0px 0px 0px 2px #427C3A, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+  rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+}
+
+#th_3 {
+  box-shadow: inset 0px 0px 0px 2px #AF5F1D, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+  rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+}
+
+#th_4 {
+  box-shadow: inset 0px 0px 0px 2px #808080, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+  rgb(0 0 0 / 50%) 0px 16px 10px -10px;
 }
 
 #fiche_icon_bg {
@@ -83,6 +114,8 @@
   justify-content: center;
   transform: scaleX(-1);
   pointer-events: none;
+  transition: 350ms all;
+  z-index: 10;
 }
 
 #th_1:after {
