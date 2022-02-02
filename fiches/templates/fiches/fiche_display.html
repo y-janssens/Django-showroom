@@ -139,7 +139,8 @@
 
             <div id="fiche_btns_grp">
                 <button class="fiche_btn" id="fiche_save"><a href="{% url 'save_fiche' fiche.id %}">Enregistrer</a></button>
-                {% comment %} <button class="fiche_btn" id="fiche_send"><a href="{% url 'send_fiche' fiche.id %}">Envoyer</a></button> {% endcomment %}
+                <button class="fiche_btn" id="fiche_send"><a href="{% url 'send_fiche' fiche.id %}">Envoyer</a></button>
+                
                 <button class="fiche_btn" id="fiche_print"><a href="{% url 'print_fiche' fiche.id %}">Imprimer</a></button>
             </div>
 

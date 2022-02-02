@@ -58,6 +58,7 @@
   height: inherit;
   object-fit: cover;
   margin-top: 15px;
+  opacity: 0.15;
 }
 
 .wrap:hover {
@@ -70,10 +71,6 @@
 
 .wrap:hover .fiche_icon_bg{
   transform: scaleX(-1) rotate(-360deg);
-}
-
-#showroom_thumb_bg {
-  opacity: 0.15;
 }
 
 #th_1, #th_3, #th_4 {

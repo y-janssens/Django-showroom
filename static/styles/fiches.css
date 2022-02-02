@@ -65,6 +65,7 @@
         rgb(0 0 0 / 50%) 0px 16px 10px -10px;
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(320deg, rgba(255, 255, 255, 0.5) 30%, rgba(0, 0, 0, 0.025) 70%);
     transition: 250ms all;
     overflow: hidden;
 }
@@ -155,7 +156,7 @@
     align-items: center;
     font-family: "Share Tech Mono", monospace;
     color: #427C3A;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .fiches_created {
@@ -201,39 +202,39 @@
     font-size: 20px;
     background-color: transparent;
     border: none;
-  }
+}
 
 @media (max-width: 1000px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(6, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 800px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(5, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 650px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 500px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 350px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }   
+    }
 }
