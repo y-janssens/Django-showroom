@@ -148,7 +148,7 @@
 
 .infos {
     display: flex;
-    width: auto;
+    width: 250px;
     flex-direction: row;
     display: -webkit-box;    
     font-size: 14px;
@@ -164,6 +164,10 @@
     letter-spacing: 1px;  
     padding-bottom: 6px;  
     color: rgba(0, 0, 0, 0.85);
+}
+
+#infos_content_sup {
+    width: 1000px;
 }
 
 .infos_content a{
@@ -307,7 +311,7 @@
                 <div id="sub_row4_1">
                     <div class="sub_title">Informations complémentaires</div>
     
-                    <div class="infos"><div class="infos_content">{{fiche.infos}}</div></div>
+                    <div class="infos"><div class="infos_content" id="infos_content_sup">{{fiche.infos}}</div></div>
     
                 </div>
             </div>
