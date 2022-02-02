@@ -4,7 +4,7 @@ from decorators import login_required, admin_required
 from users.models import User
 
 @login_required(login_url='login')
-def devis(request):
+def factures(request):
     users = User.objects.all()
 
     page_title = "Factures"
