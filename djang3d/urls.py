@@ -10,6 +10,8 @@ urlpatterns = [
     path('users/', include('users.urls')),
     path('admin/', admin.site.urls, name='super-admin'),
     path('dashboard/', include('dashboard.urls')),
+    path('devis/', include('devis.urls')),
+    path('factures/', include('factures.urls')),
 ]
 
 

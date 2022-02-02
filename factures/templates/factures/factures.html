@@ -3,7 +3,7 @@
 {% block content %}
 
 <div id="fiches_wrapper">
-    <div id="fiches_title">Fiches de chantier</div>
+    <div id="fiches_title">Factures</div>
     <div id="fiches_search_bar">
         <button id="search_icon">
             <img src="{% static 'images/search-button.svg' %}">
@@ -16,12 +16,12 @@
         <div class="fiches_wrap_c">
             <div id="icon_bg">✎</div>    
             <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-            <a class="fiches_thumbnail" href="{% url 'create_fiche' %}">
-                <div class="fiches_customer_c">Nouvelle fiche</div>                
+            <a class="fiches_thumbnail" href="">
+                <div class="fiches_customer_c">Nouvelle facture</div>                
             </a>     
         </div>
 
-        {% for fiche in fiches reversed %}
+{% comment %}         {% for fiche in fiches reversed %}
 
     <div class="fiches_wrap">
 
@@ -37,7 +37,7 @@
         </a>     
     </div>
 
-        {% endfor %}
+        {% endfor %} {% endcomment %}
         
     </div>
 </div>

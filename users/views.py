@@ -43,10 +43,7 @@ def loginUser(request):
         if user is not None:
             login(request, user)
             messages.success(request, f'Bienvenue {username}!')
-            if user.is_superuser:
-                return redirect('admin')
-            else:
-                return redirect('fiches')
+            return redirect('/')
 
         else:
             messages.error(

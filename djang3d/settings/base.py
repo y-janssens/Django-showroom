@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'dashboard.apps.DashboardConfig',
     'users.apps.UsersConfig',
     'fiches.apps.FichesConfig',
+    'devis.apps.DevisConfig',
+    'factures.apps.FacturesConfig'
     
 ]
 
