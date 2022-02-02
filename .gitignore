@@ -79,3 +79,5 @@ typings/
 __pycache__/
 *.egg-info/
 /.cache/
+
+db.sqlite3
