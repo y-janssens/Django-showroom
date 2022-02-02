@@ -173,6 +173,7 @@
 
 .infos_content a{
     position: absolute;
+    width: 150px !important;
     color: #004fbd;    
     text-decoration: none;    
 }
@@ -194,8 +195,9 @@
                     
                 <div class="infos">Nom du client: <div class="infos_content">{{fiche.first_name}} {{fiche.last_name}}</div></div>
                 <div class="infos">Adresse: <div class="infos_content"><a href="https://www.google.fr/maps/place/{{fiche.adress}},+{{fiche.post_code}}+{{fiche.city}}" target="_blank">{{fiche.adress}}</a></div></div>
-                <div class="infos">Localité: <div class="infos_content">{{fiche.city}}</div></div>
-                <div class="infos">Code postal: <div class="infos_content">{{fiche.post_code}}</div> Téléphone: <div class="infos_content"><a href="tel:{{fiche.phone}}">{{fiche.phone}}</a></div></div>
+                <div class="infos">Code postal: <div class="infos_content">{{fiche.post_code}}</div></div>
+                <div class="infos">Localité: <div class="infos_content">{{fiche.city}}</div></div>                 
+                <div class="infos">Téléphone: <div class="infos_content"><a href="tel:{{fiche.phone}}">{{fiche.phone}}</a></div></div>
                 <div class="infos">Commercial: <div class="infos_content"><a href="tel:{{fiche.owner.phone}}">{{fiche.owner.first_name}} {{fiche.owner.last_name}}</a></div></div>
                 <div class="infos">Source: <div class="infos_content">{{fiche.source}}</div></div>
                 </div>
