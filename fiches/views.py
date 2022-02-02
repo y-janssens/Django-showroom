@@ -54,10 +54,9 @@ def send_fiche(request, pk):
             "Content-Disposition"
         ] = f"attachment; filename=Fiche de chantier {name}.pdf"
         response["Content-Transfer-Encoding"] = "binary"
-        def attachment():
-            return response.write(pdf_content)
-        webbrowser.open(f'mailto:?subject={page_title}&body=test&attachment={attachment()}', new=1)
-        return response
+        response.write(pdf_content)
+        webbrowser.open(f'mailto:?subject={page_title}&attachment=', new=1)
+        return response        
     except:
         return HttpResponse(status=204)
 

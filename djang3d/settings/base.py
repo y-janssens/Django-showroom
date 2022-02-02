@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'fiches.apps.FichesConfig',
     'devis.apps.DevisConfig',
-    'factures.apps.FacturesConfig'
+    'factures.apps.FacturesConfig',
+    'clients.apps.ClientsConfig',
     
 ]
 

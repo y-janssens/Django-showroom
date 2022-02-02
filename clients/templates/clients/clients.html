@@ -1,0 +1,45 @@
+{% extends "index/index.html" %} 
+{% load static %} 
+{% block content %}
+
+<div id="fiches_wrapper">
+    <div id="fiches_title">Clients</div>
+    <div id="fiches_search_bar">
+        <button id="search_icon">
+            <img src="{% static 'images/search-button.svg' %}">
+        </button>
+            <input id="search_bar_input" type="text" placeholder="Rechercher...">
+    </div>
+
+    <div id="fiches_content">
+
+        <div class="fiches_wrap_c">
+            <div id="icon_bg">✎</div>    
+            <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
+            <a class="fiches_thumbnail" href="">
+                <div class="fiches_customer_c">Nouveau client</div>                
+            </a>     
+        </div>
+
+{% comment %}         {% for fiche in fiches reversed %}
+
+    <div class="fiches_wrap">
+
+        {% if user.is_superuser %}
+        <a class="fiches_crud" href="{% url 'delete_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
+        {% endif %}
+
+        <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
+        <a class="fiches_thumbnail" href="{% url 'fiche_chantier' fiche.id %}">
+            <div class="fiches_customer">{{fiche.last_name}}</div>
+            <div class="fiches_created">{{fiche.created|date:'d-m-Y'}}                
+            </div>
+        </a>     
+    </div>
+
+        {% endfor %} {% endcomment %}
+        
+    </div>
+</div>
+
+{% endblock %}

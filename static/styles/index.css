@@ -73,11 +73,6 @@
   transform: scaleX(-1) rotate(-360deg);
 }
 
-#th_1, #th_3, #th_4 {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 #th_1 {
   box-shadow: inset 0px 0px 0px 2px #3a557c, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
   rgb(0 0 0 / 50%) 0px 16px 10px -10px;
@@ -120,6 +115,14 @@
 #th_4 {
   box-shadow: inset 0px 0px 0px 2px #808080, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
   rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+}
+
+#fiche_icon_bg_4 {
+  color: #808080;
+}
+
+#wrap_title_4 {
+  color: #808080;
 }
 
 .fiche_icon_bg {
