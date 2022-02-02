@@ -74,3 +74,8 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+# Pycaches
+__pycache__/
+*.egg-info/
+/.cache/
