@@ -139,7 +139,7 @@
 
             <div id="fiche_btns_grp">
                 <button class="fiche_btn" id="fiche_save"><a href="{% url 'save_fiche' fiche.id %}">Enregistrer</a></button>
-                <button class="fiche_btn" id="fiche_send"><a href="{% url 'send_fiche' fiche.id %}">Envoyer</a></button>
+                <button class="fiche_btn" id="fiche_send">Envoyer</button>
                 
                 <button class="fiche_btn" id="fiche_print"><a href="{% url 'print_fiche' fiche.id %}">Imprimer</a></button>
             </div>
@@ -147,6 +147,54 @@
         </div>
     </div>    
 
+    <div id="fiche_send_form">
+        <div id="fiche_send_form_header">
+            <span class="title">Envoi</span>
+          </div>
+        <form action="{% url 'send_fiche' fiche.id %}" method="POST">
+            {% csrf_token %}
+            <div class="form_label" id="form_receiver" type="text" placeholder="Destinataire"><select name="receiver">{% for profile in profiles%}
+                    <option value="{{profile.email}}">{{profile.first_name}} {{profile.last_name}}</option>
+                    {% endfor %}
+            </select>
+         </div>
+            <hr>
+            <input class="form_label" name="subject" type="text" placeholder="Fiche de chantier {{name}}"/>
+            <hr>
+
+            <textarea class="form_label" id="form_message" name="form_message" placeholder="Message"></textarea>
+            <hr>
+            <button id="mail_submit" type="submit">Envoyer</button>
+        </form>
+    </div>
+
 </div>
+
+<script type="text/javascript">
+
+let form = false;
+
+    $('#fiche_send').click(function(){
+        if (form == false){
+            form = true;
+            $('#fiche_send_form').css('visibility', 'visible');
+        } else {
+            form = false;
+            $('#fiche_send_form').css('visibility', 'hidden');
+        }
+    });
+
+        $('#mail_submit').click(function(){
+            
+            setTimeout(function () {
+                document.getElementById('mail_submit').innerHTML = "Envoyé";
+                $('#mail_submit').css('color', '#427C3A');
+                
+            }, 1000)
+        });
+        
+
+    
+</script>
 
 {% endblock %}
