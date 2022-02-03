@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, HttpResponse
 from decorators import login_required, admin_required
-from .models import Fiche
+from .models import Fiche, Profile
 from .forms import FicheForm
 from users.models import User
 import pdfkit
 import os
 from django.template.loader import render_to_string
+from . import utils
+
 
 try:
     pdfkit_config = pdfkit.configuration(
@@ -14,12 +16,6 @@ try:
 except OSError:
     pdfkit_config = {}
 
-@login_required(login_url='login')
-def test_fiche(request, pk):
-    page_title = f"Fiche de chantier N°{pk}"
-    fiche = Fiche.objects.get(id=pk)
-    context = {'page_title': page_title, 'fiche': fiche}
-    return render(request, 'fiches/fiche_export.html', context)
 
 @login_required(login_url='login')
 def save_fiche(request, pk):
@@ -41,6 +37,28 @@ def save_fiche(request, pk):
         return response
     except:
         return HttpResponse(status=204)
+
+
+@login_required(login_url='login')
+def send_fiche(request, pk):
+    fiche = Fiche.objects.get(id=pk)
+    profile = request.user.profile
+    page_title = f"Fiche de chantier {fiche.last_name}"
+    
+    html_content = render_to_string(
+        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
+    options = {'page-height': '223', 'page-width': '277'}
+    pdf_content = pdfkit.from_string(
+        html_content, False, configuration=pdfkit_config, options=options)
+    utils.send_email_plaintext(
+        from_header = profile.email,
+        to = request.POST['receiver'],
+        subject = page_title,
+        message = request.POST['form_message'],
+        attachments=[(f"{page_title}.pdf", pdf_content)],
+    )
+    return redirect('fiches')
+        
 
 
 @login_required(login_url='login')
@@ -78,7 +96,23 @@ def fiches(request):
 def fiche_chantier(request, pk):
     page_title = f"Fiche de chantier N°{pk}"
     fiche = Fiche.objects.get(id=pk)
-    context = {'page_title': page_title, 'fiche': fiche}
+    users = User.objects.all()
+    profiles = Profile.objects.all()
+
+    name = fiche.last_name
+    html_content = render_to_string(
+        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
+    options = {'page-height': '223', 'page-width': '277'}
+    pdf_content = pdfkit.from_string(
+        html_content, False, configuration=pdfkit_config, options=options)
+    response = HttpResponse(content_type="application/pdf;")
+    response[
+        "Content-Disposition"
+    ] = f"attachment; filename=Fiche de chantier {name}.pdf"
+    response["Content-Transfer-Encoding"] = "binary"
+
+    context = {'page_title': page_title, 'fiche': fiche,
+               'name': name, 'users': users, 'profiles': profiles}
     return render(request, 'fiches/fiche_display.html', context)
 
 

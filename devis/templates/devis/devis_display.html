@@ -1,0 +1,25 @@
+{% extends "index/index.html" %} 
+{% load static %} 
+{% block content %}
+
+<div id="fiche_wrapper">  
+
+    <div id="fiche_content">
+        <div id="fiche_header">
+        <div id="fiche_title">Fiche de chantier {{fiche.last_name}}</div>
+        </div>
+
+        
+            <div id="fiche_btns_grp">
+                <button class="fiche_btn" id="fiche_save"><a href="{% url 'save_fiche' fiche.id %}">Enregistrer</a></button>
+                <button class="fiche_btn" id="fiche_send"><a href="{% url 'send_fiche' fiche.id %}">Envoyer</a></button>
+                
+                <button class="fiche_btn" id="fiche_print"><a href="{% url 'print_fiche' fiche.id %}">Imprimer</a></button>
+            </div>
+
+        </div>
+    </div>    
+
+</div>
+
+{% endblock %}

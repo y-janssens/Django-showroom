@@ -8,7 +8,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #E3EAF0;
   box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
     rgb(0 0 0 / 50%) 0px 16px 10px -10px;
   z-index: 10;
@@ -61,6 +63,7 @@
   font-family: "Share Tech Mono", monospace;
   letter-spacing: 3px;
   background-color: rgba(58, 85, 124, 1);
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -83,13 +86,6 @@
   justify-content: center;
 }
 
-hr {
-  background-color: rgba(58, 85, 124, 1);
-  width: 90%;
-  height: 1px;
-  margin-bottom: 30px;
-}
-
 .link {
   margin-top: 10px;
   text-decoration: none;
@@ -102,8 +98,8 @@ hr {
   text-decoration: underline;
 }
 
-@media (max-width: 500px) { 
-  #loginwrapper {    
+@media (max-width: 500px) {
+  #loginwrapper {
     transform: translate(-50%, -50%) scale(0.75);
-}
+  }
 }

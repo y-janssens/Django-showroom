@@ -61,12 +61,22 @@
     width: 100px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
-        rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(320deg, rgba(255, 255, 255, 0.5) 30%, rgba(0, 0, 0, 0.025) 70%);
     transition: 250ms all;
     overflow: hidden;
+}
+
+.fiches_wrap {
+    box-shadow: inset 0px 0px 0px 1px #3a557c, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+}
+
+.fiches_wrap_c {
+    box-shadow: inset 0px 0px 0px 1px #427C3A, rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 50%) 0px 16px 10px -10px;
 }
 
 .fiches_wrap:after {
@@ -83,6 +93,14 @@
 .fiches_wrap:hover, .fiches_wrap_c:hover {
     transform: scale(1.05);
 }
+
+.fiches_wrap_c:hover #icon_bg{
+    transform: scaleX(-1) rotate(-360deg); 
+}
+
+.fiches_wrap:hover .fiches_customer, .fiches_wrap_c:hover .fiches_customer_c{
+    letter-spacing: 2px;
+  }
 
 .fiches_wrap_c:after {
     content: "";
@@ -108,8 +126,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    text-decoration: none;
-    background-color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;    
 }
 
 #icon_bg {
@@ -125,6 +142,7 @@
     transform: scaleX(-1);
     pointer-events: none;
     z-index: 10;
+    transition: 500ms all;
 }
 
 #thumb_bg {
@@ -145,6 +163,7 @@
     font-family: "Share Tech Mono", monospace;
     color: #3a557c;
     font-size: 12px;
+    transition: 250ms all;
 }
 
 .fiches_customer_c {
@@ -156,6 +175,7 @@
     font-family: "Share Tech Mono", monospace;
     color: #427C3A;
     font-size: 12px;
+    transition: 250ms all;
 }
 
 .fiches_created {
@@ -201,39 +221,39 @@
     font-size: 20px;
     background-color: transparent;
     border: none;
-  }
+}
 
 @media (max-width: 1000px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(6, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 800px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(5, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 650px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 500px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-    }   
+    }
 }
 
 @media (max-width: 350px) {
-    
+
     #fiches_content {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }   
+    }
 }
