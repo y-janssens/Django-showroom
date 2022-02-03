@@ -54,12 +54,12 @@ td.user_phone {
   justify-content: center;
 }
 
-td.user_phone a, td.user_user a{
-  color:rgba(58, 85, 124, 1);
+td.user_phone a, td.user_user a {
+  color: rgba(58, 85, 124, 1);
   text-decoration: none;
 }
 
-td.user_phone a:hover, td.user_user a:hover{
+td.user_phone a:hover, td.user_user a:hover {
   text-decoration: underline;
 }
 
@@ -68,12 +68,12 @@ td.user_mail {
   justify-content: center;
 }
 
-td.user_mail a{
-  color:rgba(58, 85, 124, 1);
+td.user_mail a {
+  color: rgba(58, 85, 124, 1);
   text-decoration: none;
 }
 
-td.user_mail a:hover{
+td.user_mail a:hover {
   text-decoration: underline;
 }
 
@@ -188,5 +188,3 @@ hr.hr1 {
   border-left: none;
   border-right: none;
 }
-
-
