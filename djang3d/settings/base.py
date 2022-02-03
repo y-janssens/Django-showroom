@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 import environ
+import os
 
 env = environ.Env(
     # set casting, default value
@@ -53,7 +54,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'fiches.apps.FichesConfig',
     'devis.apps.DevisConfig',
-    'factures.apps.FacturesConfig'
+    'factures.apps.FacturesConfig',
+    'clients.apps.ClientsConfig',
     
 ]
 
@@ -138,12 +140,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SMTP_HOST = os.getenv("SMTP_HOST")
+SMTP_PORT = int(os.getenv("SMTP_PORT", "587"))
+SMTP_LOGIN = os.getenv("SMTP_LOGIN")
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 
-
-DATABASES = {
-    # read os.environ['DATABASE_URL'] and raises
-    # ImproperlyConfigured exception if not found
-    #
-    # The db() method is an alias for db_url().
-    'default': env.db(),
-}

@@ -25,6 +25,14 @@ body, html {
   z-index: 99999;
 }
 
+hr {
+  background-color: rgba(58, 85, 124, 1);
+  width: 90%;
+  height: 2px !important;
+  margin-bottom: 30px;
+  border: none;
+}
+
 ::-webkit-scrollbar {
   position: absolute;
   width: 5px;

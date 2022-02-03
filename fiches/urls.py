@@ -9,8 +9,8 @@ urlpatterns = [
     path('delete_fiche/<pk>', views.delete_fiche_chantier, name="delete_fiche"),
     path('create_fiche', views.create_fiche_chantier, name="create_fiche"),
     path('save_fiche/<pk>', views.save_fiche, name="save_fiche"),
+    path('send_fiche/<pk>', views.send_fiche, name="send_fiche"),
     path('print_fiche/<pk>', views.print_fiche, name="print_fiche"),
-    path('test/<pk>', views.test_fiche, name="test"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
