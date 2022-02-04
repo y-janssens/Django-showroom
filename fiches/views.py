@@ -98,18 +98,7 @@ def fiche_chantier(request, pk):
     fiche = Fiche.objects.get(id=pk)
     users = User.objects.all()
     profiles = Profile.objects.all()
-
-    name = fiche.last_name
-    html_content = render_to_string(
-        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-    options = {'page-height': '223', 'page-width': '277'}
-    pdf_content = pdfkit.from_string(
-        html_content, False, configuration=pdfkit_config, options=options)
-    response = HttpResponse(content_type="application/pdf;")
-    response[
-        "Content-Disposition"
-    ] = f"attachment; filename=Fiche de chantier {name}.pdf"
-    response["Content-Transfer-Encoding"] = "binary"
+    name = fiche.last_name    
 
     context = {'page_title': page_title, 'fiche': fiche,
                'name': name, 'users': users, 'profiles': profiles}

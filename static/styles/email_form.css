@@ -10,11 +10,15 @@
     align-items: center;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #E3EAF0;
+    background-color: #E3EAF0;    
     box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
         rgb(0 0 0 / 50%) 0px 16px 10px -10px;
     z-index: 10;
     visibility: hidden;
+}
+
+#fiche_send_form * {
+    font-family: "Share Tech Mono", monospace; 
 }
 
 #fiche_send_form form {
@@ -31,7 +35,6 @@
     border: none;
     outline: none;
     color: #3a557c;
-    font-family: "Share Tech Mono", monospace;
     font-size: 16px;
     letter-spacing: 3px;
     background-color: transparent !important;
@@ -51,7 +54,6 @@
     border: none;
     color: #ffffff;
     font-size: 20px;
-    font-family: "Share Tech Mono", monospace;
     letter-spacing: 3px;
     background-color: rgba(58, 85, 124, 1);
     border-radius: 5px;
@@ -65,7 +67,6 @@
     align-items: center;
     margin-left: 35px;
     color: #3a557c;
-    font-family: "Share Tech Mono", monospace;
     font-size: 16px;
     letter-spacing: 3px;
     margin-top: 10px;
@@ -95,12 +96,25 @@
     height: 40px;
     width: auto;
     color: #3a557c;
-    font-family: "Share Tech Mono", monospace;
     font-size: 16px;
     letter-spacing: 3px;
     border: none;
     outline: none;
     background-color: transparent;
+}
+
+.attachment {
+    position: relative;
+    width: 400px; 
+    font-size: 12px;
+    margin-left: 60px;
+    color: #737373;
+}
+
+.attachment span {
+    position: relative;
+    font-size: 14px;
+    color: #3a557c;
 }
 
 @media (max-width: 500px) {

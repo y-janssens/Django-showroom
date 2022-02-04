@@ -24,8 +24,7 @@
   font-family: "Share Tech Mono", monospace;
 }
 
-#users_list tr,
-td {
+#users_list tr, #users_list td {
   display: flex;
   justify-content: space-between;
   line-height: 35px;

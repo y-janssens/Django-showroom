@@ -19,8 +19,7 @@
     font-family: "Share Tech Mono", monospace;
   }
 
-  #logs_list tr,
-td {
+  #logs_list tr, #logs_list td {
   display: flex;
   justify-content: space-between;
   line-height: 35px;

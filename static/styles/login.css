@@ -36,7 +36,7 @@
   background-color: transparent !important;
 }
 
-::placeholder {
+#loginwrapper ::placeholder {
   color: #3a557c;
   font-size: 16px;
   letter-spacing: 3px;

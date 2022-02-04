@@ -16,28 +16,28 @@
         <div class="fiches_wrap_c">
             <div id="icon_bg">✎</div>    
             <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-            <a class="fiches_thumbnail" href="">
+            <a class="fiches_thumbnail" href="{% url 'devis_create' %}">
                 <div class="fiches_customer_c">Ajout</div>                
             </a>     
         </div>
 
-{% comment %}         {% for fiche in fiches reversed %}
+{% for devis in estimates reversed %}
 
     <div class="fiches_wrap">
 
         {% if user.is_superuser %}
-        <a class="fiches_crud" href="{% url 'delete_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
+        <a class="fiches_crud" href=""><button class="fiche_delete">X</button></a>
         {% endif %}
 
         <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-        <a class="fiches_thumbnail" href="{% url 'fiche_chantier' fiche.id %}">
-            <div class="fiches_customer">{{fiche.last_name}}</div>
-            <div class="fiches_created">{{fiche.created|date:'d-m-Y'}}                
+        <a class="fiches_thumbnail" href="{% url 'devis_client' devis.id %}">
+            <div class="fiches_customer">{{devis.estimate_number}}</div>
+            <div class="fiches_created">{{devis.date|date:'d-m-Y'}}                
             </div>
         </a>     
     </div>
 
-        {% endfor %} {% endcomment %}
+        {% endfor %}
         
     </div>
 </div>

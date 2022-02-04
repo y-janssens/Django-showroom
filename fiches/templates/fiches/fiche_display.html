@@ -164,6 +164,7 @@
 
             <textarea class="form_label" id="form_message" name="form_message" placeholder="Message"></textarea>
             <hr>
+            <div class="attachment"><span>Pièces jointes:</span> Fiche de chantier {{name}}.pdf</div>
             <button id="mail_submit" type="submit">Envoyer</button>
         </form>
     </div>
@@ -184,17 +185,12 @@ let form = false;
         }
     });
 
-        $('#mail_submit').click(function(){
-            
+        $('#mail_submit').click(function(){            
             setTimeout(function () {
-                document.getElementById('mail_submit').innerHTML = "Envoyé";
-                $('#mail_submit').css('color', '#427C3A');
-                
+                document.getElementById('mail_submit').innerHTML = "Message Envoyé!";              
             }, 1000)
         });
         
-
-    
 </script>
 
 {% endblock %}
