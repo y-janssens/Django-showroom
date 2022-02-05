@@ -6,7 +6,7 @@
 
     <div id="devis_content">
         <div id="devis_header">
-            <div id="devis_title">Devis N°: {{devis.estimate_number}}</div>
+            <div id="devis_title_d">Devis N°: {{devis.estimate_number}}</div>
         </div>
 
         
@@ -49,24 +49,175 @@
     
             </tbody>
         </table>
-            
-        <table class="items_list" onchange="calc()">
+        
+        <table class="items_list">
             <tbody>
                 <tr>
-                    <td><input type="text" class="items_content" id="product" placeholder="Produit:" /></td>
-                    <td><input type="text" class="items_content" id="quant" placeholder="Quantité:" /></td>
-                    <td><input type="text" class="items_content" id="unit" placeholder="Unité:" /></td>
-                    <td><input type="text" class="items_content" id="unit_price" placeholder="Prix unitaire HT:" /></td>
-                    <td><input type="text" class="items_content" id="tva_margin" placeholder="%TVA:" /></td>
-                    <td><input type="text" class="items_content" id="tva_total" placeholder="Total TVA:" /></td>
-                    <td><input type="text" class="items_content" id="total_price" placeholder="Total TTC:" /></td>
+                    <td><div class="devis_items_content" id="product" placeholder="Produit:">{{devis.product_1}}</div></td>
+                    <td><div class="devis_items_content" id="quant" placeholder="Quantité:">{{devis.quantity_1}}</div></td>
+                    <td><div class="devis_items_content" id="unit" placeholder="Unité:">{{devis.unit_1}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price" placeholder="Prix unitaire HT:">{{devis.unit_price_1}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin" placeholder="%TVA:">{{devis.vat_1}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total" placeholder="Total TVA:">{{devis.total_vat_1}}</div></td>
+                    <td><div class="devis_items_content" id="total_price" placeholder="Total TTC:">{{devis.total_full_1}}</div></td>
                 </tr>
             </tbody>
         </table>
-    
-        <button id="add_line" onclick="add_row()">+</button>
-        <button id="remove_line" onclick="remove_row()">-</button>
-    
+
+        {% if devis.product_2 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product2" placeholder="Produit:">{{devis.product_2}}</div></td>
+                    <td><div class="devis_items_content" id="quant2" placeholder="Quantité:">{{devis.quantity_2}}</div></td>
+                    <td><div class="devis_items_content" id="unit2" placeholder="Unité:">{{devis.unit_2}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price2" placeholder="Prix unitaire HT:">{{devis.unit_price_2}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin2" placeholder="%TVA:">{{devis.vat_2}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total2" placeholder="Total TVA:">{{devis.total_vat_2}}</div></td>
+                    <td><div class="devis_items_content" id="total_price2" placeholder="Total TTC:">{{devis.total_full_2}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        {% endif  %}
+        {% if devis.product_3 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product3" placeholder="Produit:">{{devis.product_3}}</div></td>
+                    <td><div class="devis_items_content" id="quant3" placeholder="Quantité:">{{devis.quantity_3}}</div></td>
+                    <td><div class="devis_items_content" id="unit3" placeholder="Unité:">{{devis.unit_3}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price3" placeholder="Prix unitaire HT:">{{devis.unit_price_3}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin3" placeholder="%TVA:">{{devis.vat_3}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total3" placeholder="Total TVA:">{{devis.total_vat_3}}</div></td>
+                    <td><div class="devis_items_content" id="total_price3" placeholder="Total TTC:">{{devis.total_full_3}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_4 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product4" placeholder="Produit:">{{devis.product_4}}</div></td>
+                    <td><div class="devis_items_content" id="quant4" placeholder="Quantité:">{{devis.quantity_4}}</div></td>
+                    <td><div class="devis_items_content" id="unit4" placeholder="Unité:">{{devis.unit_4}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price4" placeholder="Prix unitaire HT:">{{devis.unit_price_4}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin4" placeholder="%TVA:">{{devis.vat_4}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total4" placeholder="Total TVA:">{{devis.total_vat_4}}</div></td>
+                    <td><div class="devis_items_content" id="total_price4" placeholder="Total TTC:">{{devis.total_full_4}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_5 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product5" placeholder="Produit:">{{devis.product_5}}</div></td>
+                    <td><div class="devis_items_content" id="quant5" placeholder="Quantité:">{{devis.quantity_5}}</div></td>
+                    <td><div class="devis_items_content" id="unit5" placeholder="Unité:">{{devis.unit_5}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price5" placeholder="Prix unitaire HT:">{{devis.unit_price_5}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin5" placeholder="%TVA:">{{devis.vat_5}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total5" placeholder="Total TVA:">{{devis.total_vat_5}}</div></td>
+                    <td><div class="devis_items_content" id="total_price5" placeholder="Total TTC:">{{devis.total_full_5}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_6 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product6" placeholder="Produit:">{{devis.product_6}}</div></td>
+                    <td><div class="devis_items_content" id="quant6" placeholder="Quantité:">{{devis.quantity_6}}</div></td>
+                    <td><div class="devis_items_content" id="unit6" placeholder="Unité:">{{devis.unit_6}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price6" placeholder="Prix unitaire HT:">{{devis.unit_price_6}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin6" placeholder="%TVA:">{{devis.vat_6}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total6" placeholder="Total TVA:">{{devis.total_vat_6}}</div></td>
+                    <td><div class="devis_items_content" id="total_price6" placeholder="Total TTC:">{{devis.total_full_6}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_7 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product7" placeholder="Produit:">{{devis.product_7}}</div></td>
+                    <td><div class="devis_items_content" id="quant7" placeholder="Quantité:">{{devis.quantity_7}}</div></td>
+                    <td><div class="devis_items_content" id="unit7" placeholder="Unité:">{{devis.unit_7}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price7" placeholder="Prix unitaire HT:">{{devis.unit_price_7}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin7" placeholder="%TVA:">{{devis.vat_7}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total7" placeholder="Total TVA:">{{devis.total_vat_7}}</div></td>
+                    <td><div class="devis_items_content" id="total_price7" placeholder="Total TTC:">{{devis.total_full_7}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_8 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product8" placeholder="Produit:">{{devis.product_8}}</div></td>
+                    <td><div class="devis_items_content" id="quant8" placeholder="Quantité:">{{devis.quantity_8}}</div></td>
+                    <td><div class="devis_items_content" id="unit8" placeholder="Unité:">{{devis.unit_8}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price8" placeholder="Prix unitaire HT:">{{devis.unit_price_8}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin8" placeholder="%TVA:">{{devis.vat_8}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total8" placeholder="Total TVA:">{{devis.total_vat_8}}</div></td>
+                    <td><div class="devis_items_content" id="total_price8" placeholder="Total TTC:">{{devis.total_full_8}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_9 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product9" placeholder="Produit:">{{devis.product_9}}</div></td>
+                    <td><div class="devis_items_content" id="quant9" placeholder="Quantité:">{{devis.quantity_9}}</div></td>
+                    <td><div class="devis_items_content" id="unit9" placeholder="Unité:">{{devis.unit_9}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price9" placeholder="Prix unitaire HT:">{{devis.unit_price_9}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin9" placeholder="%TVA:">{{devis.vat_9}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total9" placeholder="Total TVA:">{{devis.total_vat_9}}</div></td>
+                    <td><div class="devis_items_content" id="total_price9" placeholder="Total TTC:">{{devis.total_full_9}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        {% if devis.product_10 != None %}
+
+        <table class="items_list">
+            <tbody>
+                <tr>
+                    <td><div class="devis_items_content" id="product10" placeholder="Produit:">{{devis.product_10}}</div></td>
+                    <td><div class="devis_items_content" id="quant10" placeholder="Quantité:">{{devis.quantity_10}}</div></td>
+                    <td><div class="devis_items_content" id="unit10" placeholder="Unité:">{{devis.unit_10}}</div></td>
+                    <td><div class="devis_items_content" id="unit_price10" placeholder="Prix unitaire HT:">{{devis.unit_price_10}}</div></td>
+                    <td><div class="devis_items_content" id="tva_margin10" placeholder="%TVA:">{{devis.vat_10}}</div></td>
+                    <td><div class="devis_items_content" id="tva_total10" placeholder="Total TVA:">{{devis.total_vat_10}}</div></td>
+                    <td><div class="devis_items_content" id="total_price10" placeholder="Total TTC:">{{devis.total_full_10}}</div></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        {% endif  %}
+        
         <div id="prices_title">
             <span class="price">Total HT</span></br>
             <span class="price">Total TVA</span></br>
@@ -74,9 +225,9 @@
         </div>
     
         <div id="prices_value">
-            <span class="price" id="total_ht"></span></br>
-            <span class="price" id="total_tva"></span></br>
-            <span class="price" id="total_ttc"></span>
+            <span class="price" id="total_ht">{{devis.total_ht}}</span></br>
+            <span class="price" id="total_tva">{{devis.total_vat}}</span></br>
+            <span class="price" id="total_ttc">{{devis.total_full}}</span>
         </div>
     
         <div id="signa">Signature du client:</div>

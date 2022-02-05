@@ -4,9 +4,11 @@
 
 <div id="devis_c_wrapper">  
 
+    <form action="{% url 'devis_create' %}" method="POST">
+        {% csrf_token %}
     <div id="devis_c_content">
         <div id="devis_c_header">
-            <div id="devis_c_title">devis_c N°: FD1-0001</div>
+            <div id="devis_c_title">Devis N°: {{form.estimate_number}}</div>
         </div>
 
         
@@ -21,10 +23,9 @@
         </div>
     
         <div id="devis_c_infos">
-            <input type="text" class="devis_c_content" id="devis_c_date" /></br>
-            <input type="text" class="devis_c_content" id="devis_c_ref" /></br>
+            <div class="devis_c_content" id="devis_c_date" ></div></br>
             <input type="text" class="devis_c_content" id="devis_c_valid" /></br>
-            <div class="devis_c_content" id="devis_c_commercial">Commercial: <a href="tel:{{profile.phone}}">{{profile.first_name}} {{profile.last_name}}</a></div>
+            <div class="devis_c_content" id="devis_c_commercial">Commercial: {{profile.first_name}} {{profile.last_name}}</div>
         </div>
     
         <div id="client_infos">
@@ -50,22 +51,22 @@
             </tbody>
         </table>
             
-        <table class="items_list" onchange="calc()">
+        <table class="items_list_c" onchange="calc()">
             <tbody>
                 <tr>
-                    <td><input type="text" class="items_content" id="product" placeholder="Produit:" /></td>
-                    <td><input type="text" class="items_content" id="quant" placeholder="Quantité:" /></td>
-                    <td><input type="text" class="items_content" id="unit" placeholder="Unité:" /></td>
-                    <td><input type="text" class="items_content" id="unit_price" placeholder="Prix unitaire HT:" /></td>
-                    <td><input type="text" class="items_content" id="tva_margin" placeholder="%TVA:" /></td>
-                    <td><input type="text" class="items_content" id="tva_total" placeholder="Total TVA:" /></td>
-                    <td><input type="text" class="items_content" id="total_price" placeholder="Total TTC:" /></td>
+                    <td><input class="items_c_content" name="product_c" id="product_c" placeholder="Produit:" /></td>
+                    <td><input class="items_c_content" name="quant_c" id="quant_c" placeholder="Quantité:" /></td>
+                    <td><input class="items_c_content" name="unit_c" id="unit_c" placeholder="Unité:" /></td>
+                    <td><input class="items_c_content" name="unit_price_c" id="unit_price_c" placeholder="Prix unitaire HT:" /></td>
+                    <td><input class="items_c_content" name="tva_margin_c" id="tva_margin_c" placeholder="%TVA:" /></td>
+                    <td><input class="items_c_content" name="tva_total_c" id="tva_total_c" placeholder="Total TVA:" /></td>
+                    <td><input class="items_c_content" name="total_price_c" id="total_price_c" placeholder="Total TTC:" /></td>
                 </tr>
             </tbody>
         </table>
     
-        <button id="add_line" onclick="add_row()">+</button>
-        <button id="remove_line" onclick="remove_row()">-</button>
+        <button id="add_line" type="button" onclick="add_row()">+</button>
+        <button id="remove_line" type="button" onclick="remove_row()">-</button>
     
         <div id="prices_title">
             <span class="price">Total HT</span></br>
@@ -74,9 +75,9 @@
         </div>
     
         <div id="prices_value">
-            <span class="price" id="total_ht"></span></br>
-            <span class="price" id="total_tva"></span></br>
-            <span class="price" id="total_ttc"></span>
+            <input class="price" name="total_ht_c" id="total_ht_c"/></br>
+            <input class="price" name="total_tva_c" id="total_tva_c"/></br>
+            <input class="price" name="total_ttc_c" id="total_ttc_c"/>
         </div>
     
         <div id="signa">Signature du client:</div>
@@ -89,13 +90,15 @@
         </div>
     </div>    
 
+
+
     <div id="devis_c_btns_grp">
-        <button class="devis_c_btn" id="devis_c_save"><a href="">Enregistrer</a></button>
+        <button class="devis_c_btn" id="devis_c_save" type="submit">Enregistrer</button>
         <button class="devis_c_btn" id="devis_c_send"><a href="">Envoyer</a></button>                
         <button class="devis_c_btn" id="devis_c_print"><a href="">Imprimer</a></button>
     </div>
-
+</form>
 
 </div>
-<script src="{% static 'js/devis_form.js' %}" defer></script>
+<script src="{% static 'js/devis_form.js' %}"></script>
 {% endblock %}

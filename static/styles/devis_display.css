@@ -17,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 #devis_content {
@@ -42,12 +42,12 @@
     width: 100%;
 }
 
-#devis_title {
+#devis_title_d {
     position: absolute;
     top: 2em;
     left: 2em;
     font-size: 25px;
-    
+
 }
 
 #company_logo {
@@ -138,6 +138,7 @@ hr.devis_hr {
 .devis_content {
     font-size: 12px !important;
     text-align: left;
+    margin-bottom: -10px;
     background-color: transparent;
     border: none;
     outline: none;
@@ -180,53 +181,28 @@ hr.table_hr {
     transform: translateX(-50%);
 }
 
-/* .items_list ::placeholder, .items_list2 ::placeholder, .items_list3 ::placeholder, .items_list4 ::placeholder, .items_list5 ::placeholder, .items_list6 ::placeholder, .items_list7 ::placeholder, .items_list8 ::placeholder, .items_list9 ::placeholder, .items_list10 ::placeholder {    
-    color: #3a557c;
-} */
-
-.items_content {
-    position: absolute;
+.devis_items_content {
+    position: relative;
     top: -0.25em;
     width: 3em;
     font-size: 10px;
     border: none;
     outline: none;
+    text-align: left;
     background-color: transparent;
 }
 
+.items_list * {
+    position: relative;
+    margin-left: 20px !important;
+}
+
 #product, #product2, #product3, #product4, #product5, #product6, #product7, #product8, #product9, #product10 {
-    margin-left: -2.5em;
-    width: 6.5em;
-}
-
-#quant, #quant2, #quant3, #quant4, #quant5, #quant6, #quant7, #quant8, #quant9, #quant10 {
-    margin-left: -1.2em;
-    width: 4.75em;
-}
-
-#unit, #unit2, #unit3, #unit4, #unit5, #unit6, #unit7, #unit8, #unit9, #unit10 {
-    margin-left: -2em;
-    width: 3em;
-}
-
-#unit_price, #unit_price2, #unit_price3, #unit_price4, #unit_price5, #unit_price6, #unit_price7, #unit_price8, #unit_price9, #unit_price10 {
-    margin-left: -4em;
-    width: 9em;
+    left: -2px;
 }
 
 #tva_margin, #tva_margin2, #tva_margin3, #tva_margin4, #tva_margin5, #tva_margin6, #tva_margin7, #tva_margin8, #tva_margin9, #tva_margin10 {
-    margin-left: 0.5em;
-    width: 3em;
-}
-
-#tva_total, #tva_total2, #tva_total3, #tva_total4, #tva_total5, #tva_total6, #tva_total7, #tva_total8, #tva_total9, #tva_total10 {
-    margin-left: -2.6em;
-    width: 5.5em;
-}
-
-#total_price, #total_price2, #total_price3, #total_price4, #total_price5, #total_price6, #total_price7, #total_price8, #total_price9, #total_price10 {
-    margin-left: -2.5em;
-    width: 5.5em;
+    left: 12px !important;
 }
 
 #add_line {

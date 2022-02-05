@@ -1,120 +1,3 @@
-const day = new Date();
-const month = new Date();
-const year = new Date();
-
-const d = new Date();
-let time = d.getTime().toString();
-let number = time.slice(9);
-
-let estimate_number = "FD1-0" + number;
-
-document.getElementById('devis_ref').value = "Référence du devis:" + estimate_number;
-document.getElementById('devis_title').innerHTML = "Devis N°: " + estimate_number;
-
-const current_day = day.getDate();
-const current_month = month.getMonth();
-const current_year = year.getUTCFullYear();
-
-const date = current_day + '/' + current_month + '/' + current_year;
-const nplus_1 = current_day + '/' + current_month + '/' + (current_year + 1);
-
-document.getElementById('devis_date').value = "Date du devis: " + date;
-document.getElementById('devis_valid').value = "Date de validité du devis: " + nplus_1;
-
-$("#save").click(function () {
-
-    var w = document.getElementById("devisontainer").offsetWidth;
-    var h = document.getElementById("devisontainer").offsetHeight;
-    let node = document.getElementById('devisontainer');
-
-    domtoimage.toBlob(node, {
-        width: w, height: h, quality: 1,
-        style: {
-            'position': 'inherit',
-            'left': '0%',
-            'top': '0%',
-            'margin': '0',
-            'transform': 'translate(0%, 0%)',
-            'margin-left': '0%',
-            'border-radius': '0px'
-        }
-    })
-        .then(function (blob) {
-            window.saveAs(blob, estimate_number + '.png');
-        });
-});
-
-let add_pos = 29.25;
-let rem_pos = 26.31;
-let row_number = 1;
-let line_name = "items_list"
-let line_number = 1;
-
-function add_row() {
-
-    row_number = row_number + 1;
-    line_number = line_number + 1;
-    lines = line_name + line_number;
-
-    let line = '<table class=' + lines + ' id="next" >' +
-        '<tbody>' +
-        '<tr>' +
-        '<td><input type="text" class="itemsontent" id="product' + line_number + '" placeholder="Produit:"/></td>' +
-        '<td><input type="text" class="itemsontent" id="quant' + line_number + '" placeholder="Quantité:"/></td>' +
-        '<td><input type="text" class="itemsontent" id="unit' + line_number + '" placeholder="Unité:"/></td>' +
-        '<td><input type="text" class="itemsontent" id="unit_price' + line_number + '" placeholder="Prix unitaire HT:"/></td>' +
-        '<td><input type="text" class="itemsontent" id="tva_margin' + line_number + '" placeholder="%TVA:"/></td>' +
-        '<td><input type="text" class="itemsontent" id="tva_total' + line_number + '" placeholder="Total TVA:"/></td>' +
-        '<td><input type="text" class="itemsontent" id="total_price' + line_number + '" placeholder="Total TTC:"/></td>' +
-        '</tr>' +
-        '</tbody>' +
-        '</table>';
-
-    if (row_number <= 10) {
-        add_pos = add_pos + 2.94;
-        rem_pos = rem_pos + 2.94;
-        $("#devisontent").append(line);
-        $("#add_line").css('top', add_pos + 'em');
-        $("#remove_line").css('visibility', 'visible');
-        $("#remove_line").css('top', rem_pos + 'em');
-    }
-
-    $("." + lines).change(function () {
-
-        let quant = document.getElementById('quant').id + line_number;
-        let unity = document.getElementById('unit_price').id + line_number;
-        let margin = document.getElementById('tva_margin').id + line_number;
-        let tva_total = document.getElementById('tva_total').id + line_number;
-        let total_ttc = document.getElementById('total_price').id + line_number;
-
-        let quantity = document.getElementById(quant).value;
-        let unit = document.getElementById(unity).value;
-        let tva_margin = document.getElementById(margin).value;
-        let total_tva = ((unit * quantity) / 100) * (tva_margin);
-        let total_price = (unit * quantity) + total_tva;
-
-        document.getElementById(tva_total).value = total_tva;
-        document.getElementById(total_ttc).value = total_price;
-
-        results()
-    });
-}
-
-function remove_row() {
-
-    add_pos = add_pos - 2.94;
-    rem_pos = rem_pos - 2.94;
-    row_number = row_number - 1;
-    line_number = line_number - 1;
-
-    $("#next").remove();
-    $("#add_line").css('top', add_pos + 'em');
-    $("#remove_line").css('top', rem_pos + 'em');
-
-    if (rem_pos <= 27) {
-        $("#remove_line").css('visibility', 'hidden');
-    }
-}
 
 let result = "";
 document.getElementById('total_ht').innerHTML = result + "€";
@@ -123,14 +6,14 @@ document.getElementById('total_ttc').innerHTML = result + "€";
 
 
 function calc() {
-    let quantity = document.getElementById('quant').value;
-    let unit = document.getElementById('unit_price').value;
-    let tva_margin = document.getElementById('tva_margin').value;
+    let quantity = document.getElementById('quant').innerHTML;
+    let unit = document.getElementById('unit_price').innerHTML;
+    let tva_margin = document.getElementById('tva_margin').innerHTML;
     let tva_total = ((unit * quantity) / 100) * (tva_margin);
     let total_price = (unit * quantity) + tva_total;
-    document.getElementById('tva_total').value = tva_total;
-    document.getElementById('tva_margin').value = tva_margin;
-    document.getElementById('total_price').value = total_price;
+    document.getElementById('tva_total').innerHTML = tva_total;
+    document.getElementById('tva_margin').innerHTML = tva_margin;
+    document.getElementById('total_price').innerHTML = total_price;
 
     results();
 }
@@ -141,54 +24,54 @@ let tt_1 = tt_2 = tt_3 = tt_4 = tt_5 = tt_6 = tt_7 = tt_8 = tt_9 = tt_10 = 0;
 
 function results() {
     if (document.getElementById('unit_price') !== null) {
-        ht_1 = document.getElementById('unit_price').value * document.getElementById('quant').value;
-        tv_1 = parseFloat(document.getElementById('tva_total').value);
-        tt_1 = parseFloat(document.getElementById('total_price').value);
+        ht_1 = document.getElementById('unit_price').innerHTML * document.getElementById('quant').innerHTML;
+        tv_1 = parseFloat(document.getElementById('tva_total').innerHTML);
+        tt_1 = parseFloat(document.getElementById('total_price').innerHTML);
     }
     if (document.getElementById('unit_price2') !== null) {
-        ht_2 = document.getElementById('unit_price2').value * document.getElementById('quant2').value;
-        tv_2 = parseFloat(document.getElementById('tva_total2').value);
-        tt_2 = parseFloat(document.getElementById('total_price2').value);
+        ht_2 = document.getElementById('unit_price2').innerHTML * document.getElementById('quant2').innerHTML;
+        tv_2 = parseFloat(document.getElementById('tva_total2').innerHTML);
+        tt_2 = parseFloat(document.getElementById('total_price2').innerHTML);
     }
     if (document.getElementById('unit_price3') !== null) {
-        ht_3 = document.getElementById('unit_price3').value * document.getElementById('quant3').value;
-        tv_3 = parseFloat(document.getElementById('tva_total3').value);
-        tt_3 = parseFloat(document.getElementById('total_price3').value);
+        ht_3 = document.getElementById('unit_price3').innerHTML * document.getElementById('quant3').innerHTML;
+        tv_3 = parseFloat(document.getElementById('tva_total3').innerHTML);
+        tt_3 = parseFloat(document.getElementById('total_price3').innerHTML);
     }
     if (document.getElementById('unit_price4') !== null) {
-        ht_4 = document.getElementById('unit_price4').value * document.getElementById('quant4').value;
-        tv_4 = parseFloat(document.getElementById('tva_total4').value);
-        tt_4 = parseFloat(document.getElementById('total_price4').value);
+        ht_4 = document.getElementById('unit_price4').innerHTML * document.getElementById('quant4').innerHTML;
+        tv_4 = parseFloat(document.getElementById('tva_total4').innerHTML);
+        tt_4 = parseFloat(document.getElementById('total_price4').innerHTML);
     }
     if (document.getElementById('unit_price5') !== null) {
-        ht_5 = document.getElementById('unit_price5').value * document.getElementById('quant5').value;
-        tv_5 = parseFloat(document.getElementById('tva_total5').value);
-        tt_5 = parseFloat(document.getElementById('total_price5').value);
+        ht_5 = document.getElementById('unit_price5').innerHTML * document.getElementById('quant5').innerHTML;
+        tv_5 = parseFloat(document.getElementById('tva_total5').innerHTML);
+        tt_5 = parseFloat(document.getElementById('total_price5').innerHTML);
     }
     if (document.getElementById('unit_price6') !== null) {
-        ht_6 = document.getElementById('unit_price6').value * document.getElementById('quant6').value;
-        tv_6 = parseFloat(document.getElementById('tva_total6').value);
-        tt_6 = parseFloat(document.getElementById('total_price6').value);
+        ht_6 = document.getElementById('unit_price6').innerHTML * document.getElementById('quant6').innerHTML;
+        tv_6 = parseFloat(document.getElementById('tva_total6').innerHTML);
+        tt_6 = parseFloat(document.getElementById('total_price6').innerHTML);
     }
     if (document.getElementById('unit_price7') !== null) {
-        ht_7 = document.getElementById('unit_price7').value * document.getElementById('quant7').value;
-        tv_7 = parseFloat(document.getElementById('tva_total7').value);
-        tt_7 = parseFloat(document.getElementById('total_price7').value);
+        ht_7 = document.getElementById('unit_price7').innerHTML * document.getElementById('quant7').innerHTML;
+        tv_7 = parseFloat(document.getElementById('tva_total7').innerHTML);
+        tt_7 = parseFloat(document.getElementById('total_price7').innerHTML);
     }
     if (document.getElementById('unit_price8') !== null) {
-        ht_8 = document.getElementById('unit_price8').value * document.getElementById('quant8').value;
-        tv_8 = parseFloat(document.getElementById('tva_total8').value);
-        tt_8 = parseFloat(document.getElementById('total_price8').value);
+        ht_8 = document.getElementById('unit_price8').innerHTML * document.getElementById('quant8').innerHTML;
+        tv_8 = parseFloat(document.getElementById('tva_total8').innerHTML);
+        tt_8 = parseFloat(document.getElementById('total_price8').innerHTML);
     }
     if (document.getElementById('unit_price9') !== null) {
-        ht_9 = document.getElementById('unit_price9').value * document.getElementById('quant9').value;
-        tv_9 = parseFloat(document.getElementById('tva_total9').value);
-        tt_9 = parseFloat(document.getElementById('total_price9').value);
+        ht_9 = document.getElementById('unit_price9').innerHTML * document.getElementById('quant9').innerHTML;
+        tv_9 = parseFloat(document.getElementById('tva_total9').innerHTML);
+        tt_9 = parseFloat(document.getElementById('total_price9').innerHTML);
     }
     if (document.getElementById('unit_price10') !== null) {
-        ht_10 = document.getElementById('unit_price10').value * document.getElementById('quant10').value;
-        tv_10 = parseFloat(document.getElementById('tva_total10').value);
-        tt_10 = parseFloat(document.getElementById('total_price10').value);
+        ht_10 = document.getElementById('unit_price10').innerHTML * document.getElementById('quant10').innerHTML;
+        tv_10 = parseFloat(document.getElementById('tva_total10').innerHTML);
+        tt_10 = parseFloat(document.getElementById('total_price10').innerHTML);
     }
 
     final_ht = ht_1 + ht_2 + ht_3 + ht_4 + ht_5 + ht_6 + ht_7 + ht_8 + ht_9 + ht_10;
@@ -200,6 +83,4 @@ function results() {
     document.getElementById('total_ttc').innerHTML = (final_tt).toFixed(2) + "€";
 }
 
-function erase() {
-    location.reload();
-}
+window.onload = calc();
