@@ -7,6 +7,7 @@ import pdfkit
 import os
 from django.template.loader import render_to_string
 import utils
+from .utils import searchDevis
 
 try:
     pdfkit_config = pdfkit.configuration(
@@ -18,11 +19,10 @@ except OSError:
 
 @login_required(login_url='login')
 def devis(request):
-    users = User.objects.all()
-    estimates = Devi.objects.all()
+    estimates, search_query = searchDevis(request)
 
     page_title = "Devis"
-    context = {'page_title': page_title, 'users': users, 'estimates': estimates}
+    context = {'page_title': page_title, 'estimates': estimates, 'search_query': search_query}
     return render(request, 'devis/devis.html', context)
 
 @login_required(login_url='login')

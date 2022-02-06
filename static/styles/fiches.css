@@ -35,6 +35,7 @@
     font-size: 16px;
     letter-spacing: 3px;
     text-indent: 30px;
+    overflow: hidden;
 }
 
 #search_icon {
@@ -44,6 +45,23 @@
     background-color: transparent;
     border: none;
     filter: sepia(1) contrast(0.3) saturate(12) invert(1) hue-rotate(-20deg) brightness(0.85) opacity(0.95);
+}
+
+#search_val {
+    position: absolute;
+    width: 65px;
+    height: 39px;
+    margin-top: 10px;
+    top: 0;
+    right: -20px;
+    background-color: #3a557c;
+    border: none;
+    outline: none;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 0px 4px 4px 0px;
+    cursor: pointer;
 }
 
 #fiches_content {

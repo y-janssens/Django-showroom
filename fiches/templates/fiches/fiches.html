@@ -8,7 +8,10 @@
         <button id="search_icon">
             <img src="{% static 'images/search-button.svg' %}">
         </button>
-            <input id="search_bar_input" type="text" placeholder="Rechercher...">
+        <form action="#" method="GET">
+            <input id="search_bar_input" type="text" placeholder="Rechercher..." name="search_query", value="{{search_query}}">
+            <button type="submit" id="search_val">OK</button>
+        </form>
     </div>
 
     <div id="fiches_content">

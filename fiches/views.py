@@ -7,6 +7,7 @@ import pdfkit
 import os
 from django.template.loader import render_to_string
 import utils
+from .utils import searchFiche
 
 
 try:
@@ -85,10 +86,9 @@ def print_fiche(request, pk):
 
 @login_required(login_url='login')
 def fiches(request):
-    users = User.objects.all()
-    fiches = Fiche.objects.all()
+    fiches, search_query = searchFiche(request)
     page_title = "Fiches de chantier"
-    context = {'page_title': page_title, 'users': users, 'fiches': fiches}
+    context = {'page_title': page_title,  'fiches': fiches, 'search_query': search_query}
     return render(request, 'fiches/fiches.html', context)
 
 
