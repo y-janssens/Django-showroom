@@ -7,7 +7,7 @@ import pdfkit
 import os
 from django.template.loader import render_to_string
 import utils
-from .utils import searchDevis
+from .utils import searchDevis, paginateDevis
 
 try:
     pdfkit_config = pdfkit.configuration(
@@ -21,8 +21,10 @@ except OSError:
 def devis(request):
     estimates, search_query = searchDevis(request)
 
+    custom_range, estimates = paginateDevis(request, estimates, 40) 
+
     page_title = "Devis"
-    context = {'page_title': page_title, 'estimates': estimates, 'search_query': search_query}
+    context = {'page_title': page_title, 'estimates': estimates, 'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'devis/devis.html', context)
 
 @login_required(login_url='login')

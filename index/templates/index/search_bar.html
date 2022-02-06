@@ -1,0 +1,8 @@
+{% load static %} 
+
+<div id="search_bar">    
+    <form id="search_form" action="#" method="GET">
+        <input id="search_bar_input" type="text" placeholder="Rechercher..." name="search_query", value="{{search_query}}" onchange="this.form.submit()">
+        <button type="submit" id="search_val"><img src="{% static 'images/search-button.svg' %}"></button>
+    </form>
+</div>

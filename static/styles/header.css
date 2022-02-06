@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   color: #ffffff;
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Share Tech Mono", monospace;
   letter-spacing: 6px;
   text-align: center;
@@ -67,7 +67,6 @@
 @media (max-width: 500px) {
   .nav_title {
     font-size: 25px;
-    margin-top: -10px;
-    letter-spacing: 12px;
+    margin-top: -10px;    
   }
 }

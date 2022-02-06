@@ -3,16 +3,8 @@
 {% block content %}
 
 <div id="fiches_wrapper">
-    <div id="fiches_title">Factures</div>
-    <div id="fiches_search_bar">
-        <button id="search_icon">
-            <img src="{% static 'images/search-button.svg' %}">
-        </button>
-        <form action="#" method="GET">
-            <input id="search_bar_input" type="text" placeholder="Rechercher..." name="search_query", value="{{search_query}}">
-            <button type="submit" id="search_val">OK</button>
-        </form>
-    </div>
+
+    {% include 'index/search_bar.html' %}
 
     <div id="fiches_content">
 
@@ -43,6 +35,9 @@
         {% endfor %} {% endcomment %}
         
     </div>
+
+    {% include 'index/pagination.html' %}
+    
 </div>
 
 {% endblock %}

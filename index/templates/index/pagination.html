@@ -1,0 +1,24 @@
+
+<div id="pagination_wrapper">
+
+    {% if queryset.has_previous %}
+        <a href="?page={{queryset.previous_page_number}}" class="pages" id="previous_page">&#10094;</a>
+    {% endif %}
+
+
+    {% for page in custom_range %}
+
+    {% if page == queryset.number%}
+        <a href="?page={{page}}" class="pages pages_active">{{page}}</a>
+    {% else %}
+        <a href="?page={{page}}" class="pages">{{page}}</a>
+    {% endif %}
+    
+    {% endfor %}
+    
+
+    {% if queryset.has_next %}
+        <a href="?page={{queryset.next_page_number}}" class="pages" id="next_page">&#10095;</a>
+    {% endif %}
+
+</div>

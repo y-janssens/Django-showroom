@@ -7,7 +7,7 @@ import pdfkit
 import os
 from django.template.loader import render_to_string
 import utils
-from .utils import searchFiche
+from .utils import searchFiche, paginateFiche
 
 
 try:
@@ -87,8 +87,10 @@ def print_fiche(request, pk):
 @login_required(login_url='login')
 def fiches(request):
     fiches, search_query = searchFiche(request)
+    custom_range, fiches = paginateFiche(request, fiches, 40)    
+
     page_title = "Fiches de chantier"
-    context = {'page_title': page_title,  'fiches': fiches, 'search_query': search_query}
+    context = {'page_title': page_title,  'fiches': fiches, 'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'fiches/fiches.html', context)
 
 
