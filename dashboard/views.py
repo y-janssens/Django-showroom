@@ -33,6 +33,13 @@ def admin_logs(request):
                'logs': logs, 'users': users, 'fiche': fiche}
     return render(request, 'dashboard/logs.html', context)
 
+@login_required(login_url='login')
+@admin_required(login_url='login')
+def company(request):
+    page_title = "Société"
+    context = {'page_title': page_title}
+    return render(request, 'dashboard/company.html', context)
+
 
 @login_required(login_url='login')
 @admin_required(login_url='login')

@@ -6,12 +6,20 @@ const d = new Date();
 let time = d.getTime().toString();
 let number = time.slice(9);
 
-const current_day = day.getDate();
-const current_month = month.getMonth();
-const current_year = year.getUTCFullYear();
+let current_day = day.getDate();
+let current_month = month.getMonth();
+let current_year = year.getUTCFullYear();
 
-const date = current_day + '/' + current_month + '/' + current_year;
-const nplus_1 = current_day + '/' + current_month + '/' + (current_year + 1);
+if (current_day < 10) {
+		current_day = "0" + current_day;
+}
+
+if (current_month < 10) {
+		current_month = "0" + current_month;
+}
+
+const date = current_day + '-' + current_month + '-' + current_year;
+const nplus_1 = current_day + '-' + current_month + '-' + (current_year + 1);
 
 document.getElementById('devis_c_date').innerHTML = "Date du devis: " + date;
 document.getElementById('devis_c_valid').value = "Date de validité du devis: " + nplus_1;

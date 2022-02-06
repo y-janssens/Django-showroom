@@ -6,7 +6,7 @@ from users.models import User
 import pdfkit
 import os
 from django.template.loader import render_to_string
-from . import utils
+import utils
 
 
 try:

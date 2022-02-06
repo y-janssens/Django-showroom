@@ -5,6 +5,7 @@ class Devi(models.Model):
 
     estimate_number = models.CharField(max_length=200, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True, null=True)
+    validity = models.CharField(max_length=200, null=True, blank=True)
 
     customer = models.CharField(max_length=200, null=True, blank=True)
     customer_adress = models.CharField(max_length=200, null=True, blank=True)

@@ -29,10 +29,10 @@
     height: 1000px !important;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    background: linear-gradient(155deg, rgba(58, 85, 124, 0.25) 0%, rgba(255, 255, 255, 1) 100%), linear-gradient(155deg, rgba(247, 167, 93, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: url('../images/d_bg.jpg') !important;
     background-size: 100%;
     background-repeat: no-repeat;
-    object-fit: fill;
+    object-fit: cover;
     box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
         rgb(0 0 0 / 50%) 0px 16px 10px -10px;
     overflow: hidden;
@@ -368,16 +368,6 @@ hr.table_hr {
 
 #devis_print {
     background-color: rgb(175, 95, 29);
-}
-
-#devis_background {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    opacity: 0.15;
-    transform: rotateZ(-49deg) scale(2.6);
-    filter: hue-rotate(-45deg);
-    pointer-events: none;
 }
 
 /* @media (max-width: 1400px) {
