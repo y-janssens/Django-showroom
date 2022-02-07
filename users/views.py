@@ -70,6 +70,6 @@ def profile(request):
             form.save()
             return redirect('home')
 
-    page_title = "Profil"
+    page_title = f"Profil {profile.first_name} {profile.last_name}"
     context = {'page_title': page_title, 'form': form, 'profile': profile}
     return render(request, 'users/profile.html', context)

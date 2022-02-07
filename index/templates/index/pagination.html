@@ -1,4 +1,4 @@
-
+{% if queryset.has_other_pages %}
 <div id="pagination_wrapper">
 
     {% if queryset.has_previous %}
@@ -22,3 +22,4 @@
     {% endif %}
 
 </div>
+{% endif %}

@@ -96,12 +96,12 @@ def fiches(request):
 
 @login_required(login_url='login')
 def fiche_chantier(request, pk):
-    page_title = f"Fiche de chantier N°{pk}"
+    
     fiche = Fiche.objects.get(id=pk)
     users = User.objects.all()
     profiles = Profile.objects.all()
     name = fiche.last_name    
-
+    page_title = f"Fiche de chantier {fiche.last_name}"
     context = {'page_title': page_title, 'fiche': fiche,
                'name': name, 'users': users, 'profiles': profiles}
     return render(request, 'fiches/fiche_display.html', context)

@@ -203,9 +203,9 @@ def delete_devis(request, pk):
 
 @login_required(login_url='login')
 def devis_client(request, pk):
-    page_title = f"Devis N°{pk}"
+    
     profile = request.user.profile
     devis = Devi.objects.get(id=pk)
-
+    page_title = f"Devis N°{devis.estimate_number}"
     context = {'page_title': page_title, 'devis': devis, 'profile': profile}
     return render(request, 'devis/devis_display.html', context)
