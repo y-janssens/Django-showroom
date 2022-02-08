@@ -29,17 +29,21 @@ if (searchForm) {
 
 let panels = true;
 const buttons = document.getElementsByClassName("client_line");
+const crud = document.getElementsByClassName("client_crud");
 
-function hide(e) {
-  if (panels) {
-    panels = false;
+function scroll(e) {
+
+  if (panels) {    
+    panels = false;    
     $(e.target.nextSibling.nextSibling).toggle("slow");
+    
   } else {
     panels = true;
     $(e.target.nextSibling.nextSibling).toggle("slow");
   }
+ 
 }
 
 for (var i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", hide, false);
+  buttons[i].addEventListener("click", scroll, false);
 }

@@ -6,7 +6,7 @@
 
         <div id="client_form">
             <div id="client_form_header">
-              <span class="title">Nouveau client</span>
+              <span class="title">{{page_title}}</span>
             </div>
             <form action="{% url 'create_client' %}" method="POST">
               {% csrf_token %}

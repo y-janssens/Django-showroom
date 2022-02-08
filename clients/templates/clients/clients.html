@@ -7,57 +7,57 @@
     {% include 'index/search_bar.html' %}
 
     <div id="clients_content">
-
-        {% comment %} <div class="fiches_wrap_c">
-            <div id="icon_bg">✎</div>    
-            <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-            <a class="fiches_thumbnail" href="{% url 'create_client' %}">
-                <div class="fiches_customer_c">Ajout</div>                
-            </a>     
-        </div> {% endcomment %}
         
-        {% for client in clients %}
+        {% for client in clients reversed %}
 
         {% if forloop.counter|divisibleby:2 %}
-
         <div class="client_line">
-            <div class="client_infos">{{client.last_name}}</div>                
+        {% else %}
+        <div class="client_line pair">
+        {% endif %}
+            <div class="client_infos">- {{client.last_name}} <span>N°:{{client.id}}</span></div>
+        
+
+                <div class="client_crud_grp">
+                    <a class="client_crud" href="{% url 'edit_client' client.id %}"><button class="client_edit">✎</button></a>
+                    <a class="client_crud" href="{% url 'delete_client' client.id %}"><button class="client_delete">X</button></a>
+
+                </div>                
         </div>
+
             <div class="client_details">
 
-        {% else %}
+                <div class="client_details_grid">
 
-        <div class="client_line pair">
-            <div class="client_infos">{{client.last_name}}</div>                
-        </div>
-            <div class="client_details pair">
+                    <div class="client_details_content_1">
+                        <ul>
+                            <li><span>Nom: </span>{{client.first_name}} {{client.last_name}}</li>
+                            <li><span>Adresse: </span>{{client.adress}}</li>
+                            <li><span>Ville: </span>{{client.post_code}} {{client.city}}</li>
+                            <li><span>N° de téléphone: </span>{{client.phone}}</li>
+                            {% if client.email%}
+                            <li><span>Adresse e-mail: </span>{{client.email}}</li>
+                            {% endif %}
+                            <li><span>Date de naissance: </span>{{client.birth_date}}</li>
+                        </ul>
+                    </div>
 
-                {% endif %}
+                    <div class="client_details_content_2">
+                        <ul>
+                            <li><a class="client_items" href="/devis/?search_query={{client.last_name}}#">Devis associés</a></li>
+                            <li><a class="client_items" href="/factures/?search_query={{client.last_name}}#">Factures associées</a></li>                            
+                        </ul>
+                    </div>
 
-                <div class="client_details_content">
-                    <ul>
-                        <li><span>Nom: </span>{{client.first_name}} {{client.last_name}}</li>
-                        <li><span>Adresse: </span>{{client.adress}}</li>
-                        <li><span>Ville: </span>{{client.post_code}} {{client.city}}</li>
-                        <li><span>N° de téléphone: </span>{{client.phone}}</li>
-                        {% if client.email%}
-                        <li><span>Adresse e-mail: </span>{{client.email}}</li>
-                        {% endif %}
-                        <li><span>Date de naissance: </span>{{client.birth_date}}</li>
-                    </ul>
-                </div>
+                </div>  
             </div>
                 </br>
 
-    
-
-        
-
-
-        
-
         {% endfor %}
     </div>
+
+    {% include 'index/pagination.html' with queryset=clients custom_range=custom_range %}
+
 </div>
 
 {% endblock %}
