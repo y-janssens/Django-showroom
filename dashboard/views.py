@@ -39,7 +39,11 @@ def admin_logs(request):
 @admin_required(login_url='login')
 def company(request):
    
-    company = Societe.objects.get(pk=1)
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+
     form = CompanyForm(instance=company)    
 
     if request.method == "POST":
