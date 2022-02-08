@@ -1,3 +1,5 @@
+// ALERTS
+
 let alertWrapper = document.querySelector(".alert");
 let alertClose = document.querySelector(".alert__close");
 
@@ -8,6 +10,7 @@ if (alertWrapper) {
   );
 }
 
+// SEARCHBAR FIX
 let searchForm = document.getElementById("search_form");
 let pageLinks = document.getElementsByClassName("pages");
 
@@ -20,4 +23,23 @@ if (searchForm) {
       searchForm.submit();
     });
   }
+}
+
+// CLIENT FILE TOGGLE
+
+let panels = true;
+const buttons = document.getElementsByClassName("client_line");
+
+function hide(e) {
+  if (panels) {
+    panels = false;
+    $(e.target.nextSibling.nextSibling).toggle("slow");
+  } else {
+    panels = true;
+    $(e.target.nextSibling.nextSibling).toggle("slow");
+  }
+}
+
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", hide, false);
 }

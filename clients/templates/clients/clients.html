@@ -24,15 +24,6 @@
             <div class="client_infos">{{client.last_name}}</div>                
         </div>
             <div class="client_details">
-                <div class="client_details_content">
-                    {{client.first_name}} {{client.last_name}}</br>
-                    {{client.adress}}</br>
-                    {{client.post_code}} {{client.city}}</br>
-                    {{client.phone}}</br>
-                    {{client.birth_date}}
-                </div>
-            </div>
-                </br>
 
         {% else %}
 
@@ -40,36 +31,33 @@
             <div class="client_infos">{{client.last_name}}</div>                
         </div>
             <div class="client_details pair">
+
+                {% endif %}
+
                 <div class="client_details_content">
-                    {{client.first_name}} {{client.last_name}}</br>
-                    {{client.adress}}</br>
-                    {{client.post_code}} {{client.city}}</br>
-                    {{client.phone}}</br>
-                    {{client.birth_date}}
+                    <ul>
+                        <li><span>Nom: </span>{{client.first_name}} {{client.last_name}}</li>
+                        <li><span>Adresse: </span>{{client.adress}}</li>
+                        <li><span>Ville: </span>{{client.post_code}} {{client.city}}</li>
+                        <li><span>N° de téléphone: </span>{{client.phone}}</li>
+                        {% if client.email%}
+                        <li><span>Adresse e-mail: </span>{{client.email}}</li>
+                        {% endif %}
+                        <li><span>Date de naissance: </span>{{client.birth_date}}</li>
+                    </ul>
                 </div>
             </div>
                 </br>
 
+    
 
-        {% endif %}
+        
+
+
+        
 
         {% endfor %}
     </div>
 </div>
-
-<script>
-let panel = true;
-
-    $(".client_line").on("click", function () {
-        if (panel) {
-            panel = false;
-          $(".client_details").slideUp(500);
-        } else {
-            panel = true;
-          $(".client_details").slideDown(500);
-        }
-      });
-
-</script>
 
 {% endblock %}
