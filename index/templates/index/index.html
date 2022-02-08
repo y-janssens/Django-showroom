@@ -8,14 +8,13 @@
   <title>{{page_title}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;500;600;700;800;900&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;500;600;700;800;900&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"/>
 
   <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/header.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/footer.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/alerts.css' %}">
 
   <link rel="stylesheet" type="text/css" href="{% static 'styles/search_bar.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/pagination.css' %}">
@@ -27,6 +26,7 @@
   
   <link rel="stylesheet" type="text/css" href="{% static 'styles/admin.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/logs.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/company.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'styles/admin_navbar.css' %}">
   
   <link rel="stylesheet" type="text/css" href="{% static 'styles/fiches.css' %}">
@@ -35,9 +35,10 @@
   <link rel="stylesheet" type="text/css" href="{% static 'styles/email_form.css' %}">
 
   <link rel="stylesheet" type="text/css" href="{% static 'styles/devis_form.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'styles/devis_display.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/devis_display.css' %}"> 
 
-  <link rel="stylesheet" href="{% static 'uikit/styles/uikit.css' %}" />  
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/clients.css' %}"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/client_form.css' %}"> 
 
   <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
 
@@ -64,5 +65,5 @@
   {% include "index/footer.html" %}
   <div id="main_background"></div>
 </body>
-<script src="{% static 'uikit/app.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
 </html>

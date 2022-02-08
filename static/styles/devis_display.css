@@ -84,16 +84,19 @@ hr.devis_hr {
 #company_infos {
     position: absolute;
     top: 11em;
-    left: 3em;
+    left: 3.5em;
     font-size: 12px;
     font-style: italic;
     text-align: left;
     line-height: 1.25em;
 }
 
+#company_infos .devis_content {
+    margin: -6px;
+}
+
 #company_name {
     font-weight: 700;
-    margin-bottom: 0.25em;
 }
 
 #devis_infos {

@@ -18,7 +18,7 @@
   
   {% for user, profile in group  %} 
 
-  {% if user.is_superuser == False %}
+  {% if user.is_superuser == True %}
 
   {% if forloop.counter|divisibleby:2 %}
   <tr class="user_bg_1">

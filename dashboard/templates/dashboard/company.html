@@ -7,7 +7,25 @@
 
     {% include "dashboard/admin_navbar.html" %}  
 
-    Société
-</div>
+
+        <div id="company_form">
+          <div id="company_form_header">
+            <span class="title">{{company.name}}</span>
+          </div>
+          <form action="{% url 'societe' %}" method="POST">
+            {% csrf_token %}
+             {% for field in form %}
+              
+               {{field}}
+            <hr>
+            {% endfor %}
+      
+            <button type="submit">Valider</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
 
 {% endblock %}

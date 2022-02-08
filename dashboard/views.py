@@ -5,6 +5,8 @@ from django.contrib.admin.models import LogEntryManager, LogEntry
 from users.models import Profile
 from fiches.models import Fiche
 from users.forms import ProfileForm
+from .forms import CompanyForm
+from .models import Societe
 
 
 @login_required(login_url='login')
@@ -36,8 +38,18 @@ def admin_logs(request):
 @login_required(login_url='login')
 @admin_required(login_url='login')
 def company(request):
+   
+    company = Societe.objects.get(pk=1)
+    form = CompanyForm(instance=company)    
+
+    if request.method == "POST":
+        form = CompanyForm(request.POST, instance=company)
+        if form.is_valid:
+            form.save()
+            return redirect('admin')
+
     page_title = "Société"
-    context = {'page_title': page_title}
+    context = {'page_title': page_title, 'form': form, 'company': company}
     return render(request, 'dashboard/company.html', context)
 
 

@@ -14,10 +14,10 @@
         <hr class="devis_hr">
     
         <div id="company_infos">
-            <input type="text" class="devis_content" placeholder="Société: " id="company_name" /></br>
-            <input type="text" class="devis_content" placeholder="Adresse: " /></br>
-            <input type="text" class="devis_content" placeholder="Ville: " /></br>
-            <input type="text" class="devis_content" placeholder="Tel: " />
+            <div class="devis_content" placeholder="Société: " id="company_name" >{{company.name}}</div></br>
+            <div  type="text" class="devis_content" placeholder="Adresse: " >{{company.adress}}</div></br>
+            <div  type="text" class="devis_content" placeholder="Ville: " >{{company.post_code}} {{company.city}}</div></br>
+            <div  type="text" class="devis_content" placeholder="Tel: " >{{company.phone}}</div>
         </div>
     
         <div id="devis_infos">

@@ -2,44 +2,74 @@
 {% load static %} 
 {% block content %}
 
-<div id="fiches_wrapper">
-    <div id="fiches_title">Clients</div>
-    <div id="fiches_search_bar">
-        <button id="search_icon">
-            <img src="{% static 'images/search-button.svg' %}">
-        </button>
-            <input id="search_bar_input" type="text" placeholder="Rechercher...">
-    </div>
+<div id="clients_wrapper">
 
-    <div id="fiches_content">
+    {% include 'index/search_bar.html' %}
 
-        <div class="fiches_wrap_c">
+    <div id="clients_content">
+
+        {% comment %} <div class="fiches_wrap_c">
             <div id="icon_bg">✎</div>    
             <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-            <a class="fiches_thumbnail" href="">
+            <a class="fiches_thumbnail" href="{% url 'create_client' %}">
                 <div class="fiches_customer_c">Ajout</div>                
             </a>     
+        </div> {% endcomment %}
+        
+        {% for client in clients %}
+
+        {% if forloop.counter|divisibleby:2 %}
+
+        <div class="client_line">
+            <div class="client_infos">{{client.last_name}}</div>                
         </div>
+            <div class="client_details">
+                <div class="client_details_content">
+                    {{client.first_name}} {{client.last_name}}</br>
+                    {{client.adress}}</br>
+                    {{client.post_code}} {{client.city}}</br>
+                    {{client.phone}}</br>
+                    {{client.birth_date}}
+                </div>
+            </div>
+                </br>
 
-{% comment %}         {% for fiche in fiches reversed %}
+        {% else %}
 
-    <div class="fiches_wrap">
+        <div class="client_line pair">
+            <div class="client_infos">{{client.last_name}}</div>                
+        </div>
+            <div class="client_details pair">
+                <div class="client_details_content">
+                    {{client.first_name}} {{client.last_name}}</br>
+                    {{client.adress}}</br>
+                    {{client.post_code}} {{client.city}}</br>
+                    {{client.phone}}</br>
+                    {{client.birth_date}}
+                </div>
+            </div>
+                </br>
 
-        {% if user.is_superuser %}
-        <a class="fiches_crud" href="{% url 'delete_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
+
         {% endif %}
 
-        <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-        <a class="fiches_thumbnail" href="{% url 'fiche_chantier' fiche.id %}">
-            <div class="fiches_customer">{{fiche.last_name}}</div>
-            <div class="fiches_created">{{fiche.created|date:'d-m-Y'}}                
-            </div>
-        </a>     
-    </div>
-
-        {% endfor %} {% endcomment %}
-        
+        {% endfor %}
     </div>
 </div>
+
+<script>
+let panel = true;
+
+    $(".client_line").on("click", function () {
+        if (panel) {
+            panel = false;
+          $(".client_details").slideUp(500);
+        } else {
+            panel = true;
+          $(".client_details").slideDown(500);
+        }
+      });
+
+</script>
 
 {% endblock %}

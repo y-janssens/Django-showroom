@@ -81,19 +81,22 @@ hr.devis_c_hr {
     width: 80%;
 }
 
-#company_infos {
+#company_c_infos {
     position: absolute;
     top: 11em;
-    left: 3em;
+    left: 3.5em;
     font-size: 12px;
     font-style: italic;
     text-align: left;
     line-height: 1.25em;
 }
 
+#company_c_infos .devis_c_content {
+    margin: -6px;
+}
+
 #company_name {
     font-weight: 700;
-    margin-bottom: 0.25em;
 }
 
 #devis_c_infos {

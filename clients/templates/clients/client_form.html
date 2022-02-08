@@ -1,0 +1,25 @@
+{% extends "index/index.html" %}
+{% load static %}
+
+{% block content %}
+    <div id="client_wrapper">
+
+        <div id="client_form">
+            <div id="client_form_header">
+              <span class="title">Nouveau client</span>
+            </div>
+            <form action="{% url 'create_client' %}" method="POST">
+              {% csrf_token %}
+               {% for field in form %}
+                
+                 {{field}}
+              <hr>
+              {% endfor %}
+        
+              <button type="submit">Valider</button>
+            </form>
+          </div>
+        </div>
+
+    </div>
+{% endblock %}

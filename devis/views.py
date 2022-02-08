@@ -8,6 +8,7 @@ import os
 from django.template.loader import render_to_string
 import utils
 from .utils import searchDevis, paginateDevis
+from dashboard.models import Societe
 
 try:
     pdfkit_config = pdfkit.configuration(
@@ -51,6 +52,7 @@ def devis_save(request, pk):
 def devis_create(request):
     page_title = "Création de devis"
     profile = request.user.profile
+    company = Societe.objects.get(pk=1)
     form = DevisForm()
 
     if request.method == "POST":        
@@ -191,7 +193,7 @@ def devis_create(request):
             devis.save()
             return redirect('devis')
 
-    context = {'page_title': page_title, 'profile': profile, 'form': form}
+    context = {'page_title': page_title, 'profile': profile, 'form': form, 'company': company}
     return render(request, 'devis/devis_form.html', context)
 
 @login_required(login_url='login')
@@ -205,7 +207,8 @@ def delete_devis(request, pk):
 def devis_client(request, pk):
     
     profile = request.user.profile
+    company = Societe.objects.get(pk=1)
     devis = Devi.objects.get(id=pk)
     page_title = f"Devis N°{devis.estimate_number}"
-    context = {'page_title': page_title, 'devis': devis, 'profile': profile}
+    context = {'page_title': page_title, 'devis': devis, 'profile': profile, 'company': company}
     return render(request, 'devis/devis_display.html', context)

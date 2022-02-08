@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from decorators import login_required, admin_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import RegisterForm, ProfileForm, Profile
+from .forms import RegisterForm, ProfileForm
 
 
 def registerUser(request):
@@ -25,7 +25,7 @@ def registerUser(request):
 
 
 def loginUser(request):
-    page_title = "Login"
+    page_title = "Connexion"
     if request.user.is_authenticated:
         return redirect('/')
 
@@ -42,7 +42,8 @@ def loginUser(request):
 
         if user is not None:
             login(request, user)
-            messages.success(request, f'Bienvenue {username}!')
+            profile = request.user.profile
+            messages.success(request, f'Bienvenue {profile.first_name}!')
             return redirect('/')
 
         else:
@@ -53,9 +54,9 @@ def loginUser(request):
 
 def logoutUser(request):
     if request.user.is_authenticated:
-        username = request.user.username
+        profile = request.user.profile
     logout(request)
-    messages.info(request, f'À bientôt {username}!')
+    messages.info(request, f'À bientôt {profile.first_name}!')
     return redirect('login')
 
 

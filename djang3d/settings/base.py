@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     'devis.apps.DevisConfig',
     'factures.apps.FacturesConfig',
     'clients.apps.ClientsConfig',
-    'societe.apps.SocieteConfig',    
 ]
 
 MIDDLEWARE = [
