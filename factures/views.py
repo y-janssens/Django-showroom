@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from decorators import login_required, admin_required
+from decorators import login_required, admin_required, role_required
 from users.models import User
 
 @login_required(login_url='login')
+@role_required(login_url='login')
 def factures(request):
     users = User.objects.all()
 

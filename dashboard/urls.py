@@ -9,6 +9,7 @@ urlpatterns = [
     path('societe', views.company, name="societe"),
     path('activate/<str:pk>/', views.activate, name="activate"),
     path('delete/<str:pk>/', views.delete, name="delete"),
+    path('profile/<pk>', views.user_profile_edit, name="user_profile_edit"),
 ]
 
 

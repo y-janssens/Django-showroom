@@ -8,13 +8,17 @@
 
     <div id="fiches_content">
 
+        {% if profile.role != "Technicien" %}
         <div class="fiches_wrap_c">
             <div id="icon_bg">✎</div>    
             <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
+            
             <a class="fiches_thumbnail" href="{% url 'create_fiche' %}">
+                
                 <div class="fiches_customer_c">Ajout</div>                
             </a>     
         </div>
+        {% endif %}
 
         {% for fiche in fiches reversed %}
 

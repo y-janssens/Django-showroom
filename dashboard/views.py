@@ -77,3 +77,17 @@ def delete(request, pk):
     if user.is_superuser == False:
         user.delete()
     return redirect('admin')
+
+def user_profile_edit(request, pk):
+    profile = Profile.objects.get(id=pk)
+    form = ProfileForm(instance=profile)
+
+    if request.method == "POST":
+        form = ProfileForm(request.POST, instance=profile)
+        if form.is_valid:
+            form.save()
+            return redirect('admin')
+
+    page_title = f"Profil {profile.first_name} {profile.last_name}"
+    context = {'page_title': page_title, 'form': form, 'profile': profile}
+    return render(request, 'dashboard/admin_profile.html', context)

@@ -6,6 +6,8 @@
 
     {% include 'index/search_bar.html' %}
 
+    <a class="add_client" href="{% url 'create_client' %}">Ajouter un client</a>
+
     <div id="clients_content">
         
         {% for client in clients reversed %}
@@ -17,12 +19,12 @@
         {% endif %}
             <div class="client_infos">- {{client.last_name}} <span>N°:{{client.id}}</span></div>
         
-
+                {% if user.is_superuser %}
                 <div class="client_crud_grp">
                     <a class="client_crud" href="{% url 'edit_client' client.id %}"><button class="client_edit">✎</button></a>
                     <a class="client_crud" onclick="return confirm('Voulez-vous vraiment supprimer cet élément? Cette action est irréversible.')" href="{% url 'delete_client' client.id %}"><button class="client_delete" onclick="prompt_toggle()">X</button></a>
-
-                </div>                
+                </div>          
+                {% endif %}      
         </div>
 
             <div class="client_details">

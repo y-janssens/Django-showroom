@@ -6,13 +6,28 @@
     overflow-y: auto;
 }
 
+.add_client {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 85px;
+    color: #3a557c;
+    font-size: 14px;
+    font-family: "Share Tech Mono", monospace;
+    text-decoration: none;
+}
+
+.add_client:hover {
+    text-decoration: underline;
+}
+
 #clients_content {
     position: relative;
     display: flex;
     align-items: center;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 120px;
+    margin-top: 130px;
     flex-direction: column;
 }
 
@@ -86,7 +101,7 @@
 .client_infos {
     position: absolute;
     display: flex;
-    width: 47%;
+    width: 49%;
     justify-content: space-between;
     margin-left: 25px;
     color: #3a557c;
@@ -100,12 +115,13 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 90% !important;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.025);
+    background-color: rgba(58, 85, 124, 0.025);
     cursor: initial;
     display: none;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 15px;
+    border-radius: 0px 5px 5px 0px;
     box-shadow: rgb(0 0 0 / 25%) 0px 13px 15px -10px, rgb(0 0 0 / 25%) 0px 8px 5px -10px;
     opacity: 1 !important;
 }

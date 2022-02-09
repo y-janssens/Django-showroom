@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Profile
+from .choices import *
 
 class RegisterForm(UserCreationForm):
     username = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Nom d\'utilisateur'}))
@@ -25,6 +26,7 @@ class ProfileForm(ModelForm):
     last_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Nom'}))
     phone = forms.CharField(max_length=10, widget=forms.TextInput(attrs={'placeholder': 'Téléphone'}))
     email = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'E-mail'}))
+    
     class Meta:
         model = Profile
         fields = ("first_name", "last_name", "phone", "email", "role")

@@ -6,17 +6,13 @@
     <div id="profile_form_header">
       <span class="title">Profil</span>
     </div>
-    <form action="{% url 'profile' %}" method="POST">
+    <form action="{% url 'user_profile_edit' profile.id %}" method="POST">
       {% csrf_token %}
-               
-        {{form.first_name}}
-          <hr>
-        {{form.last_name}}
-          <hr>
-        {{form.phone}}
-          <hr>
-        {{form.email}}
-          <hr>      
+       {% for field in form %}
+        
+         {{field}}
+      <hr>
+      {% endfor %}
 
       <button type="submit">Valider</button>
     </form>
@@ -24,3 +20,4 @@
 </div>
 
 {% endblock %}
+

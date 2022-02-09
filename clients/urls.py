@@ -7,7 +7,7 @@ urlpatterns = [
     path('', views.clients, name="clients"),
     path('create_client', views.create_client, name="create_client"),
     path('delete_client/<pk>', views.delete_client, name="delete_client"),
-    path('edit_client/<pk>', views.edit_client, name="edit_client"),
+    path('edit_client/<pk>', views.edit_client, name="edit_client"),    
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

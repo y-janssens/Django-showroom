@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from decorators import login_required, admin_required
+from decorators import login_required, admin_required, role_required
 from users.models import User, Profile
 from .forms import DevisForm
 from .models import Devi
@@ -19,20 +19,24 @@ except OSError:
 
 
 @login_required(login_url='login')
+@role_required(login_url='login')
 def devis(request):
     estimates, search_query = searchDevis(request)
 
-    custom_range, estimates = paginateDevis(request, estimates, 40) 
+    custom_range, estimates = paginateDevis(request, estimates, 40)
 
     page_title = "Devis"
-    context = {'page_title': page_title, 'estimates': estimates, 'search_query': search_query, 'custom_range': custom_range}
+    context = {'page_title': page_title, 'estimates': estimates,
+               'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'devis/devis.html', context)
 
+
 @login_required(login_url='login')
+@role_required(login_url='login')
 def devis_save(request, pk):
     devis = Devi.objects.get(id=pk)
     page_title = f"Devis N° {devis.estimate_number}"
-    
+
     html_content = render_to_string(
         'devis/devis_export.html', {'page_title': page_title, 'devis': devis})
     options = {'page-height': '235', 'page-width': '173'}
@@ -45,21 +49,21 @@ def devis_save(request, pk):
     response["Content-Transfer-Encoding"] = "binary"
     response.write(pdf_content)
     return response
-        
 
 
 @login_required(login_url='login')
+@role_required(login_url='login')
 def devis_create(request):
     page_title = "Création de devis"
     profile = request.user.profile
     company = Societe.objects.get(pk=1)
     form = DevisForm()
 
-    if request.method == "POST":        
+    if request.method == "POST":
         form = DevisForm(request.POST)
 
         if form.is_valid():
-            
+
             devis = form.save(commit=False)
             devis.owner = profile
             devis.validity = request.POST['devis_valid']
@@ -69,14 +73,14 @@ def devis_create(request):
             devis.customer_city = request.POST['customer_city']
             devis.customer_post_code = request.POST['customer_post_code']
             devis.customer_phone = request.POST['customer_phone']
-        
+
             devis.product_1 = request.POST['product_c']
             devis.quantity_1 = request.POST['quant_c']
             devis.unit_1 = request.POST['unit_c']
             devis.unit_price_1 = request.POST['unit_price_c']
             devis.vat_1 = request.POST['tva_margin_c']
             devis.total_vat_1 = request.POST['tva_total_c']
-            devis.total_full_1 = request.POST['total_price_c']            
+            devis.total_full_1 = request.POST['total_price_c']
 
             try:
                 if request.POST['product_c2'] != None:
@@ -193,8 +197,10 @@ def devis_create(request):
             devis.save()
             return redirect('devis')
 
-    context = {'page_title': page_title, 'profile': profile, 'form': form, 'company': company}
+    context = {'page_title': page_title, 'profile': profile,
+               'form': form, 'company': company}
     return render(request, 'devis/devis_form.html', context)
+
 
 @login_required(login_url='login')
 @admin_required(login_url='login')
@@ -203,12 +209,15 @@ def delete_devis(request, pk):
     devis.delete()
     return redirect('devis')
 
+
 @login_required(login_url='login')
+@role_required(login_url='login')
 def devis_client(request, pk):
-    
+
     profile = request.user.profile
     company = Societe.objects.get(pk=1)
     devis = Devi.objects.get(id=pk)
     page_title = f"Devis N°{devis.estimate_number}"
-    context = {'page_title': page_title, 'devis': devis, 'profile': profile, 'company': company}
+    context = {'page_title': page_title, 'devis': devis,
+               'profile': profile, 'company': company}
     return render(request, 'devis/devis_display.html', context)

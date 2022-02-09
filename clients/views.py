@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from decorators import login_required, admin_required
+from decorators import login_required, admin_required, role_required
 from .models import Client
 from .forms import ClientForm
 from .utils import paginateClients, searchClients
 
+
 @login_required(login_url='login')
+@role_required(login_url='login')
 def clients(request):
     
     clients, search_query = searchClients(request)
@@ -16,6 +18,7 @@ def clients(request):
     return render(request, 'clients/clients.html', context)
 
 @login_required(login_url='login')
+@role_required(login_url='login')
 def create_client(request):
 
     form = ClientForm()
@@ -31,6 +34,7 @@ def create_client(request):
 
 
 @login_required(login_url='login')
+@admin_required(login_url='login')
 def delete_client(request, pk):
 
     client = Client.objects.get(id=pk)
@@ -38,6 +42,7 @@ def delete_client(request, pk):
     return redirect('clients')
 
 @login_required(login_url='login')
+@admin_required(login_url='login')
 def edit_client(request, pk):
 
     client = Client.objects.get(id=pk)

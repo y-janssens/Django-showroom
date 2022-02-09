@@ -26,7 +26,7 @@
     <tr class="user_bg_2">
       {% endif %}
     <td class="user_id">{{forloop.counter}}</td>
-    <td class="user_user">{{profile.username}}</td>    
+    <td class="user_user"><a href="{% url 'user_profile_edit' profile.id %}">{{profile.username}}</a></td>    
     <td class="user_fname">{{profile.first_name}}</td>
     <td class="user_lname">{{profile.last_name}}</td> 
     <td class="user_phone"><a href="tel:0631224313">{{profile.phone}}</a></td>   

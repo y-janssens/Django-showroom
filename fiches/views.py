@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
-from decorators import login_required, admin_required
+from decorators import login_required, admin_required, role_required
 from .models import Fiche, Profile
 from .forms import FicheForm
 from users.models import User
@@ -86,11 +86,12 @@ def print_fiche(request, pk):
 
 @login_required(login_url='login')
 def fiches(request):
+    profile = request.user.profile
     fiches, search_query = searchFiche(request)
     custom_range, fiches = paginateFiche(request, fiches, 40)    
 
     page_title = "Fiches de chantier"
-    context = {'page_title': page_title,  'fiches': fiches, 'search_query': search_query, 'custom_range': custom_range}
+    context = {'page_title': page_title,  'fiches': fiches, 'search_query': search_query, 'custom_range': custom_range, 'profile': profile}
     return render(request, 'fiches/fiches.html', context)
 
 
@@ -108,6 +109,7 @@ def fiche_chantier(request, pk):
 
 
 @login_required(login_url='login')
+@role_required(login_url='fiches')
 def create_fiche_chantier(request):
     page_title = "Création de fiche"
     profile = request.user.profile
