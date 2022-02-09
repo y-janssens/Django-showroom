@@ -1,0 +1,106 @@
+#prompt_container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    backdrop-filter: blur(3px);
+    opacity: 1;
+    z-index: 100;
+    display: none;
+}
+
+#prompt_wrapper {
+    position: fixed;
+    left: 50%;
+    top: 250px;
+    width: 350px;
+    height: 150px;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    background-color: rgba(228, 230, 231, 0.95);
+    box-shadow: inset 0px 0px 0px 1px #3a557c, rgb(0 0 0 / 25%) 0px 13px 15px -10px,
+        rgb(0 0 0 / 25%) 0px 8px 5px -10px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#prompt_wrapper * {
+    font-family: "Share Tech Mono", monospace;
+    color: #3a557c;
+}
+
+#prompt_wrapper button {
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 250ms all;
+}
+
+#prompt_wrapper button:hover {
+    transform: scale(1.1);
+}
+
+#prompt_title {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3a557c;
+    color: #fff !important
+}
+
+#prompt_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    font-size: 14px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#prompt_close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    color: #b84040 !important;
+    font-family: "Comic Neue", cursive !important;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: transparent;
+    z-index: 100;
+}
+
+#prompt_btn_grp {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.prompt_action {
+    position: relative;
+    width: 90px;
+    height: 30px;
+    margin: 0px 10px 10px 10px;
+    color: #fff !important;
+    background-color: rgba(58, 85, 124, 1);
+}
+
+#prompt_deny {
+    background-color: #808080;
+}
+
+#prompt_confirm {
+    background-color: #b84040;
+}

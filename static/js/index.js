@@ -47,3 +47,26 @@ function scroll(e) {
 for (var i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", scroll, false);
 }
+
+// PROMPT CONFIRMATION
+
+let prompt = true;
+
+function prompt_close() {
+  if (prompt) {
+    prompt = false;
+    $('#prompt_container').css('transition', '250ms all'); 
+    $('#prompt_container').css('opacity', '0');
+    $('#prompt_container').css('visibility', 'hidden');
+    $('#prompt_container').css('pointer-events', 'none');
+  }
+}
+
+function prompt_toggle() {
+  prompt = true;
+    $('#prompt_container').css('transition', '250ms all'); 
+    $('#prompt_container').css('opacity', '1');
+    $('#prompt_container').css('visibility', 'visible');
+    $('#prompt_container').css('pointer-events', 'initial');
+    $('#prompt_container').css('display', 'initial');
+}

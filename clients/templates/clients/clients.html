@@ -20,7 +20,7 @@
 
                 <div class="client_crud_grp">
                     <a class="client_crud" href="{% url 'edit_client' client.id %}"><button class="client_edit">✎</button></a>
-                    <a class="client_crud" href="{% url 'delete_client' client.id %}"><button class="client_delete">X</button></a>
+                    <a class="client_crud" onclick="return confirm('Voulez-vous vraiment supprimer cet élément? Cette action est irréversible.')" href="{% url 'delete_client' client.id %}"><button class="client_delete" onclick="prompt_toggle()">X</button></a>
 
                 </div>                
         </div>
