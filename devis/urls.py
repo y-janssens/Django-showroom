@@ -5,10 +5,12 @@ from . import views
 
 urlpatterns = [
     path('', views.devis, name="devis"),
-    path('<pk>', views.devis_client, name="devis_client"),
+    path('devis/<pk>', views.devis_client, name="devis_client"),
     path('create_devis', views.devis_create, name="devis_create"),
     path('delete_devis/<pk>', views.delete_devis, name="devis_delete"),
     path('save_devis/<pk>', views.devis_save, name="devis_save"),
+    path('print_devis/<pk>', views.devis_print, name="devis_print"),
+    path('send_devis/<pk>', views.devis_send, name="devis_send"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

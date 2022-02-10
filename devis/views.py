@@ -37,9 +37,65 @@ def devis_save(request, pk):
     devis = Devi.objects.get(id=pk)
     page_title = f"Devis N° {devis.estimate_number}"
 
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+
     html_content = render_to_string(
-        'devis/devis_export.html', {'page_title': page_title, 'devis': devis})
-    options = {'page-height': '235', 'page-width': '173'}
+        'devis/devis_export.html', {'page_title': page_title, 'devis': devis, 'company': company})
+    options = {'page-height': '255', 'page-width': '187', 'encoding': "UTF-8",}
+    pdf_content = pdfkit.from_string(
+        html_content, False, configuration=pdfkit_config, options=options)
+    response = HttpResponse(content_type="application/pdf;")
+    response[
+        "Content-Disposition"
+    ] = f"attachment; filename=Devis N° {devis.estimate_number}.pdf"
+    response["Content-Transfer-Encoding"] = "binary"
+    response.write(pdf_content)
+    return response
+
+
+@login_required(login_url='login')
+@role_required(login_url='login')
+def devis_send(request, pk):
+    devis = Devi.objects.get(id=pk)
+    page_title = f"Devis N° {devis.estimate_number}"
+    profile = request.user.profile
+
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+
+    html_content = render_to_string(
+        'devis/devis_export.html', {'page_title': page_title, 'devis': devis, 'company': company})
+    options = {'page-height': '255', 'page-width': '187', 'encoding': "UTF-8",}
+    pdf_content = pdfkit.from_string(
+        html_content, False, configuration=pdfkit_config, options=options)
+    utils.send_email_plaintext(
+        from_header = profile.email,
+        to = request.POST['receiver'],
+        subject = page_title,
+        message = request.POST['form_message'],
+        attachments=[(f"{page_title}.pdf", pdf_content)],
+    )
+    return redirect('devis')
+
+@login_required(login_url='login')
+@role_required(login_url='login')
+def devis_print(request, pk):
+    devis = Devi.objects.get(id=pk)
+    page_title = f"Devis N° {devis.estimate_number}"
+
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+
+    html_content = render_to_string(
+        'devis/devis_export.html', {'page_title': page_title, 'devis': devis, 'company': company})
+    options = {'page-height': '255', 'page-width': '187', 'encoding': "UTF-8",}
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     response = HttpResponse(content_type="application/pdf;")
@@ -56,7 +112,12 @@ def devis_save(request, pk):
 def devis_create(request):
     page_title = "Création de devis"
     profile = request.user.profile
-    company = Societe.objects.get(pk=1)
+
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+
     form = DevisForm()
 
     if request.method == "POST":
@@ -214,10 +275,11 @@ def delete_devis(request, pk):
 @role_required(login_url='login')
 def devis_client(request, pk):
 
-    profile = request.user.profile
+    users = User.objects.all()
+    profiles = Profile.objects.all()
     company = Societe.objects.get(pk=1)
     devis = Devi.objects.get(id=pk)
     page_title = f"Devis N°{devis.estimate_number}"
     context = {'page_title': page_title, 'devis': devis,
-               'profile': profile, 'company': company}
+               'profiles': profiles, 'company': company, 'users': users}
     return render(request, 'devis/devis_display.html', context)

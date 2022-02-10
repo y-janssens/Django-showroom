@@ -73,8 +73,8 @@ function add_row() {
         let total_tva = ((unit * quantity) / 100) * (tva_margin);
         let total_price = (unit * quantity) + total_tva;
 
-        document.getElementById(tva_total).value = total_tva;
-        document.getElementById(total_ttc).value = total_price;
+        document.getElementById(tva_total).value = total_tva.toFixed(2);
+        document.getElementById(total_ttc).value = total_price.toFixed(2);
 
         results()
     });
@@ -109,8 +109,8 @@ function calc() {
     let tva_total = ((unit * quantity) / 100) * (tva_margin);
     let total_price = (unit * quantity) + tva_total;
 
-    document.getElementById('tva_total_c').value = tva_total;
-    document.getElementById('total_price_c').value = total_price;
+    document.getElementById('tva_total_c').value = tva_total.toFixed(2);
+    document.getElementById('total_price_c').value = total_price.toFixed(2);
 
     results();
 }

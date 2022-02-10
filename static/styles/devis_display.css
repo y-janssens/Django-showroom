@@ -91,6 +91,15 @@ hr.devis_hr {
     line-height: 1.25em;
 }
 
+#company_infos a {
+    color: #3a557c;
+    text-decoration: none;
+}
+
+#company_infos a:hover {
+    text-decoration: underline;
+}
+
 #company_infos .devis_content {
     margin: -6px;
 }
@@ -198,6 +207,7 @@ hr.table_hr {
 .items_list * {
     position: relative;
     margin-left: 20px !important;
+    text-align: center;
 }
 
 #product, #product2, #product3, #product4, #product5, #product6, #product7, #product8, #product9, #product10 {
@@ -371,6 +381,43 @@ hr.table_hr {
 
 #devis_print {
     background-color: rgb(175, 95, 29);
+}
+
+#product, #product2, #product3, #product4, #product5, #product6, #product7, #product8, #product9, #product10 {
+    margin-left: -2.5em;
+    width: 6.5em;
+}
+
+#quant, #quant2, #quant3, #quant4, #quant5, #quant6, #quant7, #quant8, #quant9, #quant10 {
+    margin-left: -1.2em;
+    width: 4.75em;
+}
+
+#unit, #unit2, #unit3, #unit4, #unit5, #unit6, #unit7, #unit8, #unit9, #unit10 {
+    margin-left: -2em;
+    width: 3em;
+}
+
+#unit_price, #unit_price2, #unit_price3, #unit_price4, #unit_price5, #unit_price6, #unit_price7, #unit_price8, #unit_price9, #unit_price10 {
+    margin-left: -4em;
+    width: 9em;
+}
+
+#tva_margin, #tva_margin2, #tva_margin3, #tva_margin4, #tva_margin5, #tva_margin6, #tva_margin7, #tva_margin8, #tva_margin9, #tva_margin10 {
+    margin-left: 0.5em;
+    width: 3em;
+}
+
+#tva_total, #tva_total2, #tva_total3, #tva_total4, #tva_total5, #tva_total6, #tva_total7, #tva_total8, #tva_total9, #tva_total10 {
+    margin-left: -2.6em;
+    width: 5.5em;
+    background-color: transparent;    
+}
+
+#total_price, #total_price2, #total_price3, #total_price4, #total_price5, #total_price6, #total_price7, #total_price8, #total_price9, #total_price10 {
+    margin-left: -2.5em;
+    width: 5.5em;
+    background-color: transparent;  
 }
 
 /* @media (max-width: 1400px) {

@@ -17,7 +17,7 @@
             <div class="devis_content" placeholder="Société: " id="company_name" >{{company.name}}</div></br>
             <div  type="text" class="devis_content" placeholder="Adresse: " >{{company.adress}}</div></br>
             <div  type="text" class="devis_content" placeholder="Ville: " >{{company.post_code}} {{company.city}}</div></br>
-            <div  type="text" class="devis_content" placeholder="Tel: " >{{company.phone}}</div>
+            <div  type="text" class="devis_content" placeholder="Tel: " ><a href="tel:{{company.phone}}">{{company.phone}}</a></div>
         </div>
     
         <div id="devis_infos">
@@ -238,12 +238,55 @@
 
     <div id="devis_btns_grp">
         <button class="devis_btn" id="devis_save"><a href="{% url 'devis_save' devis.id %}">Enregistrer</a></button>
-        <button class="devis_btn" id="devis_send"><a href="">Envoyer</a></button>                
-        <button class="devis_btn" id="devis_print"><a href="">Imprimer</a></button>
+        <button class="devis_btn" id="devis_send">Envoyer</button>                
+        <button class="devis_btn" id="devis_print"><a href="{% url 'devis_print' devis.id %}">Imprimer</a></button>
         <button class="devis_btn" id="devis_print"><a href="">Facturer</a></button>
     </div>
 
+    <div id="devis_send_form">
+        <div id="devis_send_form_header">
+            <span class="title">Envoi</span>
+          </div>
+        <form action="{% url 'devis_send' devis.id %}" method="POST">
+            {% csrf_token %}
+            <div class="form_label" id="form_receiver" type="text" placeholder="Destinataire"><select name="receiver">{% for profile in profiles%}
+                    <option value="{{profile.email}}">{{profile.first_name}} {{profile.last_name}}</option>
+                    {% endfor %}
+            </select>
+         </div>
+            <hr>
+            <input class="form_label" name="subject" type="text" placeholder="Devis N°: {{devis.id}}"/>
+            <hr>
+
+            <textarea class="form_label" id="form_message" name="form_message" placeholder="Message"></textarea>
+            <hr>
+            <div class="attachment"><span>Pièces jointes:</span> Devis N°: {{devis.id}}.pdf</div>
+            <button id="mail_submit" type="submit">Envoyer</button>
+        </form>
+    </div>
 
 </div>
+
+<script type="text/javascript">
+
+    let form = false;
+    
+        $('#devis_send').click(function(){
+            if (form == false){
+                form = true;
+                $('#devis_send_form').css('visibility', 'visible');
+            } else {
+                form = false;
+                $('#devis_send_form').css('visibility', 'hidden');
+            }
+        });
+    
+            $('#mail_submit').click(function(){            
+                setTimeout(function () {
+                    document.getElementById('mail_submit').innerHTML = "Message Envoyé!";              
+                }, 1000)
+            });
+            
+    </script>
 
 {% endblock %}

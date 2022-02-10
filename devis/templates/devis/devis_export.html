@@ -5,10 +5,10 @@
   <title>{{page_title}}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;500;600;700;800;900&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Rokkitt:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"/>
 
     <style type="text/css">
+
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Rokkitt&family=Share+Tech+Mono&display=swap');
         
         #devis_header {
             position: absolute;
@@ -21,16 +21,16 @@
         }
         
         #devis_content {
-            position: relative;
-            width: 707px;
-            height: 1000px;
+            position: relative;            
+            width: 777px ;
+            height: 1100px ;
             background-color: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
             background-image: url('{% include 'devis/base.html' %}');
             background-size: 100%;
             background-repeat: no-repeat;
             object-fit: cover;            
-            overflow: hidden;                        
+            overflow: hidden;        
         }
         
         #devis_content * {
@@ -45,8 +45,7 @@
             position: absolute;
             top: 2em;
             left: 2em;
-            font-size: 25px;
-        
+            font-size: 25px;        
         }
         
         hr {
@@ -56,17 +55,17 @@
             width: 60%;
             height: 5px;
             border: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0.55;
-            -webkit-transform: translateX(-50%) scaleY(0.5);
+            background-color: rgba(0, 0, 0, 0.25);
+            opacity: 0.25;
+            -webkit-transform: translateX(-50%) scaleY(0.25) !important;
         }
         
         #dhr2 {
-            top: 21em;
+            top: 20.25em;            
         }
         
         #dhr3 {
-            top: 97%;
+            top: 96%;
             width: 80%;
         }
         
@@ -77,12 +76,12 @@
             font-size: 12px;
             font-style: italic;
             text-align: left;
-            line-height: 1.25em;
+            line-height: 13px;
         }
         
         #company_name {
             font-weight: 700;
-            margin-bottom: 0.25em;
+            margin-bottom: 8px;
         }
         
         #devis_infos {
@@ -90,7 +89,7 @@
             top: 14em;
             left: 2em;
             width: 250px;
-            height: 5em;
+            height: 5.25em;
             padding-left: 0.25em;
             border-radius: 8px;
             background-color: rgba(0, 0, 0, 0.025);
@@ -104,15 +103,11 @@
             margin-top: 3px;
         }
         
-        #devis_commercial a {
+        #devis_commercial a, #company_infos a {
             color: #3a557c;
             text-decoration: none;
         }
-        
-        #devis_commercial a:hover {
-            text-decoration: underline;
-        }
-        
+                
         #client_infos {
             position: absolute;
             top: 14em;
@@ -141,10 +136,7 @@
             font-size: 13px;
             text-align: center;
             padding-bottom: 0.5em;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-            border-top: none !important;
-            border-left: none !important;
-            border-right: none !important;
+            magin-bottom: 10px;           
             -webkit-transform: translateX(-50%);
         }
         
@@ -157,10 +149,14 @@
             height: 2em;
             font-size: 13px;
             text-align: center;
-            padding-bottom: 0.5em;
-            border: none !important;
-            
+            padding-bottom: 0.5em;            
             -webkit-transform: translateX(-50%);
+            border-bottom: 1px solid #B8BCC1 !important;  
+            border-spacing: 0px 15px;
+        }
+
+        #head {
+            border-bottom: 1px solid #B8BCC1 !important;
         }
         
         .devis_items_content {
@@ -175,16 +171,47 @@
         }
         
         .items_list * {
-            position: relative;
             margin-left: 20px !important;
+            margin-top: 0px;
+            margin-bottom: -10px;
+            text-align: center;
         }
         
         #product, #product2, #product3, #product4, #product5, #product6, #product7, #product8, #product9, #product10 {
             left: -2px;
+            width: 6.5em;
+        }
+        
+        #quant, #quant2, #quant3, #quant4, #quant5, #quant6, #quant7, #quant8, #quant9, #quant10 {
+            margin-left: -1.2em;
+            width: 4.75em;
+        }
+        
+        #unit, #unit2, #unit3, #unit4, #unit5, #unit6, #unit7, #unit8, #unit9, #unit10 {
+            margin-left: -2em;
+            width: 3em;
+        }
+        
+        #unit_price, #unit_price2, #unit_price3, #unit_price4, #unit_price5, #unit_price6, #unit_price7, #unit_price8, #unit_price9, #unit_price10 {
+            margin-left: -4em;
+            width: 9em;
         }
         
         #tva_margin, #tva_margin2, #tva_margin3, #tva_margin4, #tva_margin5, #tva_margin6, #tva_margin7, #tva_margin8, #tva_margin9, #tva_margin10 {
             left: 12px !important;
+            width: 3em;
+        }
+        
+        #tva_total, #tva_total2, #tva_total3, #tva_total4, #tva_total5, #tva_total6, #tva_total7, #tva_total8, #tva_total9, #tva_total10 {
+            margin-left: -2.6em;
+            width: 5.5em;
+            background-color: transparent;    
+        }
+        
+        #total_price, #total_price2, #total_price3, #total_price4, #total_price5, #total_price6, #total_price7, #total_price8, #total_price9, #total_price10 {
+            margin-left: -2.5em;
+            width: 5.5em;
+            background-color: transparent;  
         }
         
         #add_line {
@@ -260,10 +287,10 @@
             <hr class="devis_hr">
         
             <div id="company_infos">
-                <input type="text" class="devis_content" placeholder="Société: " id="company_name" /></br>
-                <input type="text" class="devis_content" placeholder="Adresse: " /></br>
-                <input type="text" class="devis_content" placeholder="Ville: " /></br>
-                <input type="text" class="devis_content" placeholder="Tel: " />
+                <div class="devis_content" id="company_name" >{{company.name}}</div>
+                <div class="devis_content">{{company.adress}}</div></br>
+                <div class="devis_content">{{company.post_code}} {{company.city}}</div></br>
+                <div class="devis_content"><a href="tel:{{company.phone}}">{{company.phone}}</a></div>
             </div>
         
             <div id="devis_infos">

@@ -1,4 +1,4 @@
-#fiche_send_form {
+#fiche_send_form, #devis_send_form {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -17,11 +17,11 @@
     visibility: hidden;
 }
 
-#fiche_send_form * {
+#fiche_send_form *, #devis_send_form * {
     font-family: "Share Tech Mono", monospace; 
 }
 
-#fiche_send_form form {
+#fiche_send_form form, #devis_send_form form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     align-items: center;
 }
 
-#fiche_send_form input {
+#fiche_send_form input, #devis_send_form input {
     width: 90%;
     height: 64px;
     border: none;
@@ -40,14 +40,14 @@
     background-color: transparent !important;
 }
 
-#fiche_send_form_header {
+#fiche_send_form_header, #devis_send_form_header {
     width: 100%;
     height: 100px;
     background-color: rgba(58, 85, 124, 1);
     margin-bottom: 30px;
 }
 
-#fiche_send_form button {
+#fiche_send_form button, #devis_send_form button {
     width: 60%;
     height: 64px;
     margin-top: 50px;
@@ -118,7 +118,7 @@
 }
 
 @media (max-width: 500px) {
-    #fiche_send_form {
+    #fiche_send_form, #devis_send_form {
         transform: translate(-50%, -50%) scale(0.75);
     }
 }
