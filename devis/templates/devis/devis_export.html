@@ -103,7 +103,7 @@
             margin-top: 3px;
         }
         
-        #devis_commercial a, #company_infos a {
+        #devis_commercial a, #company_infos a, .devis_content a {
             color: #3a557c;
             text-decoration: none;
         }
@@ -304,7 +304,7 @@
                 <div class="devis_content" placeholder="Nom du client:">{{devis.customer}}</div></br>
                 <div class="devis_content" placeholder="Adresse:">{{devis.customer_adress}}</div></br>
                 <div class="devis_content" placeholder="Ville:">{{devis.customer_post_code}} {{devis.customer_city}}</div></br>
-                <div class="devis_content" placeholder="Téléphone:">{{devis.customer_phone}}</div>
+                <div class="devis_content" placeholder="Téléphone:"><a href="tel:{{devis.customer_phone}}">{{devis.customer_phone}}</a></div>
             </div>
             <hr class="devis_hr" id="dhr2">
         

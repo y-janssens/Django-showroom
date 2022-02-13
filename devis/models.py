@@ -101,3 +101,6 @@ class Devi(models.Model):
 
     def __str__(self):
         return self.estimate_number
+
+    class Meta:
+        ordering = ['-date']

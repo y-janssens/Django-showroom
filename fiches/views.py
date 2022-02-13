@@ -23,21 +23,19 @@ def save_fiche(request, pk):
     fiche = Fiche.objects.get(id=pk)
     page_title = f"Fiche de chantier {fiche.last_name}"
     name = fiche.last_name
-    try:
-        html_content = render_to_string(
-            'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-        options = {'page-height': '223', 'page-width': '277'}
-        pdf_content = pdfkit.from_string(
-            html_content, False, configuration=pdfkit_config, options=options)
-        response = HttpResponse(content_type="application/pdf;")
-        response[
-            "Content-Disposition"
-        ] = f"attachment; filename=Fiche de chantier {name}.pdf"
-        response["Content-Transfer-Encoding"] = "binary"
-        response.write(pdf_content)
-        return response
-    except:
-        return HttpResponse(status=204)
+
+    html_content = render_to_string(
+        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
+    options = {'page-height': '223', 'page-width': '277'}
+    pdf_content = pdfkit.from_string(
+        html_content, False, configuration=pdfkit_config, options=options)
+    response = HttpResponse(content_type="application/pdf;")
+    response[
+        "Content-Disposition"
+    ] = f"attachment; filename=Fiche de chantier {name}.pdf"
+    response["Content-Transfer-Encoding"] = "binary"
+    response.write(pdf_content)
+    return response
 
 
 @login_required(login_url='login')
@@ -45,21 +43,20 @@ def send_fiche(request, pk):
     fiche = Fiche.objects.get(id=pk)
     profile = request.user.profile
     page_title = f"Fiche de chantier {fiche.last_name}"
-    
+
     html_content = render_to_string(
         'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
     options = {'page-height': '223', 'page-width': '277'}
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     utils.send_email_plaintext(
-        from_header = profile.email,
-        to = request.POST['receiver'],
-        subject = page_title,
-        message = request.POST['form_message'],
+        from_header=profile.email,
+        to=request.POST['receiver'],
+        subject=page_title,
+        message=request.POST['form_message'],
         attachments=[(f"{page_title}.pdf", pdf_content)],
     )
     return redirect('fiches')
-        
 
 
 @login_required(login_url='login')
@@ -67,42 +64,41 @@ def print_fiche(request, pk):
     fiche = Fiche.objects.get(id=pk)
     page_title = f"Fiche de chantier {fiche.last_name}"
     name = fiche.last_name
-    try:
-        html_content = render_to_string(
-            'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-        options = {'page-height': '223', 'page-width': '277'}
-        pdf_content = pdfkit.from_string(
-            html_content, False, configuration=pdfkit_config, options=options)
-        response = HttpResponse(content_type="application/pdf;")
-        response[
-            "Content-Disposition"
-        ] = f"inline; filename=Fiche de chantier {name}.pdf"
-        response["Content-Transfer-Encoding"] = "binary"
-        response.write(pdf_content)
-        return response
-    except:
-        return HttpResponse(status=204)
+
+    html_content = render_to_string(
+        'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
+    options = {'page-height': '223', 'page-width': '277'}
+    pdf_content = pdfkit.from_string(
+        html_content, False, configuration=pdfkit_config, options=options)
+    response = HttpResponse(content_type="application/pdf;")
+    response[
+        "Content-Disposition"
+    ] = f"inline; filename=Fiche de chantier {name}.pdf"
+    response["Content-Transfer-Encoding"] = "binary"
+    response.write(pdf_content)
+    return response
 
 
 @login_required(login_url='login')
 def fiches(request):
     profile = request.user.profile
     fiches, search_query = searchFiche(request)
-    custom_range, fiches = paginateFiche(request, fiches, 40)    
+    custom_range, fiches = paginateFiche(request, fiches, 40)
 
     page_title = "Fiches de chantier"
-    context = {'page_title': page_title,  'fiches': fiches, 'search_query': search_query, 'custom_range': custom_range, 'profile': profile}
+    context = {'page_title': page_title,  'fiches': fiches,
+               'search_query': search_query, 'custom_range': custom_range, 'profile': profile}
     return render(request, 'fiches/fiches.html', context)
 
 
 @login_required(login_url='login')
 def fiche_chantier(request, pk):
-    
+
     fiche = Fiche.objects.get(id=pk)
     users = User.objects.all()
     profiles = Profile.objects.all()
-    name = fiche.last_name    
-    page_title = f"Fiche de chantier {fiche.last_name}"
+    name = fiche.last_name
+    page_title = f"Fiche de chantier {fiche.last_name.capitalize()}"
     context = {'page_title': page_title, 'fiche': fiche,
                'name': name, 'users': users, 'profiles': profiles}
     return render(request, 'fiches/fiche_display.html', context)

@@ -16,7 +16,7 @@
             </a>     
         </div>
 
-{% for devis in estimates reversed %}
+{% for devis in estimates %}
 
     <div class="fiches_wrap">
 
@@ -37,6 +37,7 @@
     </div>
 
     {% include 'index/pagination.html' with queryset=estimates custom_range=custom_range %}
+    {% include 'index/prompt.html' %}
     
 </div>
 

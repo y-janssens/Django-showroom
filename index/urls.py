@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="home"),
+    path('cube', views.cube, name="cube"),
 ]
 
 

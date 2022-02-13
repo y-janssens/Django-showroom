@@ -14,3 +14,6 @@ class Client(models.Model):
     def __str__(self):
         return self.last_name
 
+    class Meta:
+        ordering = ['-created']
+

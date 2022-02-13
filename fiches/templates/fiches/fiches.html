@@ -20,7 +20,7 @@
         </div>
         {% endif %}
 
-        {% for fiche in fiches reversed %}
+        {% for fiche in fiches %}
 
     <div class="fiches_wrap">
 
@@ -30,7 +30,7 @@
 
         <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
         <a class="fiches_thumbnail" href="{% url 'fiche_chantier' fiche.id %}">
-            <div class="fiches_customer">{{fiche.last_name}}</div>
+            <div class="fiches_customer">{{fiche.last_name | capfirst }}</div>
             <div class="fiches_created">{{fiche.created|date:'d-m-Y'}}                
             </div>
         </a>     
