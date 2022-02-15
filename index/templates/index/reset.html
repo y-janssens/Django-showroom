@@ -1,0 +1,13 @@
+{% extends "index/index.html" %}
+
+{% block content %}
+    <div id="resetwrapper">
+        <div id="resetheader">
+        <span class="title">E-mail envoyé</span>
+        </div>
+        <p>Nous vons avons envoyé des instructions pour réinitialiser votre mot de passe, s'il existe un compte associé à l'adresse email que vous avez entré. Vous devriez le recevoir d'ici quelques instants</p>
+        <p>Si vous ne recevez aucun email, assurez-vous d'avoir entré l'adresse email associée à votre compte, et vérifiez vos courriers indésirables.</p>
+
+        <a href="{% url 'home' %}">Retour à l'accueil</a>
+    </div>
+{% endblock %}

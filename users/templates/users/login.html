@@ -13,7 +13,12 @@
             <input class="label" name="password" type="password" placeholder="*********" />
             <hr>
             <button type="submit">Connexion</button>
+
+            <div class="login_links_grp">
             <a class="link" href="{% url 'register' %}">Créer un compte</a>
+            <a class="link" href="{% url 'reset_password' %}">Mot de passe oublié?</a>
+            </div>
+
         </form>
     </div>
 {% endblock %}

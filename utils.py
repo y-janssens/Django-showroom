@@ -5,9 +5,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 def _get_smtp_context():
-    s = smtplib.SMTP(host=settings.SMTP_HOST, port=settings.SMTP_PORT)
+    s = smtplib.SMTP(host=settings.EMAIL_HOST, port=settings.EMAIL_PORT)
     s.starttls()
-    s.login(settings.SMTP_LOGIN, settings.SMTP_PASSWORD)
+    s.login(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
     return s
 
 
