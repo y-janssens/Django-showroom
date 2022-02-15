@@ -9,9 +9,10 @@ class RegisterForm(UserCreationForm):
     username = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Nom d\'utilisateur'}))
     password1 = forms.CharField(max_length=50, widget=forms.PasswordInput(attrs={'placeholder': '*********'}))
     password2 = None
+    email = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Adresse e-mail'}))
     class Meta:
         model = User
-        fields = ("username", "password1")
+        fields = ("username", "password1", "email")
         
     def __init__(self, *args, **kwags):
         

@@ -5,12 +5,12 @@
         <div id="loginheader">
             <span class="title">Connexion</span>
         </div>
-        <form action="{% url 'login' %}" method="POST">
+        <form action="{% url 'login' %}" method="POST" autocomplete="off">
             {% csrf_token %}
-            <input class="label" name="username" type="text" placeholder="Nom d'utilisateur" />
+            <input class="label" name="username" type="text" placeholder="Nom d'utilisateur" autocomplete="off"/>
             <hr>
 
-            <input class="label" name="password" type="password" placeholder="*********" />
+            <input class="label" name="password" type="password" placeholder="*********" autocomplete="off"/>
             <hr>
             <button type="submit">Connexion</button>
 

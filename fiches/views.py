@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from decorators import login_required, admin_required, role_required
 from .models import Fiche, Profile
 from .forms import FicheForm
+from dashboard.models import Societe
 from users.models import User
 import pdfkit
 import os
@@ -44,13 +45,18 @@ def send_fiche(request, pk):
     profile = request.user.profile
     page_title = f"Fiche de chantier {fiche.last_name}"
 
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+
     html_content = render_to_string(
         'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
     options = {'page-height': '223', 'page-width': '277'}
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     utils.send_email_plaintext(
-        from_header=profile.email,
+        from_header= f'webmaster@{company.name.lower()}.com',
         to=request.POST['receiver'],
         subject=page_title,
         message=request.POST['form_message'],

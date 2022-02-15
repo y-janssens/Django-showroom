@@ -74,7 +74,7 @@ def devis_send(request, pk):
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     utils.send_email_plaintext(
-        from_header = profile.email,
+        from_header= f'webmaster@{company.name.lower()}.com',
         to = request.POST['receiver'],
         subject = page_title,
         message = request.POST['form_message'],

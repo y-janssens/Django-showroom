@@ -159,12 +159,15 @@
             </select>
          </div>
             <hr>
-            <input class="form_label" name="subject" type="text" placeholder="Fiche de chantier {{name}}"/>
+            <input class="form_label" name="subject" type="text" placeholder="Fiche de chantier {{name | capfirst}}"/>
             <hr>
 
-            <textarea class="form_label" id="form_message" name="form_message" placeholder="Message"></textarea>
+            <textarea class="form_label" id="form_message" name="form_message" placeholder="Message">Bonjour.
+
+Veuillez trouver ci-joint la fiche d'intervention de Mr/Mme {{fiche.last_name | capfirst}}.
+            </textarea>
             <hr>
-            <div class="attachment"><span>Pièces jointes:</span> Fiche de chantier {{name}}.pdf</div>
+            <div class="attachment"><span>Pièces jointes:</span> Fiche de chantier {{name | capfirst}}.pdf</div>
             <button id="mail_submit" type="submit">Envoyer</button>
         </form>
     </div>
