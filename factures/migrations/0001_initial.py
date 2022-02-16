@@ -14,12 +14,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Devi',
+            name='Facture',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('estimate_number', models.CharField(max_length=200)),
+                ('invoice_number', models.CharField(max_length=200)),
                 ('date', models.DateTimeField(auto_now_add=True, null=True)),
-                ('validity', models.CharField(blank=True, max_length=200, null=True)),
                 ('customer', models.CharField(blank=True, max_length=200, null=True)),
                 ('customer_adress', models.CharField(blank=True, max_length=200, null=True)),
                 ('customer_city', models.CharField(blank=True, max_length=200, null=True)),

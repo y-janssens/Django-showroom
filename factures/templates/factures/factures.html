@@ -11,32 +11,32 @@
         <div class="fiches_wrap_c">
             <div id="icon_bg">✎</div>    
             <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-            <a class="fiches_thumbnail" href="">
+            <a class="fiches_thumbnail" href="{% url 'facture_create' %}">
                 <div class="fiches_customer_c">Ajout</div>                
             </a>     
         </div>
 
-{% comment %}         {% for fiche in fiches reversed %}
+{% for facture in invoices  %}
 
     <div class="fiches_wrap">
 
         {% if user.is_superuser %}
-        <a class="fiches_crud" href="{% url 'delete_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
+        <a class="fiches_crud" href="{% url 'facture_delete' facture.id %}"><button class="fiche_delete">X</button></a>
         {% endif %}
 
         <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">
-        <a class="fiches_thumbnail" href="{% url 'fiche_chantier' fiche.id %}">
-            <div class="fiches_customer">{{fiche.last_name}}</div>
-            <div class="fiches_created">{{fiche.created|date:'d-m-Y'}}                
+        <a class="fiches_thumbnail" href="{% url 'facture_client' facture.id %}">
+            <div class="fiches_customer">{{facture.invoice_number}}</div>
+            <div class="fiches_created">{{facture.date|date:'d-m-Y'}}                
             </div>
         </a>     
     </div>
 
-        {% endfor %} {% endcomment %}
+        {% endfor %}
         
     </div>
 
-    {% include 'index/pagination.html' %}
+    {% include 'index/pagination.html' with queryset=invoices custom_range=custom_range %}
     
 </div>
 

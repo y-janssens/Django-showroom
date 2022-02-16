@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>{{page_title}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <style type="text/css">
+
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Rokkitt&family=Share+Tech+Mono&display=swap');
+        
+        #devis_header {
+            position: absolute;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        
+        #devis_content {
+            position: relative;            
+            width: 777px ;
+            height: 1100px ;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            background-image: url('{% include 'factures/base.html' %}');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            object-fit: cover;            
+            overflow: hidden;        
+        }
+        
+        #devis_content * {
+            font-family: "Share Tech Mono", monospace;
+        }
+
+        #devis_ref {
+            width: 100%;
+        }
+        
+        #devis_title_d {
+            position: absolute;
+            top: 2em;
+            left: 2em;
+            font-size: 25px;        
+        }
+        
+        hr {
+            position: absolute;
+            top: 6.5em;
+            left: 50%;
+            width: 60%;
+            height: 5px;
+            border: none;
+            background-color: rgba(0, 0, 0, 0.25);
+            opacity: 0.25;
+            -webkit-transform: translateX(-50%) scaleY(0.25) !important;
+        }
+        
+        #dhr2 {
+            top: 20.25em;            
+        }
+        
+        #dhr3 {
+            top: 96%;
+            width: 80%;
+        }
+        
+        #company_infos {
+            position: absolute;
+            top: 11em;
+            left: 3em;
+            font-size: 12px;
+            font-style: italic;
+            text-align: left;
+            line-height: 13px;
+        }
+        
+        #company_name {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        #devis_infos {
+            position: absolute;
+            top: 14em;
+            left: 2em;
+            width: 250px;
+            height: 5.25em;
+            padding-left: 0.25em;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+        
+        #devis_date, #devis_valid {
+            width: 20em;
+        }
+        
+        #devis_commercial {
+            margin-top: 3px;
+        }
+        
+        #devis_commercial a, #company_infos a, .devis_content a {
+            color: #3a557c;
+            text-decoration: none;
+        }
+                
+        #client_infos {
+            position: absolute;
+            top: 14em;
+            right: 2em;
+            width: 240px;
+            height: 5em;
+            padding-left: 0.25em;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+        
+        .devis_content {
+            font-size: 12px !important;
+            text-align: left;
+            margin-bottom: -10px;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+              
+        .items {
+            position: absolute;
+            top: 27em;
+            left: 50%;
+            width: 90%;
+            font-size: 13px;
+            text-align: center;
+            padding-bottom: 0.5em;
+            magin-bottom: 10px;           
+            -webkit-transform: translateX(-50%);
+        }
+        
+        .items_list, #next {
+            position: relative;
+            top: 29.25em;
+            margin-top: 1em;
+            left: 50%;
+            width: 90%;
+            height: 2em;
+            font-size: 13px;
+            text-align: center;
+            padding-bottom: 0.5em;            
+            -webkit-transform: translateX(-50%);
+            border-bottom: 1px solid #B8BCC1 !important;  
+            border-spacing: 0px 15px;
+        }
+
+        #head {
+            border-bottom: 1px solid #B8BCC1 !important;
+        }
+        
+        .devis_items_content {
+            position: relative;
+            top: -0.25em;
+            width: 3em;
+            font-size: 10px;
+            border: none;
+            outline: none;
+            text-align: left;
+            background-color: transparent;
+        }
+        
+        .items_list * {
+            margin-left: 20px !important;
+            margin-top: 0px;
+            margin-bottom: -10px;
+            text-align: center;
+        }
+        
+        #product, #product2, #product3, #product4, #product5, #product6, #product7, #product8, #product9, #product10 {
+            left: -2px;
+            width: 6.5em;
+        }
+        
+        #quant, #quant2, #quant3, #quant4, #quant5, #quant6, #quant7, #quant8, #quant9, #quant10 {
+            margin-left: -1.2em;
+            width: 4.75em;
+        }
+        
+        #unit, #unit2, #unit3, #unit4, #unit5, #unit6, #unit7, #unit8, #unit9, #unit10 {
+            margin-left: -2em;
+            width: 3em;
+        }
+        
+        #unit_price, #unit_price2, #unit_price3, #unit_price4, #unit_price5, #unit_price6, #unit_price7, #unit_price8, #unit_price9, #unit_price10 {
+            margin-left: -4em;
+            width: 9em;
+        }
+        
+        #tva_margin, #tva_margin2, #tva_margin3, #tva_margin4, #tva_margin5, #tva_margin6, #tva_margin7, #tva_margin8, #tva_margin9, #tva_margin10 {
+            left: 12px !important;
+            width: 3em;
+        }
+        
+        #tva_total, #tva_total2, #tva_total3, #tva_total4, #tva_total5, #tva_total6, #tva_total7, #tva_total8, #tva_total9, #tva_total10 {
+            margin-left: -2.6em;
+            width: 5.5em;
+            background-color: transparent;    
+        }
+        
+        #total_price, #total_price2, #total_price3, #total_price4, #total_price5, #total_price6, #total_price7, #total_price8, #total_price9, #total_price10 {
+            margin-left: -2.5em;
+            width: 5.5em;
+            background-color: transparent;  
+        }
+        
+        #add_line {
+            position: absolute;
+            top: 29.25em;
+            left: 1em;
+            color: rgba(0, 0, 0, 0.35);
+            background-color: transparent;
+            -webkit-transform: scale(2);
+            border: none;
+            cursor: pointer;
+        }
+        
+        #remove_line {
+            position: absolute;
+            top: 26.31em;
+            left: 1em;
+            color: rgba(0, 0, 0, 0.35);
+            background-color: transparent;
+            -webkit-transform: scale(2);
+            visibility: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #signa {
+            position: absolute;
+            width: 20em;
+            height: 5em;
+            bottom: 4em;
+            right: 2em;
+            padding-top: 0.5em;
+            padding-left: 0.5em;
+            font-size: 12px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.025);
+        }
+        
+        #prices_title {
+            position: absolute;
+            bottom: 8em;
+            right: 12.5em;
+            text-align: right;
+        }
+        
+        #prices_value {
+            position: absolute;
+            bottom: 8em;
+            right: 2em;
+            text-align: left;
+        }
+        
+        .price {
+            font-size: 13px;
+        }
+        
+        #total_ttc, #total {
+            font-weight: 700;
+        }
+        
+    </style>
+</head>
+<body>
+
+
+        <div id="devis_content">
+            <div id="devis_header">
+                <div id="devis_title_d">Facture N°: {{facture.invoice_number}}</div>
+            </div>
+    
+            
+            
+            <hr class="devis_hr">
+        
+            <div id="company_infos">
+                <div class="devis_content" id="company_name" >{{company.name}}</div>
+                <div class="devis_content">{{company.adress}}</div></br>
+                <div class="devis_content">{{company.post_code}} {{company.city}}</div></br>
+                <div class="devis_content"><a href="tel:{{company.phone}}">{{company.phone}}</a></div>
+            </div>
+        
+            <div id="devis_infos">
+                <div class="devis_content" id="devis_date">Date de la facture: {{facture.date|date:'d-m-Y'}}</div></br>
+                <div class="devis_content" id="devis_ref">Référence de la facture: {{facture.invoice_number}}</div></br>
+                <div class="devis_content" id="devis_commercial">Commercial: <a href="tel:{{facture.owner.phone}}">{{facture.owner.first_name}} {{facture.owner.last_name}}</a></div>
+            </div>
+        
+            <div id="client_infos">
+                <div class="devis_content" placeholder="Nom du client:">{{facture.customer}}</div></br>
+                <div class="devis_content" placeholder="Adresse:">{{facture.customer_adress}}</div></br>
+                <div class="devis_content" placeholder="Ville:">{{facture.customer_post_code}} {{facture.customer_city}}</div></br>
+                <div class="devis_content" placeholder="Téléphone:"><a href="tel:{{facture.customer_phone}}">{{facture.customer_phone}}</a></div>
+            </div>
+            <hr class="devis_hr" id="dhr2">
+        
+            <table class="items" id="head">
+                <tbody>
+                    <tr>
+                        <td>Description</td>
+                        <td>Quantité</td>
+                        <td>Unité</td>
+                        <td>Prix unitaire HT</td>
+                        <td>%TVA</td>
+                        <td>Total TVA</td>
+                        <td>Total TTC</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+            
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product" placeholder="Produit:">{{facture.product_1}}</div></td>
+                        <td><div class="devis_items_content" id="quant" placeholder="Quantité:">{{facture.quantity_1}}</div></td>
+                        <td><div class="devis_items_content" id="unit" placeholder="Unité:">{{facture.unit_1}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price" placeholder="Prix unitaire HT:">{{facture.unit_price_1}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin" placeholder="%TVA:">{{facture.vat_1}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total" placeholder="Total TVA:">{{facture.total_vat_1}}</div></td>
+                        <td><div class="devis_items_content" id="total_price" placeholder="Total TTC:">{{facture.total_full_1}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            {% if devis.product_2 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product2" placeholder="Produit:">{{facture.product_2}}</div></td>
+                        <td><div class="devis_items_content" id="quant2" placeholder="Quantité:">{{facture.quantity_2}}</div></td>
+                        <td><div class="devis_items_content" id="unit2" placeholder="Unité:">{{facture.unit_2}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price2" placeholder="Prix unitaire HT:">{{facture.unit_price_2}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin2" placeholder="%TVA:">{{facture.vat_2}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total2" placeholder="Total TVA:">{{facture.total_vat_2}}</div></td>
+                        <td><div class="devis_items_content" id="total_price2" placeholder="Total TTC:">{{facture.total_full_2}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            {% endif  %}
+            {% if devis.product_3 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product3" placeholder="Produit:">{{facture.product_3}}</div></td>
+                        <td><div class="devis_items_content" id="quant3" placeholder="Quantité:">{{facture.quantity_3}}</div></td>
+                        <td><div class="devis_items_content" id="unit3" placeholder="Unité:">{{facture.unit_3}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price3" placeholder="Prix unitaire HT:">{{facture.unit_price_3}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin3" placeholder="%TVA:">{{facture.vat_3}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total3" placeholder="Total TVA:">{{facture.total_vat_3}}</div></td>
+                        <td><div class="devis_items_content" id="total_price3" placeholder="Total TTC:">{{facture.total_full_3}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_4 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product4" placeholder="Produit:">{{facture.product_4}}</div></td>
+                        <td><div class="devis_items_content" id="quant4" placeholder="Quantité:">{{facture.quantity_4}}</div></td>
+                        <td><div class="devis_items_content" id="unit4" placeholder="Unité:">{{facture.unit_4}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price4" placeholder="Prix unitaire HT:">{{facture.unit_price_4}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin4" placeholder="%TVA:">{{facture.vat_4}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total4" placeholder="Total TVA:">{{facture.total_vat_4}}</div></td>
+                        <td><div class="devis_items_content" id="total_price4" placeholder="Total TTC:">{{facture.total_full_4}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_5 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product5" placeholder="Produit:">{{facture.product_5}}</div></td>
+                        <td><div class="devis_items_content" id="quant5" placeholder="Quantité:">{{facture.quantity_5}}</div></td>
+                        <td><div class="devis_items_content" id="unit5" placeholder="Unité:">{{facture.unit_5}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price5" placeholder="Prix unitaire HT:">{{facture.unit_price_5}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin5" placeholder="%TVA:">{{facture.vat_5}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total5" placeholder="Total TVA:">{{facture.total_vat_5}}</div></td>
+                        <td><div class="devis_items_content" id="total_price5" placeholder="Total TTC:">{{facture.total_full_5}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_6 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product6" placeholder="Produit:">{{facture.product_6}}</div></td>
+                        <td><div class="devis_items_content" id="quant6" placeholder="Quantité:">{{facture.quantity_6}}</div></td>
+                        <td><div class="devis_items_content" id="unit6" placeholder="Unité:">{{facture.unit_6}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price6" placeholder="Prix unitaire HT:">{{facture.unit_price_6}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin6" placeholder="%TVA:">{{facture.vat_6}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total6" placeholder="Total TVA:">{{facture.total_vat_6}}</div></td>
+                        <td><div class="devis_items_content" id="total_price6" placeholder="Total TTC:">{{facture.total_full_6}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_7 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product7" placeholder="Produit:">{{facture.product_7}}</div></td>
+                        <td><div class="devis_items_content" id="quant7" placeholder="Quantité:">{{facture.quantity_7}}</div></td>
+                        <td><div class="devis_items_content" id="unit7" placeholder="Unité:">{{facture.unit_7}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price7" placeholder="Prix unitaire HT:">{{facture.unit_price_7}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin7" placeholder="%TVA:">{{facture.vat_7}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total7" placeholder="Total TVA:">{{facture.total_vat_7}}</div></td>
+                        <td><div class="devis_items_content" id="total_price7" placeholder="Total TTC:">{{facture.total_full_7}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_8 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product8" placeholder="Produit:">{{facture.product_8}}</div></td>
+                        <td><div class="devis_items_content" id="quant8" placeholder="Quantité:">{{facture.quantity_8}}</div></td>
+                        <td><div class="devis_items_content" id="unit8" placeholder="Unité:">{{facture.unit_8}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price8" placeholder="Prix unitaire HT:">{{facture.unit_price_8}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin8" placeholder="%TVA:">{{facture.vat_8}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total8" placeholder="Total TVA:">{{facture.total_vat_8}}</div></td>
+                        <td><div class="devis_items_content" id="total_price8" placeholder="Total TTC:">{{facture.total_full_8}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_9 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product9" placeholder="Produit:">{{facture.product_9}}</div></td>
+                        <td><div class="devis_items_content" id="quant9" placeholder="Quantité:">{{facture.quantity_9}}</div></td>
+                        <td><div class="devis_items_content" id="unit9" placeholder="Unité:">{{facture.unit_9}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price9" placeholder="Prix unitaire HT:">{{facture.unit_price_9}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin9" placeholder="%TVA:">{{facture.vat_9}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total9" placeholder="Total TVA:">{{facture.total_vat_9}}</div></td>
+                        <td><div class="devis_items_content" id="total_price9" placeholder="Total TTC:">{{facture.total_full_9}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            {% if devis.product_10 != None %}
+    
+            <table class="items_list">
+                <tbody>
+                    <tr>
+                        <td><div class="devis_items_content" id="product10" placeholder="Produit:">{{facture.product_10}}</div></td>
+                        <td><div class="devis_items_content" id="quant10" placeholder="Quantité:">{{facture.quantity_10}}</div></td>
+                        <td><div class="devis_items_content" id="unit10" placeholder="Unité:">{{facture.unit_10}}</div></td>
+                        <td><div class="devis_items_content" id="unit_price10" placeholder="Prix unitaire HT:">{{facture.unit_price_10}}</div></td>
+                        <td><div class="devis_items_content" id="tva_margin10" placeholder="%TVA:">{{facture.vat_10}}</div></td>
+                        <td><div class="devis_items_content" id="tva_total10" placeholder="Total TVA:">{{facture.total_vat_10}}</div></td>
+                        <td><div class="devis_items_content" id="total_price10" placeholder="Total TTC:">{{facture.total_full_10}}</div></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            {% endif  %}
+            
+            <div id="prices_title">
+                <span class="price">Total HT</span></br>
+                <span class="price">Total TVA</span></br>
+                <span class="price" id="total">Total TTC</span>
+            </div>
+        
+            <div id="prices_value">
+                <span class="price" id="total_ht">{{facture.total_ht}}</span></br>
+                <span class="price" id="total_tva">{{facture.total_vat}}</span></br>
+                <span class="price" id="total_ttc">{{facture.total_full}}</span>
+            </div>
+        
+            <div id="signa">Signature du client:</div>
+            <hr class="devis_hr" id="dhr3">       
+                    
+    
+            </div>
+        </div>    
+       
+    
+
+</body>
+</html>

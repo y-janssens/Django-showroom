@@ -1,0 +1,101 @@
+{% extends "index/index.html" %} 
+{% load static %} 
+{% block content %}
+
+<div id="devis_c_wrapper">  
+
+    <form action="{% url 'facture_create' %}" method="POST">
+        {% csrf_token %}
+    <div id="devis_c_content">
+        <div id="devis_c_header">
+            <div id="devis_c_title">Facture N°: {{form.invoice_number}}</div>
+        </div>
+
+        
+        
+        <hr class="devis_c_hr">
+    
+        <div id="company_c_infos">
+            <div class="devis_c_content" placeholder="Société: " id="company_name" >{{company.name}}</div></br>
+            <div class="devis_c_content" placeholder="Adresse: ">{{company.adress}}</div></br>
+            <div class="devis_c_content" placeholder="Ville: ">{{company.post_code}} {{company.city}}</div></br>
+            <div class="devis_c_content" placeholder="Tel: ">{{company.phone}}</div>
+        </div>
+    
+        <div id="devis_c_infos">
+            <div class="devis_c_content" id="devis_c_date" ></div></br>
+            <div class="devis_c_content" id="devis_c_commercial">Commercial: {{profile.first_name}} {{profile.last_name}}</div>
+        </div>
+    
+        <div id="client_c_infos">
+            <input type="text" class="devis_c_content" name="customer" placeholder="Nom du client:" /></br>
+            <input type="text" class="devis_c_content" name="customer_adress" placeholder="Adresse:" /></br>
+            <input type="text" class="devis_c_content" name="customer_city" placeholder="Ville:" /></br>
+            <input type="text" class="devis_c_content" name="customer_post_code" placeholder="Code postal:" /></br>
+            <input type="text" class="devis_c_content" name="customer_phone" placeholder="Téléphone:" />
+        </div>
+        <hr class="devis_c_hr" id="dhr2">
+    
+        <table class="items" id="head">
+            <tbody>
+                <tr>
+                    <td>Description</td>
+                    <td>Quantité</td>
+                    <td>Unité</td>
+                    <td>Prix unitaire HT</td>
+                    <td>%TVA</td>
+                    <td>Total TVA</td>
+                    <td>Total TTC</td>
+                </tr>
+    
+            </tbody>
+        </table>
+            
+        <table class="items_list_c" onchange="calc()">
+            <tbody>
+                <tr>
+                    <td><input class="items_c_content" name="product_c" id="product_c" placeholder="Produit:" /></td>
+                    <td><input class="items_c_content" name="quant_c" id="quant_c" placeholder="Quantité:" /></td>
+                    <td><input class="items_c_content" name="unit_c" id="unit_c" placeholder="Unité:" /></td>
+                    <td><input class="items_c_content" name="unit_price_c" id="unit_price_c" placeholder="Prix unitaire HT:" /></td>
+                    <td><input class="items_c_content" name="tva_margin_c" id="tva_margin_c" placeholder="%TVA:" /></td>
+                    <td><input class="items_c_content" name="tva_total_c" id="tva_total_c" placeholder="Total TVA:" /></td>
+                    <td><input class="items_c_content" name="total_price_c" id="total_price_c" placeholder="Total TTC:" /></td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <button id="add_line" type="button" onclick="add_row()">+</button>
+        <button id="remove_line" type="button" onclick="remove_row()">-</button>
+    
+        <div id="prices_title">
+            <span class="price">Total HT</span></br>
+            <span class="price">Total TVA</span></br>
+            <span class="price" id="total">Total TTC</span>
+        </div>
+    
+        <div id="prices_value">
+            <input class="price" name="total_ht_c" id="total_ht_c"/></br>
+            <input class="price" name="total_tva_c" id="total_tva_c"/></br>
+            <input class="price" name="total_ttc_c" id="total_ttc_c"/>
+        </div>
+    
+        <div id="signa">Signature du client:</div>
+        <hr class="devis_c_hr" id="dhr3">       
+            
+
+
+
+        </div>
+    </div>    
+
+
+
+    <div id="devis_c_btns_grp">
+        <button class="devis_c_btn" id="devis_c_save" type="submit">Valider</button>
+    </div>
+</form>
+
+</div>
+<script src="{% static 'js/facture_form.js' %}"></script>
+{% endblock %}

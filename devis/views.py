@@ -267,8 +267,7 @@ def devis_create(request):
 @admin_required(login_url='login')
 def delete_devis(request, pk):
     devis = Devi.objects.get(id=pk)
-    print(f'delete: {devis}')
-    #devis.delete()
+    devis.delete()
     return redirect('devis')
 
 
