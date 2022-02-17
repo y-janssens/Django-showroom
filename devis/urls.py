@@ -11,6 +11,7 @@ urlpatterns = [
     path('save_devis/<pk>', views.devis_save, name="devis_save"),
     path('print_devis/<pk>', views.devis_print, name="devis_print"),
     path('send_devis/<pk>', views.devis_send, name="devis_send"),
+    path('convert_invoice/<pk>', views.convert_invoice, name="convert_invoice"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

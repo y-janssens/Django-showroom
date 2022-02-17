@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from decorators import login_required, admin_required
 from django.contrib.auth.models import User
-from django.contrib.admin.models import LogEntryManager, LogEntry
+from django.contrib.admin.models import LogEntry
 from users.models import Profile
 from fiches.models import Fiche
 from users.forms import ProfileForm

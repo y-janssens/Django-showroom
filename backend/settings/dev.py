@@ -1,4 +1,3 @@
-import environ
 from .base import *
 
 local = True

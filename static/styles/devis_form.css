@@ -149,6 +149,7 @@ hr.devis_c_hr {
 
 .devis_c_content {
     font-size: 12px !important;
+    width: 240px;
     text-align: left;
     background-color: transparent;
     border: none;

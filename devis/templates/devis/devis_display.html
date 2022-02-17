@@ -24,7 +24,7 @@
             <div class="devis_content" id="devis_date">Date du devis: {{devis.date|date:'d-m-Y'}}</div></br>
             <div class="devis_content" id="devis_ref">Référence du devis: {{devis.estimate_number}}</div></br>
             <div class="devis_content" id="devis_valid">{{devis.validity}}</div></br>
-            <div class="devis_content" id="devis_commercial">Commercial: <a href="tel:{{profile.phone}}">{{profile.first_name}} {{profile.last_name}}</a></div>
+            <div class="devis_content" id="devis_commercial">Commercial: <a href="tel:{{devis.owner.phone}}">{{devis.owner.first_name}} {{devis.owner.last_name}}</a></div>
         </div>
     
         <div id="client_infos">
@@ -240,6 +240,7 @@
         <button class="devis_btn" id="devis_save"><a href="{% url 'devis_save' devis.id %}">Enregistrer</a></button>
         <button class="devis_btn" id="devis_send">Envoyer</button>                
         <button class="devis_btn" id="devis_print"><a href="{% url 'devis_print' devis.id %}">Imprimer</a></button>
+        <button class="devis_btn" id="devis_print"><a href="{% url 'convert_invoice' devis.id %}">Facturer</a></button>
     </div>
 
     <div id="devis_send_form">

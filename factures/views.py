@@ -257,7 +257,7 @@ def facture_create(request):
             facture.total_full = request.POST['total_ttc_c']
 
             facture.save()
-            return redirect('factures')
+            return redirect(f'/factures/facture/{facture.id}')
 
     context = {'page_title': page_title, 'profile': profile,
                'form': form, 'company': company}
@@ -278,7 +278,12 @@ def facture_client(request, pk):
 
     users = User.objects.all()
     profiles = Profile.objects.all()
-    company = Societe.objects.get(pk=1)
+    
+    if Societe.objects.filter(pk=1).exists():
+        company = Societe.objects.get(pk=1)
+    else:
+        company = None
+        
     facture = Facture.objects.get(id=pk)
     page_title = f"Facture N°{facture.invoice_number}"
     context = {'page_title': page_title, 'facture': facture,

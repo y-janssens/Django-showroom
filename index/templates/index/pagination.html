@@ -2,7 +2,7 @@
 <div id="pagination_wrapper">
 
     {% if queryset.has_previous %}
-        <a href="?page={{queryset.previous_page_number}}" class="pages" id="previous_page">&#10094;</a>
+        <a href="?page={{queryset.previous_page_number}}" data-page="{{queryset.previous_page_number}}" class="pages" id="previous_page">&#10094;</a>
     {% endif %}
 
 
@@ -18,7 +18,7 @@
     
 
     {% if queryset.has_next %}
-        <a href="?page={{queryset.next_page_number}}" class="pages" id="next_page">&#10095;</a>
+        <a href="?page={{queryset.next_page_number}}" data-page="{{queryset.next_page_number}}" class="pages" id="next_page">&#10095;</a>
     {% endif %}
 
 </div>

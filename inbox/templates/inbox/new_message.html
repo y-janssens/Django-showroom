@@ -1,0 +1,49 @@
+{% extends "index/index.html" %} 
+{% load static %} 
+{% block content %}
+
+<div id="messages_wrapper">
+
+    {% include 'index/search_bar.html' %}
+    <form action="{% url 'new_message' %}" method="POST">
+        {% csrf_token %}
+        <div id="messages_content">
+            <div id="messages_link">
+                <a href="#" id="new_message">Nouveau message</a>
+                <a href="{% url 'inbox' %}">Boite de réception</a>
+                <a href="{% url 'outbox' %}">Messages envoyés</a>
+            </div>
+                <ul class="messages_list">
+                    <li class="message head">
+                        <span class="messages_header">De</span>
+                        <span class="messages_header">À</span>
+                    </li>    
+                </ul> 
+                
+                    <span class="new_message">
+                        {{user.profile.first_name}} {{user.profile.last_name}}
+                        <select name="recipient" class="form_fiche_input" id="id_recipient">
+                            {% for profile in profiles%}
+                    <option value="{{profile.id}}">{{profile.first_name}} {{profile.last_name}}</option>
+                    {% endfor %}
+                          
+                          </select>
+                    </span>           
+                
+
+                    <input type="text" name="subject" maxlength="200" class="form_fiche_input" required="" id="id_subject" placeholder="Sujet">
+                    <hr class="inbox">
+
+                    <div id="body_container">
+                    <textarea name="body" cols="40" rows="10" class="form_fiche_input" required="" id="id_body" placeholder="Message"></textarea>
+                    </div>
+
+                    <button type="submit" id="inbox_button">Envoyer</button>
+                    
+
+        </div>
+    </form>
+    
+</div>
+
+{% endblock %}

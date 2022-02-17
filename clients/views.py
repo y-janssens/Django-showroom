@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout
 from decorators import login_required, admin_required, role_required
 from .models import Client
 from .forms import ClientForm

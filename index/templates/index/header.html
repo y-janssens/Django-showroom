@@ -1,8 +1,9 @@
 {% load static %}
 <div id="header">
   <div id="links_group">
-  {% if user.is_authenticated == True %}
+  {% if user.is_authenticated %}
   
+  <a class="header_link" href="{% url 'inbox' %}">Messagerie</a>
   <a class="header_link" href="{% url 'profile' %}">Profil</a>
   <a class="header_link"  href="{% url 'logout' %}">Déconnexion</a>
 
@@ -10,6 +11,29 @@
   <a class="header_link"  href="{% url 'login' %}">Connexion</a>
   {% endif %}
   </div>
+
   <span class="nav_title">{{page_title}}</span>
-  <a id="home" href="{% url 'home' %}">Accueil</a>
+
+  <a id="home" href="{% url 'home' %}"><img id="home-icon" src="{% static 'images/home-icon.png' %}" /></a>
+  <div id="nav_group">
+  
+  {% if user.is_authenticated %}
+
+
+  {% if 'fiches' in request.path %}
+  <a id="current" href="{% url 'fiches' %}">Fiches</a>
+  {% elif 'devis' in request.path %}
+  <a id="current" href="{% url 'devis' %}">Devis</a>
+  {% elif 'factures' in request.path %}
+  <a id="current" href="{% url 'factures' %}">Factures</a>
+  {% elif 'clients' in request.path %}
+  <a id="current" href="{% url 'clients' %}">Clients</a>
+  {% elif 'dashboard' in request.path %}
+  <a id="current" href="{% url 'admin' %}">Administration</a>
+  {% endif %}
+
+  <button id="back" onClick="javascript:history.go(-1);">Retour</button>  
+  {% endif %}
+  </div>
+
 </div>

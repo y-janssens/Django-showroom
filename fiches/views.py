@@ -123,7 +123,7 @@ def create_fiche_chantier(request):
             fiche = form.save(commit=False)
             fiche.owner = profile
             form.save()
-            return redirect('fiches')
+            return redirect(f'/fiches/fiche/{fiche.id}')
 
     context = {'page_title': page_title, 'form': form}
     return render(request, 'fiches/fiche_form.html', context)

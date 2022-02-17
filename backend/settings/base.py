@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'devis.apps.DevisConfig',
     'factures.apps.FacturesConfig',
     'clients.apps.ClientsConfig',
+    'inbox.apps.InboxConfig',
 ]
 
 MIDDLEWARE = [
