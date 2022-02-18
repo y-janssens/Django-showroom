@@ -16,3 +16,15 @@
   #admin_title a:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 700px) {
+    #admin_title {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    #admin_title {
+      font-size: 14px;
+    }
+  }

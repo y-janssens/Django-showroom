@@ -15,7 +15,7 @@
   width: 90%;
   height: 20px;
   left: 50%;
-  margin: 10px 0 30px 0;
+  margin: 20px 0 50px 0;
   transform: translateX(-50%);
   display: flex;
   font-size: 14px;
@@ -23,27 +23,42 @@
 }
 
 #new_message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 175px;
+  height: 35px;
   font-size: 18px;
+  margin-right: -30px;
+  margin-top: 0px !important;
+  border-radius: 5px;
+  color: #ffffff !important;
+  background-color: #3a557c;
 }
 
 #messages_link a {
   text-decoration: none;
   color: #3a557c;
+  margin-top: 10px;
 }
 
 #messages_link a:hover {
   text-decoration: underline;
 }
 
+#new_message:hover {
+  text-decoration: none !important;
+}
+
 #messages_content {
   position: absolute;
   top: 100px;
-  bottom: 130px;
+  bottom: 170px;
   left: 50%;
   width: 60%;
   transform: translateX(-50%);
   border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #F1F4F7;
   justify-items: center;
   box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
     rgb(0 0 0 / 50%) 0px 16px 10px -10px;
@@ -125,10 +140,10 @@
 .messages_crud:hover {
   transform: scale(1.25);
 }
+
 .message_delete {
   width: inherit;
   height: inherit;
-
   pointer-events: none;
   font-family: "Comic Neue", cursive !important;
   outline: none;
@@ -148,6 +163,7 @@
   transform: translateX(-50%);
   display: flex;
   justify-content: space-around;
+  align-items: center;
   color: rgba(0, 0, 0, 0.75);
   font-size: 12px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
@@ -180,7 +196,7 @@ hr.inbox {
   position: absolute;
   left: 50%;
   width: 80%;
-  top: 200px;
+  top: 230px;
   bottom: 75px;
   margin: 25px 0 25px 0;
   border-radius: 10px;
@@ -213,4 +229,102 @@ hr.inbox {
   border-radius: 5px;
   background-color: rgba(58, 85, 124, 1);
   cursor: pointer;
+}
+
+@media (max-width: 850px) {
+  #messages_link {
+    font-size: 12px;
+  }
+
+  #new_message {
+    width: 150px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 750px) {
+  #messages_link {
+    font-size: 10px;
+  }
+
+  #messages_link a {
+    margin: 10px 0 0 0;
+  }
+
+  #new_message {
+    width: 125px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 700px) {
+  #messages_content {
+    width: 80%;
+  }
+
+  .messages_list *{
+    font-size: 10px;
+  }
+
+  .message_delete {
+    font-size: 14px;
+  }
+
+  #new_message {
+    height: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+
+  #messages_link {
+    font-size: 8px;
+    margin: 20px 0 30px 0;
+  }
+
+  .messages_list *{
+    font-size: 8px;
+  }
+
+  #messages_link a {
+    margin: 5px 0 0 0;
+  }
+
+  .message_delete {
+    font-size: 12px;
+  }
+
+  #new_message {
+    height: 20px;
+    width: 90px;
+    font-size: 10px;
+  }
+
+  .new_message {
+    font-size: 10px;
+  }
+
+  #id_recipient {
+    font-size: 10px;
+  }
+
+  #id_subject {
+    margin: 0;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  #body_container {
+    top: 175px;   
+    bottom: 55px; 
+  }
+
+  #id_body {
+    font-size: 12px;
+  }
+
+  #inbox_button {
+    height: 40px;
+    width: 180px;
+  }
 }

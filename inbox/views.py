@@ -3,27 +3,30 @@ from decorators import login_required
 from .models import Message
 from .forms import MessageForm
 from users.models import Profile
+from .utils import searchReceivedMessage, searchSentMessage, paginateReceivedMessages
 
 
 @login_required(login_url='login')
 def inbox(request):
     profile = request.user.profile
-    messageRequests = profile.messages.all()
+    messageRequests, search_query = searchReceivedMessage(request)
+    custom_range, messageRequests = paginateReceivedMessages(request, messageRequests, 20)
 
     page_title = "Boite de réception"
     context = {'page_title': page_title,
-               'messageRequests': messageRequests, 'profile': profile}
+               'messageRequests': messageRequests, 'profile': profile, 'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'inbox/inbox.html', context)
 
 
 @login_required(login_url='login')
 def outbox(request):
-    profile = request.user.profile
-    messageRequests = profile.sent.all()
+    profile = request.user.profile    
+    messageRequests, search_query = searchSentMessage(request)
+    custom_range, messageRequests = paginateReceivedMessages(request, messageRequests, 20)
 
     page_title = "Messages envoyés"
     context = {'page_title': page_title,
-               'messageRequests': messageRequests, 'profile': profile}
+               'messageRequests': messageRequests, 'profile': profile, 'search_query': search_query, 'custom_range': custom_range}
     return render(request, 'inbox/outbox.html', context)
 
 
