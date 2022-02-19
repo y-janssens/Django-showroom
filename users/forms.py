@@ -7,7 +7,7 @@ from .choices import *
 
 class RegisterForm(UserCreationForm):
     username = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Nom d\'utilisateur'}))
-    password1 = forms.CharField(max_length=50, widget=forms.PasswordInput(attrs={'placeholder': '*********'}))
+    password1 = forms.CharField(max_length=50, widget=forms.PasswordInput(attrs={'placeholder': 'Mot de passe'}))
     password2 = None
     email = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': 'Adresse e-mail'}))
     class Meta:

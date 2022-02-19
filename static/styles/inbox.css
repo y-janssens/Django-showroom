@@ -58,11 +58,11 @@
   width: 60%;
   transform: translateX(-50%);
   border-radius: 20px;
-  background-color: #F1F4F7;
+  background-color: #f1f4f7;
   justify-items: center;
   box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
     rgb(0 0 0 / 50%) 0px 16px 10px -10px;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 #messages_content ul {
@@ -70,7 +70,13 @@
 }
 
 .messages_list {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 0;
   list-style: none;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .message {
@@ -87,13 +93,16 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
 
+.unread {
+  font-weight: 700;
+}
+
 .head {
   width: 110%;
   justify-content: space-around;
   border: none;
   color: #000000;
-  margin-top: -10px;
-  margin-bottom: -10px;
+  margin-bottom: -15px;
 }
 
 .message_date {
@@ -111,6 +120,8 @@
 }
 
 #message_subject_full {
+  position: absolute;
+  top: 140px;
   width: 100%;
   text-align: center;
   color: #3a557c;
@@ -122,10 +133,13 @@
   position: absolute;
   width: 80%;
   left: 50%;
+  top: 175px;
+  bottom: 25px;
   transform: translateX(-50%);
   text-align: justify;
   font-size: 12px;
   line-height: 18px;
+  overflow-y: auto;
 }
 
 .messages_crud {
@@ -154,6 +168,16 @@
   border: none;
 }
 
+#messages_count {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .new_message {
   position: relative;
   width: 90%;
@@ -171,6 +195,7 @@
 
 #id_recipient {
   position: relative;
+  height: 17px;
 }
 
 #id_subject {
@@ -262,7 +287,19 @@ hr.inbox {
     width: 80%;
   }
 
-  .messages_list *{
+  #message_subject_full {
+    font-size: 14px;
+  }
+
+  .message_body_full {
+    font-size: 10px;
+  }
+
+  .messages_list * {
+    font-size: 10px;
+  }
+
+  #messages_count {
     font-size: 10px;
   }
 
@@ -276,13 +313,28 @@ hr.inbox {
 }
 
 @media (max-width: 450px) {
-
   #messages_link {
     font-size: 8px;
-    margin: 20px 0 30px 0;
   }
 
-  .messages_list *{
+  #message_subject_full {
+    top: 110px;
+    font-size: 12px;
+  }
+  
+  .message_body_full {
+    top: 135px;
+    font-size: 8px;
+  }
+
+  .messages_list {
+    top: 30px;
+  }
+  .messages_list * {
+    font-size: 8px;
+  }
+
+  #messages_count {
     font-size: 8px;
   }
 
@@ -292,6 +344,10 @@ hr.inbox {
 
   .message_delete {
     font-size: 12px;
+  }
+
+  .head {
+    margin-bottom: -25px;
   }
 
   #new_message {
@@ -315,8 +371,8 @@ hr.inbox {
   }
 
   #body_container {
-    top: 175px;   
-    bottom: 55px; 
+    top: 175px;
+    bottom: 55px;
   }
 
   #id_body {

@@ -10,11 +10,13 @@ from .utils import searchReceivedMessage, searchSentMessage, paginateReceivedMes
 def inbox(request):
     profile = request.user.profile
     messageRequests, search_query = searchReceivedMessage(request)
-    custom_range, messageRequests = paginateReceivedMessages(request, messageRequests, 20)
+    custom_range, messageRequests = paginateReceivedMessages(request, messageRequests, 15)
+    messageCount = profile.messages.distinct().count()
+    unreadCount = profile.messages.filter(is_read=False).count()
 
     page_title = "Boite de réception"
     context = {'page_title': page_title,
-               'messageRequests': messageRequests, 'profile': profile, 'search_query': search_query, 'custom_range': custom_range}
+               'messageRequests': messageRequests, 'profile': profile, 'search_query': search_query, 'custom_range': custom_range, 'messageCount': messageCount, 'unreadCount': unreadCount}
     return render(request, 'inbox/inbox.html', context)
 
 
@@ -22,21 +24,25 @@ def inbox(request):
 def outbox(request):
     profile = request.user.profile    
     messageRequests, search_query = searchSentMessage(request)
-    custom_range, messageRequests = paginateReceivedMessages(request, messageRequests, 20)
+    custom_range, messageRequests = paginateReceivedMessages(request, messageRequests, 15)
+    messageCount = profile.sent.distinct().count()
 
     page_title = "Messages envoyés"
     context = {'page_title': page_title,
-               'messageRequests': messageRequests, 'profile': profile, 'search_query': search_query, 'custom_range': custom_range}
+               'messageRequests': messageRequests, 'profile': profile, 'search_query': search_query, 'custom_range': custom_range, 'messageCount': messageCount}
     return render(request, 'inbox/outbox.html', context)
 
 
 def viewMessage(request, pk):
     profile = request.user.profile
-    messageRequest = Message.objects.get(id=pk)
+    message = Message.objects.get(id=pk)
+    if message.is_read == False:
+        message.is_read = True
+        message.save()
 
     page_title = "Lire le message"
     context = {'page_title': page_title,
-               'messageRequest': messageRequest, 'profile': profile}
+               'message': message, 'profile': profile}
     return render(request, 'inbox/message.html', context)
 
 
@@ -60,6 +66,6 @@ def newMessage(request):
 
 
 def deleteMessage(request, pk):
-    messageRequest = Message.objects.get(id=pk)
-    messageRequest.delete()
+    message = Message.objects.get(id=pk)
+    message.delete()
     return redirect('inbox')

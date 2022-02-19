@@ -26,3 +26,15 @@
 #admin:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 450px) {
+  #admin {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #admin {
+    font-size: 8px !important;
+  }
+}

@@ -9,7 +9,7 @@
         {% csrf_token %}
         <div id="messages_content">
             <div id="messages_link">
-                <a href="#" id="new_message">Nouveau message</a>
+                <a href="#">Nouveau message</a>
                 <a href="{% url 'inbox' %}">Boite de réception</a>
                 <a href="{% url 'outbox' %}">Messages envoyés</a>
             </div>

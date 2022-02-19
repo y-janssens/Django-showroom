@@ -1,3 +1,26 @@
 crud confirmation prompts: X
+Logs à revoir
 
-alertes non responsives
+Reponsive design:
+
+    Header: Ok
+    Footer: Ok
+    Messagerie: Ok
+    Profil: Ok
+    Login: Ok
+    Register: Ok
+    Reset: Ok
+    Alertes: Ok
+
+    Hub fiches, devis, factures: Ok
+
+Unresponsive design:
+    
+    Admin
+    Société
+    Utilisateurs
+    Fiches
+    Devis
+    Factures
+    Clients
+    

@@ -30,6 +30,17 @@
 
                 {% endfor %}
                 </ul>
+
+                <div id="messages_count">
+                    
+                    {% if messageCount < 2 %}
+                    <span>Total: {{messageCount}} message</span>
+                    {% else %}
+                    <span>Total: {{messageCount}} messages</span>
+                    {% endif %}                    
+
+                </div>
+
         </div>
 
         {% include 'index/pagination.html' with queryset=messageRequests custom_range=custom_range %}

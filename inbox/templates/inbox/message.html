@@ -19,14 +19,14 @@
                         <span class="messages_header">Date</span>
                     </li>     
                     <li class="message">
-                        <span class="message_sender">{{messageRequest.sender.first_name}} {{messageRequest.sender.last_name}}</span>
-                        <span class="message_sender">{{messageRequest.recipient.first_name}} {{messageRequest.recipient.last_name}}</span>
-                        <span class="message_date">{{messageRequest.created | date:"d-m-Y - H:i"}}</span>
+                        <span class="message_sender">{{message.sender.first_name}} {{message.sender.last_name}}</span>
+                        <span class="message_sender">{{message.recipient.first_name}} {{message.recipient.last_name}}</span>
+                        <span class="message_date">{{message.created | date:"d-m-Y - H:i"}}</span>
                     </li>           
                 </ul>
 
-                <div id="message_subject_full">{{messageRequest.subject}}</div>
-                <span class="message_body_full">{{messageRequest.body}}</span>
+                <div id="message_subject_full">{{message.subject}}</div>
+                <span class="message_body_full">{{message.body}}</span>
         </div>
 
     

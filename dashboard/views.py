@@ -30,7 +30,7 @@ def admin_logs(request):
     page_title = "Historique d'utilisation"
     users = User.objects.all()
     fiche = User.objects.all()
-    logs = LogEntry.objects.order_by('-action_time')
+    logs = LogEntry.objects.all().order_by('-action_time')[0:30]
     context = {'page_title': page_title,
                'logs': logs, 'users': users, 'fiche': fiche}
     return render(request, 'dashboard/logs.html', context)

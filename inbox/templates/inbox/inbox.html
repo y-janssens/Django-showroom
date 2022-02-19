@@ -12,6 +12,7 @@
                 <a href="{% url 'inbox' %}">Boite de réception</a>
                 <a href="{% url 'outbox' %}">Messages envoyés</a>
             </div>
+            
                 <ul class="messages_list">
                     <li class="message head">
                         <span class="messages_header">De</span>
@@ -20,17 +21,46 @@
                     </li>
                 {% for message in messageRequests %}
 
+                    {% if message.is_read == False %}
+
+                <li class="message unread">
+                    <span class="message_sender">{{message.sender.first_name}} {{message.sender.last_name}}</span>
+                    <a href="{% url 'view_message' message.id %}">{{message.subject | slice:"40"}}</a>                    
+                    <span class="message_date">{{message.created | date:"d-m-Y - H:i"}}
+                        <a class="messages_crud" href="{% url 'delete_message' message.id %}"><button class="message_delete">X</button></a>
+                    </span>                    
+                </li>
+
+                {% else %}
+
                 <li class="message">
                     <span class="message_sender">{{message.sender.first_name}} {{message.sender.last_name}}</span>
                     <a href="{% url 'view_message' message.id %}">{{message.subject | slice:"40"}}</a>                    
                     <span class="message_date">{{message.created | date:"d-m-Y - H:i"}}
                         <a class="messages_crud" href="{% url 'delete_message' message.id %}"><button class="message_delete">X</button></a>
-                    </span>
-                    
+                    </span>                    
                 </li>
+
+                {% endif %}
 
                 {% endfor %}
                 </ul>
+
+                <div id="messages_count">
+
+                    {% if unreadCount < 2 %}
+                    <span>{{unreadCount}} Nouveau message</span>
+                    {% else %}
+                    <span>{{unreadCount}} Nouveaux messages</span>
+                    {% endif %}
+                    
+                    {% if messageCount < 2 %}
+                    <span>Total: {{messageCount}} message</span>
+                    {% else %}
+                    <span>Total: {{messageCount}} messages</span>
+                    {% endif %}                    
+
+                </div>
         </div>
 
     {% include 'index/pagination.html' with queryset=messageRequests custom_range=custom_range %}
