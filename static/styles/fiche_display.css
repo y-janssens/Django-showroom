@@ -26,7 +26,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.9);
+    margin-top: 25px;
     width: 1200px !important;
     height: 950px !important;
     background-color: rgba(255, 255, 255, 0.5);
@@ -209,22 +210,8 @@
     background-color: rgb(175, 95, 29);
 }
 
-/* @media (max-width: 1400px) {
-        
-    #fiche_content {
-        transform: translate(-50%, -50%) scale(0.75);
-    }
-}
 
-@media (max-width: 1000px) {
-    
-    #fiche_content {
-        transform: translate(-50%, -50%) scale(0.75);
-    } 
-    
-}
-
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
     
     #fiche_content {
         transform: translate(-50%, -50%) scale(0.7) rotateZ(-90deg);

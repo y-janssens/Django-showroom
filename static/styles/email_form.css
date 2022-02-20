@@ -5,6 +5,7 @@
     width: 400px;
     height: 700px;
     transform: translate(-50%, -50%);
+    margin-top: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +15,7 @@
     box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
         rgb(0 0 0 / 50%) 0px 16px 10px -10px;
     z-index: 10;
-    visibility: hidden;
+    visibility: visible;
 }
 
 #fiche_send_form *, #devis_send_form * {
@@ -118,7 +119,33 @@
 }
 
 @media (max-width: 500px) {
-    #fiche_send_form, #devis_send_form {
-        transform: translate(-50%, -50%) scale(0.75);
+    #fiche_send_form_header, #devis_send_form_header {
+        height: 50px;
     }
+
+    #fiche_send_form_header .title, #devis_send_form_header .title {
+        font-size: 25px;
+    }
+
+    #fiche_send_form .form_label, #devis_send_form_header .form_label {
+        height: 50px;
+        font-size: 14px;
+    }
+
+    #fiche_send_form .form_label::placeholder, #devis_send_form_header .form_label::placeholder {
+        font-size: 12px;
+    }
+
+    #form_message {
+        height: 150px !important;
+        font-size: 12px !important;
+    }
+
+    #form_receiver select {
+        font-size: 12px !important;
+    }
+    #attachment span {
+        font-size: 12px !important;
+    }
+      
 }
