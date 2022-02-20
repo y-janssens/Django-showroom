@@ -3,7 +3,7 @@
 <div id="admin_title">
 
         <a href="{% url 'admin' %}">Utilisateurs</a>
-        <a href="{% url 'logs' %}">Historique</a>
+        {% comment %} <a href="{% url 'logs' %}">Historique</a> {% endcomment %}
         <a href="{% url 'societe' %}">Société</a>
 
         {% if user.is_superuser %}

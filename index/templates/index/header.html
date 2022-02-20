@@ -12,7 +12,7 @@
   {% endif %}
   </div>
 
-  <span class="nav_title">{{page_title}}</span>
+  <span class="nav_title">Mot de passe</span>
 
   <a id="home" href="{% url 'home' %}"><img id="home-icon" src="{% static 'images/home-icon.png' %}" /></a>
   <div id="nav_group">
@@ -20,7 +20,7 @@
   {% if user.is_authenticated %}
 
 
-  {% if 'fiches' in request.path %}
+  {% comment %} {% if 'fiches' in request.path %}
   <a id="current" href="{% url 'fiches' %}">Fiches</a>
   {% elif 'devis' in request.path %}
   <a id="current" href="{% url 'devis' %}">Devis</a>
@@ -30,9 +30,10 @@
   <a id="current" href="{% url 'clients' %}">Clients</a>
   {% elif 'dashboard' in request.path %}
   <a id="current" href="{% url 'admin' %}">Administration</a>
-  {% endif %}
+  {% endif %} {% endcomment %}
 
   <button id="back" onClick="javascript:history.go(-1);">Retour</button>  
+
   {% endif %}
   </div>
 

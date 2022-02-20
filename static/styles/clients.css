@@ -1,208 +1,263 @@
 #clients_wrapper {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    top: 75px;
-    overflow-y: auto;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 75px;
+  overflow-y: auto;
 }
 
 .add_client {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 85px;
-    color: #3a557c;
-    font-size: 14px;
-    font-family: "Share Tech Mono", monospace;
-    text-decoration: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 85px;
+  color: #3a557c;
+  font-size: 14px;
+  font-family: "Share Tech Mono", monospace;
+  text-decoration: none;
 }
 
 .add_client:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #clients_content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 130px;
-    flex-direction: column;
+  position: relative;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 130px;
+  flex-direction: column;
 }
 
 .client_line {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 90%;
-    height: 45px;
-    margin-top: -20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 0, 0, 0.025);
-    cursor: pointer;
-    z-index: 10 !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 45px;
+  margin-top: -20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.025);
+  cursor: pointer;
+  z-index: 10 !important;
 }
 
 .pair {
-    background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .client_crud_grp {
-    position: absolute;
-    right: 0;
-    margin-right: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 50px;
+  position: absolute;
+  right: 0;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50px;
 }
 
 .client_crud_grp a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .client_delete {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0px;
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-    font-family: "Comic Neue", cursive;
-    outline: none;
-    color: #b84040;
-    font-weight: 700;
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  font-family: "Comic Neue", cursive;
+  outline: none;
+  color: #b84040;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
 }
 
 .client_edit {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0px;
-    width: 20px;
-    height: 20px;
-    pointer-events: none;
-    font-family: "Comic Neue", cursive;
-    outline: none;
-    color: #427C3A;
-    font-weight: 700;
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    transform: scaleX(-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  font-family: "Comic Neue", cursive;
+  outline: none;
+  color: #427c3a;
+  font-weight: 700;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  transform: scaleX(-1);
 }
 
 .client_infos {
-    position: absolute;
-    display: flex;
-    width: 49%;
-    justify-content: space-between;
-    margin-left: 25px;
-    color: #3a557c;
-    font-size: 12px;
-    font-family: "Share Tech Mono", monospace;
-    pointer-events: none !important;
+  position: absolute;
+  display: flex;
+  width: 49%;
+  justify-content: space-between;
+  margin-left: 25px;
+  color: #3a557c;
+  font-size: 12px;
+  font-family: "Share Tech Mono", monospace;
+  pointer-events: none !important;
 }
 
 .client_details {
-    position: relative;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    width: 90% !important;
-    height: auto;
-    background-color: rgba(58, 85, 124, 0.025);
-    cursor: initial;
-    display: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    border-radius: 0px 5px 5px 0px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 13px 15px -10px, rgb(0 0 0 / 25%) 0px 8px 5px -10px;
-    opacity: 1 !important;
+  position: relative;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 90% !important;
+  height: auto;
+  background-color: rgba(58, 85, 124, 0.025);
+  cursor: initial;
+  display: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 2px;
+  border-radius: 0px 5px 5px 0px;
+  box-shadow: rgb(0 0 0 / 25%) 0px 13px 15px -10px,
+    rgb(0 0 0 / 25%) 0px 8px 5px -10px;
+  opacity: 1 !important;
 }
 
 .client_details_grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    height: inherit;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  height: inherit;
 }
 
 .client_details_content_1 {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-left: 25px;
-    color: #3a557c;
-    font-size: 12px;
-    line-height: 18px;
-    font-family: "Share Tech Mono", monospace;
-    transition: 250ms all;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 25px;
+  color: #3a557c;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "Share Tech Mono", monospace;
+  transition: 250ms all;
 }
 
 .client_details_content_1 li {
-    list-style: none;
+  list-style: none;
 }
 
 .client_details_content_1 ul {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .client_details_content_1 span {
-    color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .client_details_content_2 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    height: 100%;
-    width: auto;
-    margin-right: 25px;
-    color: #3a557c;
-    font-size: 12px;
-    line-height: 18px;
-    font-family: "Share Tech Mono", monospace;
-    transition: 250ms all;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  width: auto;
+  margin-right: 25px;
+  color: #3a557c;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "Share Tech Mono", monospace;
+  transition: 250ms all;
 }
 
 .client_details_content_2 li {
-    list-style: none;
+  list-style: none;
 }
 
 .client_details_content_2 ul {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .client_details_content_2 a {
-    text-decoration: none;
-    color: #3a557c;
+  text-decoration: none;
+  color: #3a557c;
 }
 
 .client_details_content_2 span {
-    color: rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .client_details_empty {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 0px;
-    cursor: initial;
-    margin-bottom: 5px;
-    visibility: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 0px;
+  cursor: initial;
+  margin-bottom: 5px;
+  visibility: hidden;
 }
 
 .hide {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .show {
-    visibility: visible;
+  visibility: visible;
 }
+
+@media (max-width: 500px) {
+  .add_client {
+    font-size: 12px;
+    margin-top: 75px;
+  }
+
+  #clients_content {
+    margin-top: 125px;
+  }
+
+  .client_line {
+    height: 40px !important;
+  }
+
+  .client_infos {
+    font-size: 10px;
+  }
+
+  .client_details_content_1, .client_details_content_2 {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+    .add_client {
+      font-size: 10px;
+      margin-top: 71px;
+    }
+  
+    #clients_content {
+      margin-top: 115px;
+    }
+  
+    .client_line {
+      height: 35px !important;
+    }
+  
+    .client_infos {
+      font-size: 8px;
+    }
+  
+    .client_details_content_1, .client_details_content_2 {
+      font-size: 8px;
+    }
+
+    .client_crud_grp {
+        width: 40px;
+        margin-right: 15px;
+    }
+    .client_crud button {
+        font-size: 15px;
+    }
+  }

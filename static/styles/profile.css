@@ -88,7 +88,32 @@
 }
 
 @media (max-width: 500px) {
-  #profile_form {
-    transform: translate(-50%, -50%) scale(0.75);
+
+  #profile_form{
+    width: 275px;
+  }
+
+  #profile_form_header {
+    height: 50px;
+  }
+
+  #profile_form_header .title{
+    font-size: 25px;
+  }
+
+  #profile_form .input {
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  #profile_form input::placeholder {
+    font-size: 12px !important;
+  }
+
+  #profile_form button {
+    font-size: 16px;
+    height: 45px;
+    margin-top: -12px;
   }
 }

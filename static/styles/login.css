@@ -4,6 +4,7 @@
   left: 50%;
   width: 400px;
   height: 500px;
+  margin-top: 25px;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -22,6 +23,7 @@
   left: 50%;
   width: 400px;
   height: 600px;
+  margin-top: 25px;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -125,7 +127,83 @@
 }
 
 @media (max-width: 500px) {
-  #loginwrapper, #registerwrapper {
-    transform: translate(-50%, -50%) scale(0.75);
+  #loginwrapper {
+    width: 350px;
+    height: 400px;
+  }
+
+  #registerwrapper {
+    width: 350px;
+    height: 500px;
+  }
+
+  #loginwrapper .title, #registerwrapper .title {
+    font-size: 25px;
+  }
+
+  #loginheader {
+    height: 75px;
+    margin-bottom: 10px;
+  }
+
+  #loginwrapper form input, #loginwrapper form .label::placeholder {
+    font-size: 14px !important;
+  }
+
+  #registerwrapper form input, #registerwrapper form .label::placeholder {
+    font-size: 14px !important;
+  }
+
+  #loginwrapper form button, #registerwrapper form button {
+    font-size: 16px;
+    height: 50px;
+    margin-top: 15px;
+  }
+
+  #loginwrapper form a, #registerwrapper form a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  #loginwrapper {
+    width: 275px;
+    height: 340px;
+  }
+
+  #registerwrapper {
+    width: 275px;
+    height: 435px;
+  }
+
+  #registerwrapper .label, #loginwrapper .label{
+    margin-top: 0px;
+  }
+
+  #loginwrapper .title, #registerwrapper .title {
+    font-size: 20px;
+  }
+
+  #loginheader {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  #loginwrapper form input, #loginwrapper form .label::placeholder {
+    font-size: 12px !important;
+  }
+
+  #registerwrapper form input, #registerwrapper form .label::placeholder {
+    font-size: 12px !important;
+  }
+
+  #loginwrapper form button, #registerwrapper form button {
+    font-size: 14px;
+    height: 40px;
+    margin-top: 15px;
+  }
+
+  #loginwrapper form a, #registerwrapper form a {
+    font-size: 10px;
   }
 }

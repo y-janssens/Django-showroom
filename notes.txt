@@ -1,5 +1,6 @@
 crud confirmation prompts: X
 Logs à revoir
+Boutons mobile trop petits
 
 Reponsive design:
 
@@ -11,16 +12,16 @@ Reponsive design:
     Register: Ok
     Reset: Ok
     Alertes: Ok
-
+    Société: Ok
     Hub fiches, devis, factures: Ok
-
-Unresponsive design:
+    Admin: Ok    
+    Utilisateurs: Ok
+    Clients: Ok
     
-    Admin
-    Société
-    Utilisateurs
+Unresponsive design:   
+
     Fiches
     Devis
     Factures
-    Clients
+    
     

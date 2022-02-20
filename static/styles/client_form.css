@@ -1,89 +1,129 @@
- 
-  #profil_title {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
-    margin-top: 10px;
-    color: #3a557c;
-    font-family: "Share Tech Mono", monospace;
-  }
-  
+#profil_title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #3a557c;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#client_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  background-color: #f1f4f7;
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#client_form_admin {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 700px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f1f4f7;
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#client_form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#client_form form input {
+  width: 90%;
+  height: 64px;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-size: 16px !important;
+  letter-spacing: 3px;
+  margin-bottom: -10px;
+  background-color: transparent;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#client_form #id_email::placeholder {
+  font-size: 16px !important;
+}
+
+#client_form_header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(58, 85, 124, 1);
+  margin-bottom: 30px;
+}
+
+#client_form button {
+  width: 60%;
+  height: 64px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 3px;
+  border-radius: 4px;
+  background-color: rgba(58, 85, 124, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
   #client_form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 500px;
-    height: 1000px;
-    transform: translate(-50%, -50%);
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    overflow: hidden;
-    align-items: center;
-    background-color: #F1F4F7;
-    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px, rgb(0 0 0 / 50%) 0px 16px 10px -10px;
-    z-index: 10;
+    width: 350px;
+    height: 545px;
   }
-  
-  #client_form_admin {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    height: 700px;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #F1F4F7;
-    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
-      rgb(0 0 0 / 50%) 0px 16px 10px -10px;
-    z-index: 10;
-  }
-  
-  #client_form form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-    
-  .input {
-    width: 90%;
-    height: 64px;
-    border: none;
-    outline: none;
-    color: #3a557c;
-    font-size: 16px;
-    letter-spacing: 3px;
-    background-color: transparent;
-    font-family: "Share Tech Mono", monospace;
-  }
-  
+
   #client_form_header {
-    width: 100%;
-    height: 100px;
-    background-color: rgba(58, 85, 124, 1);
-    margin-bottom: 30px;
+    height: 50px;
   }
-  
+
+  #client_form_header .title {
+    font-size: 25px;
+  }
+
+  #client_form .input {
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+
+  #client_form input::placeholder {
+    font-size: 12px !important;
+  }
+
+  #client_form #id_email::placeholder {
+    font-size: 12px !important;
+  }
+
   #client_form button {
-    width: 60%;
-    height: 64px;
-    border: none;
-    color: #ffffff;
-    font-size: 20px;
-    font-family: "Share Tech Mono", monospace;
-    letter-spacing: 3px;
-    border-radius: 4px;
-    background-color: rgba(58, 85, 124, 1);
-    cursor: pointer;
+    font-size: 16px;
+    height: 45px;
+    margin-top: -12px;
   }
-  
-  @media (max-width: 500px) {
-    #client_form {
-      transform: translate(-50%, -50%) scale(0.75);
-    }
-  }
+}
+
+@media (max-width: 450px) {
+  #client_form {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+}

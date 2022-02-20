@@ -24,7 +24,8 @@
   font-family: "Share Tech Mono", monospace;
 }
 
-#users_list tr, #users_list td {
+#users_list tr,
+#users_list td {
   display: flex;
   justify-content: space-between;
   line-height: 35px;
@@ -53,12 +54,14 @@ td.user_phone {
   justify-content: center;
 }
 
-td.user_phone a, td.user_user a {
+td.user_phone a,
+td.user_user a {
   color: rgba(58, 85, 124, 1);
   text-decoration: none;
 }
 
-td.user_phone a:hover, td.user_user a:hover {
+td.user_phone a:hover,
+td.user_user a:hover {
   text-decoration: underline;
 }
 
@@ -189,9 +192,125 @@ hr.hr1 {
 }
 
 @media (max-width: 900px) {
- 
+  #admin_title {
+    font-size: 16px !important;
+  }
+
+  #users_list tr,
+  #users_list td {
+    justify-content: space-around;
+  }
+
+  #users_header {
+    font-size: 12px !important;
+  }
+
+  #users_list {
+    font-size: 10px;
+  }
+
+  td.user_id {
+    width: 23px;
+    margin-left: 0px;
+  }
+
+  td.user_user {
+    width: 100px;
+  }
+
+  td.user_phone {
+    width: 55px;
+    margin-right: 25px;
+  }
+
+  td.user_mail {
+    width: 100px;
+  }
+
+  td.user_fname {
+    width: 66px;
+  }
+
+  td.user_lname {
+    width: 66px;
+  }
+
+  td.user_role {
+    width: 66px;
+  }
+
+  td.user_status {
+    width: 40px;
+  }
+
+  td.user_actions {
+    width: 35px;
+    margin-left: 25px;
+  }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 750px) {
 
+  #admin_title {
+    font-size: 14px !important;
+  }
+
+  #users_list tr,
+  #users_list td {
+    justify-content: space-around;
+  }
+
+  #users_header {
+    font-size: 10px !important;
+  }
+
+  #users_list {
+    font-size: 8px;
+  }
+
+  td.user_id {
+    width: 16px;
+    margin-left: 0px;
+  }
+
+  td.user_user {
+    width: 66px;
+  }
+
+  td.user_phone {
+    width: 40px;
+    margin-right: 25px;
+  }
+
+  td.user_mail {
+    width: 66px;
+  }
+
+  td.user_fname {
+    width: 44px;
+  }
+
+  td.user_lname {
+    width: 44px;
+  }
+
+  td.user_role {
+    width: 44px;
+  }
+
+  td.user_status {
+    width: 28px;
+  }
+
+  td.user_actions {
+    width: 20px;
+    margin-left: 25px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  #users_list {
+    transform: translateX(-50%) scale(0.85);
+  }
 }
