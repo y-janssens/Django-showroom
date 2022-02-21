@@ -7,11 +7,9 @@
     {% include 'index/search_bar.html' %}
 
         <div id="messages_content">
-            <div id="messages_link">
-                <a href="{% url 'new_message' %}" id="new_message">Nouveau message</a>
-                <a href="{% url 'inbox' %}">Boite de réception</a>
-                <a href="{% url 'outbox' %}">Messages envoyés</a>
-            </div>
+            
+            {% include 'inbox/inbox_navbar.html' %}
+
                 <ul class="messages_list">
                     <li class="message head">
                         <span class="messages_header">À</span>

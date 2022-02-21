@@ -8,11 +8,9 @@
     <form action="{% url 'new_message' %}" method="POST">
         {% csrf_token %}
         <div id="messages_content">
-            <div id="messages_link">
-                <a href="#">Nouveau message</a>
-                <a href="{% url 'inbox' %}">Boite de réception</a>
-                <a href="{% url 'outbox' %}">Messages envoyés</a>
-            </div>
+            
+            {% include 'inbox/inbox_navbar.html' %}
+            
                 <ul class="messages_list">
                     <li class="message head">
                         <span class="messages_header">De</span>

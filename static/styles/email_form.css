@@ -15,7 +15,7 @@
     box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
         rgb(0 0 0 / 50%) 0px 16px 10px -10px;
     z-index: 10;
-    visibility: visible;
+    visibility: hidden;
 }
 
 #fiche_send_form *, #devis_send_form * {
@@ -75,8 +75,8 @@
 }
 
 #form_message {
-    height: 170px !important;
-    width: 335px !important;
+    height: 170px;
+    width: 335px;
     color: #3a557c;
     margin-right: 35px;
     font-size: 16px;
@@ -119,6 +119,12 @@
 }
 
 @media (max-width: 500px) {
+
+    #fiche_send_form, #devis_send_form {
+        width: 300px;
+        height: 540px;
+    }
+
     #fiche_send_form_header, #devis_send_form_header {
         height: 50px;
     }
@@ -127,25 +133,47 @@
         font-size: 25px;
     }
 
-    #fiche_send_form .form_label, #devis_send_form_header .form_label {
+    #fiche_send_form .form_label, #devis_send_form .form_label {
         height: 50px;
-        font-size: 14px;
+        font-size: 14px !important;
+        margin-top: 0;
     }
 
-    #fiche_send_form .form_label::placeholder, #devis_send_form_header .form_label::placeholder {
-        font-size: 12px;
+    #fiche_send_form .form_label::placeholder, #devis_send_form .form_label::placeholder {
+        font-size: 12px !important;
     }
 
     #form_message {
         height: 150px !important;
+        width: 250px;
         font-size: 12px !important;
     }
 
     #form_receiver select {
         font-size: 12px !important;
     }
-    #attachment span {
+
+    .attachment {
+        font-size: 10px;
+        margin-left: 30px;
+        width: 300px;
+    }
+
+    .attachment span{
         font-size: 12px !important;
     }
+
+    #fiche_send_form button, #devis_send_form button {
+        font-size: 16px;
+        height: 45px;
+        margin-top: 30px;
+      }
       
+}
+
+@media (max-width: 350px) {
+
+    #fiche_send_form, #devis_send_form {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
 }

@@ -13,21 +13,24 @@
 #messages_link {
   position: relative;
   width: 90%;
-  height: 20px;
   left: 50%;
   margin: 20px 0 50px 0;
   transform: translateX(-50%);
   display: flex;
+  align-items: center;
   font-size: 14px;
   justify-content: space-between;
+  z-index: 100;
 }
+
+
 
 #new_message {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 175px;
-  height: 35px;
+  height: 35px !important;
   font-size: 18px;
   margin-right: -30px;
   margin-top: 0px !important;
@@ -39,7 +42,11 @@
 #messages_link a {
   text-decoration: none;
   color: #3a557c;
-  margin-top: 10px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  margin-top: 0px !important;
+  z-index: 100;
 }
 
 #messages_link a:hover {
@@ -308,7 +315,7 @@ hr.inbox {
   }
 
   #new_message {
-    height: 30px;
+    height: 30px !important;
   }
 }
 
@@ -321,7 +328,7 @@ hr.inbox {
     top: 110px;
     font-size: 12px;
   }
-  
+
   .message_body_full {
     top: 135px;
     font-size: 8px;
@@ -330,16 +337,13 @@ hr.inbox {
   .messages_list {
     top: 30px;
   }
+
   .messages_list * {
     font-size: 8px;
   }
 
   #messages_count {
     font-size: 8px;
-  }
-
-  #messages_link a {
-    margin: 5px 0 0 0;
   }
 
   .message_delete {
@@ -351,7 +355,7 @@ hr.inbox {
   }
 
   #new_message {
-    height: 20px;
+    height: 20px !important;
     width: 90px;
     font-size: 10px;
   }
