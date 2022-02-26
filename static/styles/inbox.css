@@ -1,7 +1,7 @@
 #messages_wrapper {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   top: 75px;
   overflow-y: auto;
 }
@@ -249,8 +249,8 @@ hr.inbox {
 #inbox_button {
   position: absolute;
   bottom: 20px;
-  width: 240px;
-  height: 64px;
+  width: 200px;
+  height: 50px;
   left: 50%;
   transform: translateX(-50%);
   border: none;
@@ -287,6 +287,12 @@ hr.inbox {
     width: 125px;
     font-size: 14px;
   }
+
+  #inbox_button {
+    height: 40px;
+    width: 160px;
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -316,6 +322,12 @@ hr.inbox {
 
   #new_message {
     height: 30px !important;
+  }
+
+  #inbox_button {
+    height: 40px;
+    width: 160px;
+    font-size: 18px;
   }
 }
 
@@ -384,7 +396,8 @@ hr.inbox {
   }
 
   #inbox_button {
-    height: 40px;
-    width: 180px;
+    height: 30px;
+    width: 140px;
+    font-size: 16px;
   }
 }
