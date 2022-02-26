@@ -123,7 +123,7 @@ def create_fiche_chantier(request):
             fiche = form.save(commit=False)
             fiche.owner = profile
             form.save()
-            return redirect(f'/fiches/fiche/{fiche.id}')
+            return redirect(f'/fiches/fiche/{fiche.id}')        
 
     context = {'page_title': page_title, 'form': form}
     return render(request, 'fiches/fiche_form.html', context)
@@ -144,3 +144,16 @@ def confirm_fiche(request, pk):
     sender = "fiche"
     context = {'page_title': page_title, 'fiche': fiche, 'sender': sender}
     return render(request, 'index/confirm.html', context) 
+
+
+@login_required(login_url='login')
+def fiche_chantier_vert(request, pk):
+
+    fiche = Fiche.objects.get(id=pk)
+    users = User.objects.all()
+    profiles = Profile.objects.all()
+    name = fiche.last_name
+    page_title = f"Fiche de chantier {fiche.last_name.capitalize()}"
+    context = {'page_title': page_title, 'fiche': fiche,
+               'name': name, 'users': users, 'profiles': profiles}
+    return render(request, 'fiches/fiche_display_vert.html', context)
