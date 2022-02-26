@@ -349,6 +349,7 @@ hr.table_hr {
 .devis_btn {
     position: relative;
     height: 40px;
+    width: auto;
     border: none;
     color: #ffffff;
     font-size: 16px;
@@ -420,46 +421,53 @@ hr.table_hr {
     background-color: transparent;  
 }
 
-/* @media (max-width: 1400px) {
-        
+@media (max-width: 1400px) {
     #devis_content {
-        transform: translate(-50%, -50%) scale(0.75);
+      transform: translate(-50%, -50%) scale(0.85);
     }
-}
-
-@media (max-width: 1000px) {
-    
+  }
+  
+  @media (max-width: 1000px) {
     #devis_content {
-        transform: translate(-50%, -50%) scale(0.75);
-    } 
-    
-}
-
-@media (max-width: 800px) {
-    
-    #devis_content {
-        transform: translate(-50%, -50%) scale(0.7) rotateZ(-90deg);
+      transform: translate(-50%, -50%) scale(0.75);
     }
-    
-}
-
-@media (max-width: 750px) {
-    #devis_content {
-        transform: translate(-50%, -50%) scale(0.4) rotateZ(-90deg);
+  
+    .devis_btn {
+      height: 35px;
+      border: none;
+      color: #ffffff;
+      font-size: 14px;
+      opacity: 1;
     }
-}
-
-@media (max-width: 650px) {
-    
+  }
+  
+  @media (max-width: 800px) {
     #devis_content {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }   
-
-}
-
-@media (max-width: 500px) {
-    
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+  }
+  
+  @media (max-width: 750px) {
     #devis_content {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }   
-} */
+      transform: translate(-50%, -50%) scale(0.6);
+    }
+  
+    .devis_btn {
+      height: 35px;
+  
+      font-size: 10px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    #devis_content {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  
+    .devis_btn {
+      height: 30px;
+      font-size: 8px;
+      margin: 0px 5px 0px 5px;
+    }
+  }
+  
