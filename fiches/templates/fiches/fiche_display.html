@@ -177,7 +177,6 @@ Veuillez trouver ci-joint la fiche d'intervention de Mr/Mme {{fiche.last_name | 
 <script type="text/javascript">
 
 let form = false;
-let view_width = $(window).width();
 
     $('#fiche_send').click(function(){
         if (form == false){
@@ -194,15 +193,6 @@ let view_width = $(window).width();
                 document.getElementById('mail_submit').innerHTML = "Message Envoyé!";              
             }, 1000)
         });
-
-    if (view_width <= 1000) {
-        window.screen.orientation
-    .lock("landscape")
-    .then(
-        success => console.log(success),
-        failure => console.log(failure)
-    )
-    }
         
 </script>
 
