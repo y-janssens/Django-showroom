@@ -271,6 +271,16 @@ def delete_facture(request, pk):
     facture.delete()
     return redirect('factures')
 
+@login_required(login_url='login')
+@admin_required(login_url='login')
+def confirm_facture(request, pk):
+    facture = Facture.objects.get(id=pk)
+    page_title = "Confirmation"
+    sender = "facture"
+    context = {'page_title': page_title, 'facture': facture, 'sender': sender}
+    return render(request, 'index/confirm.html', context) 
+
+
 
 @login_required(login_url='login')
 @role_required(login_url='login')

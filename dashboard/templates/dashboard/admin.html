@@ -46,7 +46,7 @@
     <td class="user_actions">
   <span class="btn_grp">
   <a class="crud" href="{% url 'activate' user.id %}"><button class="user_valid_btn">{% if user.is_active %}✔{% else %}{% endif %}</button></a>
-  <a class="crud" href="{% url 'delete' user.id %}"><button class="user_delete">X</button></a></span></span>
+  <a class="crud" href="{% url 'confirm_user' user.id %}"><button class="user_delete">X</button></a></span></span>
   </td>
     </tr>  
   {% endif %}

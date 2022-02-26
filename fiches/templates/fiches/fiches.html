@@ -25,7 +25,7 @@
     <div class="fiches_wrap">
 
         {% if user.is_superuser %}
-        <a class="fiches_crud" href="{% url 'delete_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
+        <a class="fiches_crud" href="{% url 'confirm_fiche' fiche.id %}"><button class="fiche_delete">X</button></a>
         {% endif %}
 
         <img id="thumb_bg" src="{% static 'images/doc-icon.png' %}">

@@ -276,6 +276,15 @@ def delete_devis(request, pk):
     devis.delete()
     return redirect('devis')
 
+@login_required(login_url='login')
+@admin_required(login_url='login')
+def confirm_devis(request, pk):
+    devis = Devi.objects.get(id=pk)
+    page_title = "Confirmation"
+    sender = "devis"
+    context = {'page_title': page_title, 'devis': devis, 'sender': sender}
+    return render(request, 'index/confirm.html', context) 
+
 
 @login_required(login_url='login')
 @role_required(login_url='login')

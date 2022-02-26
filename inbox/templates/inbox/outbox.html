@@ -22,7 +22,7 @@
                     <span class="message_sender">{{message.recipient.first_name}} {{message.recipient.last_name}}</span>
                     <a href="{% url 'view_message' message.id %}">{{message.subject | slice:"40"}}</a>                    
                     <span class="message_date">{{message.created | date:"d-m-Y - H:i"}}
-                        <a class="messages_crud" href="{% url 'delete_message' message.id %}"><button class="message_delete">X</button></a>
+                        <a class="messages_crud" href="{% url 'confirm_message' message.id %}"><button class="message_delete">X</button></a>
                     </span>
                 </li>
 

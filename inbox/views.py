@@ -33,6 +33,7 @@ def outbox(request):
     return render(request, 'inbox/outbox.html', context)
 
 
+@login_required(login_url='login')
 def viewMessage(request, pk):
     profile = request.user.profile
     message = Message.objects.get(id=pk)
@@ -46,6 +47,7 @@ def viewMessage(request, pk):
     return render(request, 'inbox/message.html', context)
 
 
+@login_required(login_url='login')
 def newMessage(request):
     profile = request.user.profile
     profiles = Profile.objects.all()
@@ -65,7 +67,17 @@ def newMessage(request):
     return render(request, 'inbox/new_message.html', context)
 
 
+@login_required(login_url='login')
 def deleteMessage(request, pk):
     message = Message.objects.get(id=pk)
     message.delete()
     return redirect('inbox')
+
+
+@login_required(login_url='login')
+def confirm_message(request, pk):
+    message = Message.objects.get(id=pk)
+    page_title = "Confirmation"
+    sender = "message"
+    context = {'page_title': page_title, 'message': message, 'sender': sender}
+    return render(request, 'index/confirm.html', context) 

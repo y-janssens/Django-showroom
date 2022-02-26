@@ -1,0 +1,51 @@
+{% extends "index/index.html" %} 
+{% load static %} 
+{% block content %}
+
+
+    <div id="prompt_wrapper">
+
+
+        <div id="prompt_title">
+            Confirmer
+        </div>
+
+        <div id="prompt_text">Voulez-vous vraiment supprimer cet élément?
+            {% if sender == "facture" %} 
+            <p>Facture N°:{{facture.invoice_number}} - {{facture.customer}}</p>
+            {% elif sender == "devis" %} 
+            <p>Devis N°:{{devis.estimate_number}} - {{devis.customer}}</p>
+            {% elif sender == "fiche" %} 
+            <p>Fiche de chantier N°:{{fiche.invoice_number}} - {{fiche.last_name}} {{fiche.first_name}}</p>
+            {% elif sender == "client" %} 
+            <p>Client: {{client.last_name}} {{client.first_name}}</p>
+            {% elif sender == "user" %} 
+            <p>Utilisateur: {{user.profile.first_name}} {{user.profile.last_name}}</p>
+            {% elif sender == "message" %} 
+            <p>Message: {{message.subject}}</p>
+            {% endif %}
+        </div>
+        
+
+        <div id="prompt_btn_grp">
+            {% if sender == "facture" %}            
+            <button class="prompt_action" id="prompt_confirm"><a href="{% url 'facture_delete' facture.id %}">✓ Oui</a></button>
+            {% elif sender == "devis" %}
+            <button class="prompt_action" id="prompt_confirm"><a href="{% url 'devis_delete' devis.id %}">✓ Oui</a></button>
+            {% elif sender == "fiche" %}
+            <button class="prompt_action" id="prompt_confirm"><a href="{% url 'fiche_delete' fiche.id %}">✓ Oui</a></button>
+            {% elif sender == "client" %}
+            <button class="prompt_action" id="prompt_confirm"><a href="{% url 'client_delete' client.id %}">✓ Oui</a></button> 
+            {% elif sender == "user" %}
+            <button class="prompt_action" id="prompt_confirm"><a href="{% url 'delete_user' user.id %}">✓ Oui</a></button> 
+            {% elif sender == "message" %}
+            <button class="prompt_action" id="prompt_confirm"><a href="{% url 'delete_message' message.id %}">✓ Oui</a></button>           
+            {% endif %}
+            <button class="prompt_action" id="prompt_deny" onClick="javascript:history.go(-1);">Non</button>
+            
+
+        </div>
+    </div>
+
+
+{% endblock %}

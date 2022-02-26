@@ -135,3 +135,12 @@ def delete_fiche_chantier(request, pk):
     fiche = Fiche.objects.get(id=pk)
     fiche.delete()
     return redirect('fiches')
+
+@login_required(login_url='login')
+@admin_required(login_url='login')
+def confirm_fiche(request, pk):
+    fiche = Fiche.objects.get(id=pk)
+    page_title = "Confirmation"
+    sender = "fiche"
+    context = {'page_title': page_title, 'fiche': fiche, 'sender': sender}
+    return render(request, 'index/confirm.html', context) 

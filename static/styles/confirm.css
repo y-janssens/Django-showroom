@@ -1,0 +1,122 @@
+#prompt_wrapper {
+  position: fixed;
+  left: 50%;
+  top: 250px;
+  width: 650px;
+  max-width: 80%;
+  height: 135px;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  background-color: rgba(228, 230, 231, 0.95);
+  box-shadow: inset 0px 0px 0px 1px #3a557c,
+    rgb(0 0 0 / 25%) 0px 13px 15px -10px, rgb(0 0 0 / 25%) 0px 8px 5px -10px;
+  overflow: hidden;
+}
+
+#prompt_wrapper * {
+  font-family: "Share Tech Mono", monospace;
+  color: #3a557c;
+}
+
+#prompt_wrapper button {
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 250ms all;
+}
+
+#prompt_wrapper button:hover {
+  transform: scale(1.1);
+}
+
+#prompt_title {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: #3a557c;
+  color: #fff !important;
+}
+
+#prompt_text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  font-size: 14px;
+  padding: 0 10px 5px 10px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#prompt_btn_grp {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prompt_action {
+  position: relative;
+  width: 70px;
+  height: 30px;
+  margin: 0px 10px 10px 10px;
+  color: #fff !important;
+  font-size: 14px;
+  background-color: rgba(58, 85, 124, 1);
+}
+
+.prompt_action a {
+  text-decoration: none;
+  color: inherit !important;
+}
+
+#prompt_deny {
+  background-color: #b84040;
+}
+
+#prompt_confirm {
+  background-color: #427c3a;
+}
+
+@media (max-width: 500px) {
+  #prompt_title {
+    font-size: 14px;
+  }
+
+  #prompt_text {
+    font-size: 12px;
+  }
+
+  .prompt_action {
+    font-size: 12px;
+    width: 60px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  #prompt_wrapper {
+    height: 125px;
+  }
+
+  #prompt_title {
+    font-size: 12px;
+  }
+
+  #prompt_text {
+    font-size: 10px;
+  }
+
+  .prompt_action {
+    font-size: 10px;
+    width: 50px;
+    height: 25px;
+  }
+}

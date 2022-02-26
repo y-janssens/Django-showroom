@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.inbox, name="inbox"),
+    path('confirm/<pk>', views.confirm_message, name="confirm_message"),
     path('outbox/', views.outbox, name="outbox"),
     path('message/<pk>', views.viewMessage, name="view_message"),
     path('new_message/', views.newMessage, name="new_message"),

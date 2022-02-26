@@ -13,6 +13,7 @@ Reponsive design:
     Admin: Ok    
     Utilisateurs: Ok
     Clients: Ok
+    Confirmation: Ok
     
 Unresponsive design:   
 

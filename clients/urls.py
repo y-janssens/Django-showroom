@@ -5,8 +5,9 @@ from . import views
 
 urlpatterns = [
     path('', views.clients, name="clients"),
+    path('confirm/<pk>', views.confirm_client, name="confirm_client"),
     path('create_client', views.create_client, name="create_client"),
-    path('delete_client/<pk>', views.delete_client, name="delete_client"),
+    path('delete_client/<pk>', views.delete_client, name="client_delete"),
     path('edit_client/<pk>', views.edit_client, name="edit_client"),    
 ]
 

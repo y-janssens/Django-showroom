@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.factures, name="factures"),
+    path('confirm/<pk>', views.confirm_facture, name="confirm_facture"),
     path('facture/<pk>', views.facture_client, name="facture_client"),
     path('create_facture', views.facture_create, name="facture_create"),
     path('delete_facture/<pk>', views.delete_facture, name="facture_delete"),

@@ -72,11 +72,23 @@ def activate(request, pk):
 
 @login_required(login_url='login')
 @admin_required(login_url='login')
-def delete(request, pk):
+def delete_user(request, pk):
     user = User.objects.get(id=pk)
     if user.is_superuser == False:
         user.delete()
     return redirect('admin')
+
+@login_required(login_url='login')
+@admin_required(login_url='login')
+def confirm_user(request, pk):
+    user = User.objects.get(id=pk)
+    page_title = "Confirmation"
+    sender = "user"
+    context = {'page_title': page_title, 'user': user, 'sender': sender}
+    if user.is_superuser == False:
+        return render(request, 'index/confirm.html', context) 
+    else:
+        return redirect('admin')
 
 def user_profile_edit(request, pk):
     profile = Profile.objects.get(id=pk)
