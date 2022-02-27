@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Share Tech Mono", monospace;
   letter-spacing: 6px;
   text-align: center;
@@ -43,7 +43,6 @@
   height: 65px;
   filter: invert(1);
   transition: 250ms all;
-  /* image-rendering: -webkit-optimize-contrast; */
 }
 
 #home-icon:hover {
@@ -96,13 +95,13 @@
 
 @media (max-width: 750px) {
   .nav_title {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 500px) {
   .nav_title {
-    font-size: 16px;
+    font-size: 14px;
     margin-top: -10px;
     margin-left: 45px;
   }
@@ -122,7 +121,7 @@
 
 @media (max-width: 360px) {
   .nav_title {
-    font-size: 16px;
+    font-size: 12px;
     margin-top: -10px;
     margin-left: 60px;
   }
