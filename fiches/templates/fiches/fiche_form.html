@@ -1,7 +1,7 @@
 {% extends "index/index.html" %} 
 {% load static %} 
 {% block content %}
-
+<button id="toggle_full"></button>
 <form action="{% url 'create_fiche' %}" method="POST">
     {% csrf_token %}
 <div id="fiche_wrapper">  
@@ -150,5 +150,27 @@
 
 </div>
 </form>
+
+<script type="text/javascript">
+
+    let toggle = false;
+        
+        $('#toggle_full').click(function(){
+            if (toggle == false) {
+                toggle = true;
+                $('#header').css('transform', 'translateY(-75px)');
+                $('#footer').css('transform', 'translateY(25px)');
+                $('#toggle_full').css('top', '20px');
+                $('#fiche_wrapper').css('transform', 'translateY(-37.5px) scale(1.1)');
+            } else {
+                toggle = false;
+                $('#header').css('transform', 'translateY(0px)');
+                $('#footer').css('transform', 'translateY(0px)');
+                $('#toggle_full').css('top', '100px');
+                $('#fiche_wrapper').css('transform', 'translateY(0px) scale(1)');
+            }
+        })
+            
+    </script>
 
 {% endblock %}

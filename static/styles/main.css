@@ -36,6 +36,26 @@ hr {
   border: none;
 }
 
+#toggle_full {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: url('../images/full.png');
+  background-size: 100%;
+  filter: brightness(1.1);
+  image-rendering: crisp-edges;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+#toggle_full:hover{
+  transform: scale(1.15);
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,

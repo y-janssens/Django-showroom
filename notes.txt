@@ -18,8 +18,7 @@ Reponsive design:
     Utilisateurs: Ok
     Clients: Ok
     Confirmation: Ok
-    
-Unresponsive design:   
 
-    Header landscape
-    
+    Fiches toggle: Ok    
+    Devis toggle: Ok
+    Factures toggle: Ok
