@@ -10,8 +10,10 @@ Reponsive design:
     Alertes: Ok
     Société: Ok
     Hub fiches, devis, factures: Ok
+    Fiches: Ok
     Devis: Ok
     Factures: Ok
+
     Admin: Ok    
     Utilisateurs: Ok
     Clients: Ok
@@ -19,7 +21,5 @@ Reponsive design:
     
 Unresponsive design:   
 
-    Fiches
-    Formulaire Fiches
     Header landscape
     

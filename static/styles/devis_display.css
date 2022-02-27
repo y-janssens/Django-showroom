@@ -421,11 +421,29 @@ hr.table_hr {
     background-color: transparent;  
 }
 
-@media (max-width: 1400px) {
+@media (max-height: 1100px) {
     #devis_content {
       transform: translate(-50%, -50%) scale(0.85);
     }
   }
+
+  @media (max-height: 1000px) {
+    #devis_content {
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+  }  
+
+  @media (max-height: 800px) {
+    #devis_content {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    .devis_btn {
+        height: 30px;
+        font-size: 8px;
+        margin: 0px 5px 0px 5px;
+      }
+  }  
   
   @media (max-width: 1000px) {
     #devis_content {

@@ -34,11 +34,11 @@
 
 #fiche_content {
     position: relative;
-    width: 1200px;
-    height: 950px;
+    width: 950px;
+    height: 1200px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    background-image: url('{% include 'fiches/base.html' %}');
+    background-image: url('{% include 'fiches/base2.html' %}');
     background-size: 100%;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -47,16 +47,11 @@
 
 #row1 , #row2, #row3, #row4  {
     position: relative;
-    display: flex;
-    display: -webkit-box;
-    margin-left: 100px;
-    flex-direction: row;
-    justify-content: space-evenly;
-    -webkit-justify-content: space-between;
+    display: -webkit-box;    
     -webkit-box-pack: justify;
-    width: 1000px;
     height: 260px;
     padding-top: 30px;
+    
 }
 
 #row2, #row3, #row4 {
@@ -70,7 +65,7 @@
 
 #row4 {
     margin-top: -40px;
-    height: 100px;
+    height: 280px;
     overflow: hidden;
 }
 
@@ -78,6 +73,7 @@
     width: 200px;
     height: 200px;
     margin-top: 40px;
+    margin-left: 35px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.25);
 }
@@ -88,7 +84,7 @@
     flex-direction: column;
     justify-content: center;
     -webkit-box-pack: justify;
-    width: 450px !important;
+    width: 300px;
     height: 200px;
     margin-top: 40px;
 }
@@ -100,7 +96,7 @@
     flex-direction: column;
     justify-content: center;
     -webkit-box-pack: justify;
-    width: 250px;
+    width: 300px;
     height: 200px;
     margin-top: 40px;
 }
@@ -118,15 +114,21 @@
 }
 
 #sub_row4_1 .infos_content {
-    width: 1030px;
-    display: flex;
+    width: 96%;
+    height: 250px;    
+    overflow-wrap: word;
     text-align: justify;
-    align-items: flex-start;
+    line-height: 22px;
 }
 
 #sub_row2_1, #sub_row2_2, #sub_row2_3, #sub_row2_4, #sub_row3_1, #sub_row3_2, #sub_row3_3, #sub_row3_4 {
-    width: 280px;
-    height: 200px;    
+    width: 220px;
+    height: 200px;   
+    margin-left: 30px; 
+}
+
+#sub_row2_4, #sub_row3_4 {
+    margin-left: 10px;
 }
 
 .sub_title {
@@ -167,7 +169,7 @@
 }
 
 #infos_content_sup {
-    width: 1000px!important;
+    width: 850px!important;
 }
 
 .infos_content a{    

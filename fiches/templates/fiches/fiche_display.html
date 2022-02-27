@@ -133,7 +133,7 @@
             <div id="sub_row4_1">
                 <div class="sub_title">Informations complémentaires</div>
 
-                <div class="infos"><div class="infos_content">{{fiche.infos}}</div></div>
+                <div class="infos"><span class="infos_content">{{fiche.infos}}</span></div>
 
             </div>
 
@@ -145,6 +145,7 @@
             </div>
 
         </div>
+
     </div>    
 
     <div id="fiche_send_form">
@@ -164,7 +165,7 @@
 
             <textarea class="form_label" id="form_message" name="form_message" placeholder="Message">Bonjour.
 
-Veuillez trouver ci-joint la fiche d'intervention de Mr/Mme {{fiche.last_name | capfirst}}.
+    Veuillez trouver ci-joint la fiche d'intervention de Mr/Mme {{fiche.last_name | capfirst}}.
             </textarea>
             <hr>
             <div class="attachment"><span>Pièces jointes:</span> Fiche de chantier {{name | capfirst}}.pdf</div>

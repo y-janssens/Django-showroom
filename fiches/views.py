@@ -27,7 +27,7 @@ def save_fiche(request, pk):
 
     html_content = render_to_string(
         'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-    options = {'page-height': '223', 'page-width': '277'}
+    options = {'page-height': '277', 'page-width': '225'}
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     response = HttpResponse(content_type="application/pdf;")
@@ -52,7 +52,7 @@ def send_fiche(request, pk):
 
     html_content = render_to_string(
         'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-    options = {'page-height': '223', 'page-width': '277'}
+    options = {'page-height': '277', 'page-width': '225'}
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     utils.send_email_plaintext(
@@ -73,7 +73,7 @@ def print_fiche(request, pk):
 
     html_content = render_to_string(
         'fiches/fiche_export.html', {'page_title': page_title, 'fiche': fiche})
-    options = {'page-height': '223', 'page-width': '277'}
+    options = {'page-height': '277', 'page-width': '225'}
     pdf_content = pdfkit.from_string(
         html_content, False, configuration=pdfkit_config, options=options)
     response = HttpResponse(content_type="application/pdf;")
@@ -144,16 +144,3 @@ def confirm_fiche(request, pk):
     sender = "fiche"
     context = {'page_title': page_title, 'fiche': fiche, 'sender': sender}
     return render(request, 'index/confirm.html', context) 
-
-
-@login_required(login_url='login')
-def fiche_chantier_vert(request, pk):
-
-    fiche = Fiche.objects.get(id=pk)
-    users = User.objects.all()
-    profiles = Profile.objects.all()
-    name = fiche.last_name
-    page_title = f"Fiche de chantier {fiche.last_name.capitalize()}"
-    context = {'page_title': page_title, 'fiche': fiche,
-               'name': name, 'users': users, 'profiles': profiles}
-    return render(request, 'fiches/fiche_display_vert.html', context)
