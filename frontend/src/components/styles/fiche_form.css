@@ -1,0 +1,28 @@
+.form_fiche_input {
+    position: absolute;       
+    border: none;
+    outline: none;    
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+input.form_fiche_input {
+    font-family: "Share Tech Mono", monospace;
+}
+
+#id_height {
+    width: 100px;
+}
+
+#id_charpente_height, #id_soufflage_height, #id_thermo_height, #id_isol_height {
+    width: 80px;
+}
+
+#id_hydro_color, #id_hydro_model, #id_fait_color, #id_fait_length_num, #id_cap_color, #id_waterproof_length_num {
+    width: 100px;
+}
+
+#id_infos {
+    width: 90%;
+    height: 250px;
+    resize: none;
+}

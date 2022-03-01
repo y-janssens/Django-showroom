@@ -1,0 +1,119 @@
+#profile_wrapper {
+  position: fixed;
+  width: 100%;
+  height: calc(100% - 100px);
+  margin-top: 75px;
+}
+
+#profil_title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #3a557c;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#profile_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: auto;
+  padding-bottom: 20px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  background-color: #F1F4F7;
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px, rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#profile_form button {
+  border-radius: 5px;
+}
+
+#profile_form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile_form input, #id_role {
+  width: 90%;
+  height: 64px;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-size: 16px;
+  letter-spacing: 3px;
+  background-color: transparent;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.input {
+  width: 90%;
+  height: 64px;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-size: 16px;
+  letter-spacing: 3px;
+  background-color: transparent;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#profile_form_header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(58, 85, 124, 1);
+  margin-bottom: 30px;
+}
+
+#profile_form button {
+  width: 60%;
+  height: 64px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 3px;
+  background-color: rgba(58, 85, 124, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+  #profile_form{
+    width: 275px;
+  }
+
+  #profile_form_header {
+    height: 50px;
+  }
+
+  #profile_form_header .title{
+    font-size: 25px;
+  }
+
+  #profile_form .input {
+    height: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  #profile_form input::placeholder {
+    font-size: 12px !important;
+  }
+
+  #profile_form button {
+    font-size: 16px;
+    height: 45px;
+    margin-top: -12px;
+  }
+}

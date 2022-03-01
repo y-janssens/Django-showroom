@@ -1,0 +1,490 @@
+#devis_c_wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-75px), scale(1);
+}
+
+#devis_c_wrapper * {
+    font-family: "Share Tech Mono", monospace;
+}
+
+#devis_c_header {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#devis_c_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 707px !important;
+    height: 1000px !important;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    background-image: url('../images/d_bg.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+    overflow: hidden;
+}
+
+#devis_c_ref {
+    width: 100%;
+}
+
+#devis_c_title {
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    font-size: 25px;
+    
+}
+
+#company_logo {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+hr.devis_c_hr {
+    position: absolute;
+    top: 6.5em;
+    left: 50%;
+    width: 60%;
+    height: 5px;
+    border-color: #000 !important;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.55;
+    transform: translateX(-50%) scaleY(0.5);
+}
+
+#dhr2 {
+    top: 21em;
+}
+
+#dhr3 {
+    top: 97%;
+    width: 80%;
+}
+
+#company_c_infos {
+    position: absolute;
+    top: 11em;
+    left: 3.5em;
+    font-size: 12px;
+    font-style: italic;
+    text-align: left;
+    line-height: 1.25em;
+}
+
+#company_c_infos .devis_c_content {
+    margin: -6px;
+}
+
+#company_name {
+    font-weight: 700;
+}
+
+#devis_c_infos {
+    position: absolute;
+    top: 14em;
+    left: 2em;
+    width: 250px;
+    height: 5em;
+    padding-left: 0.25em;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+#devis_c_date, #devis_c_valid {
+    width: 20em;
+}
+
+#devis_c_date {
+    margin-top: 7px;
+}
+
+#devis_c_valid {
+    top: -9px;
+    position: relative;
+}
+
+#devis_c_commercial {
+    margin-top: 3px;
+}
+
+#devis_c_commercial a {
+    color: #3a557c;
+    text-decoration: none;
+}
+
+#devis_c_commercial a:hover {
+    text-decoration: underline;
+}
+
+#client_c_infos {
+    position: absolute;
+    top: 14em;
+    right: 2em;
+    width: 240px;
+    height: 6em;
+    padding-left: 0.25em;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+.devis_c_content {
+    font-size: 12px !important;
+    width: 240px;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+hr.table_hr {
+    position: relative;
+    top: 7.5em;
+    left: 50%;
+    width: 60%;
+    height: 5px;
+    border-color: #000 !important;
+    opacity: 0.25;
+    transform: translateX(-50%) scaleY(2);
+}
+
+.items {
+    position: absolute;
+    top: 27em;
+    left: 50%;
+    width: 90%;
+    font-size: 13px;
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%);
+}
+
+.items_list_c, #next {
+    position: relative;
+    top: 29.25em;
+    margin-top: 1em;
+    left: 50%;
+    width: 90%;
+    height: 2em;
+    font-size: 13px;
+    text-align: center;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    transform: translateX(-50%);
+}
+
+/* .items_list ::placeholder, .items_list2 ::placeholder, .items_list3 ::placeholder, .items_list4 ::placeholder, .items_list5 ::placeholder, .items_list6 ::placeholder, .items_list7 ::placeholder, .items_list8 ::placeholder, .items_list9 ::placeholder, .items_list10 ::placeholder {    
+    color: #3a557c;
+} */
+
+.devis_input {
+    position: relative;
+    width: 110px;
+    border: none;
+    outline: none;
+    font-size: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.items_c_content {
+    position: absolute;
+    top: -0.25em;
+    width: 3em;
+    height: 15px;
+    font-size: 10px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#product_c, #product_c2, #product_c3, #product_c4, #product_c5, #product_c6, #product_c7, #product_c8, #product_c9, #product_c10 {
+    margin-left: -2.5em;
+    width: 6.5em;
+}
+
+#quant_c, #quant_c2, #quant_c3, #quant_c4, #quant_c5, #quant_c6, #quant_c7, #quant_c8, #quant_c9, #quant_c10 {
+    margin-left: -1.2em;
+    width: 4.75em;
+}
+
+#unit_c, #unit_c2, #unit_c3, #unit_c4, #unit_c5, #unit_c6, #unit_c7, #unit_c8, #unit_c9, #unit_c10 {
+    margin-left: -2em;
+    width: 3em;
+}
+
+#unit_price_c, #unit_price_c2, #unit_price_c3, #unit_price_c4, #unit_price_c5, #unit_price_c6, #unit_price_c7, #unit_price_c8, #unit_price_c9, #unit_price_c10 {
+    margin-left: -4em;
+    width: 9em;
+}
+
+#tva_margin_c, #tva_margin_c2, #tva_margin_c3, #tva_margin_c4, #tva_margin_c5, #tva_margin_c6, #tva_margin_c7, #tva_margin_c8, #tva_margin_c9, #tva_margin_c10 {
+    margin-left: 0.5em;
+    width: 3em;
+}
+
+#tva_total_c, #tva_total_c2, #tva_total_c3, #tva_total_c4, #tva_total_c5, #tva_total_c6, #tva_total_c7, #tva_total_c8, #tva_total_c9, #tva_total_c10 {
+    margin-left: -2.6em;
+    width: 5.5em;
+    background-color: transparent;    
+}
+
+#total_price_c, #total_price_c2, #total_price_c3, #total_price_c4, #total_price_c5, #total_price_c6, #total_price_c7, #total_price_c8, #total_price_c9, #total_price_c10 {
+    margin-left: -2.5em;
+    width: 5.5em;
+    background-color: transparent;  
+}
+
+#add_line {
+    position: absolute;
+    top: 29.25em;
+    left: 1em;
+    color: rgba(0, 0, 0, 0.35);
+    background-color: transparent;
+    transform: scale(2);
+    border: none;
+    cursor: pointer;
+}
+
+#remove_line {
+    position: absolute;
+    top: 26.31em;
+    left: 1em;
+    color: rgba(0, 0, 0, 0.35);
+    background-color: transparent;
+    transform: scale(2);
+    visibility: hidden;
+    border: none;
+    cursor: pointer;
+}
+
+#signa {
+    position: absolute;
+    width: 20em;
+    height: 5em;
+    bottom: 4em;
+    right: 2em;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    font-size: 12px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+#prices_title {
+    position: absolute;
+    bottom: 8em;
+    right: 12.5em;
+    text-align: right;
+}
+
+#prices_value {
+    position: absolute;
+    bottom: 8em;
+    right: 2em;
+    text-align: left;
+}
+
+.price {
+    font-size: 13px;
+    font-size: 13px;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+#total_ttc, #total {
+    font-weight: 700;
+}
+
+#btns_container {
+    position: fixed;
+    width: 29.65em;
+    left: 50%;
+    bottom: 2em;
+    margin-left: 7em;
+    transform: translateX(-50%);
+}
+
+.devis_c_btn {
+    position: relative;
+    height: 3em;
+    width: 8em;
+    padding: 1em;
+    border-radius: 8px;
+    background-color: rgba(120, 120, 120, 0.9);
+    box-shadow: 0px 6px 12px rgb(0 0 0 / 20%);
+    transition: 0.4s;
+    color: #FFF;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#save {
+    background-color: rgba(50, 150, 50, 0.75);
+}
+
+#save:hover {
+    background-color: rgba(50, 150, 50, 0.9);
+    filter: contrast(1.5);
+}
+
+#store {
+    background-color: rgba(150, 150, 50, 0.75);
+}
+
+#store:hover {
+    background-color: rgba(150, 150, 50, 0.9);
+}
+
+#send {
+    background-color: rgba(50, 50, 150, 0.75);
+}
+
+#send:hover {
+    background-color: rgba(50, 50, 150, 0.9);
+    filter: contrast(1.5);
+}
+
+#erase {
+    background-color: rgba(150, 50, 50, 0.75);
+}
+
+#erase:hover {
+    background-color: rgba(150, 50, 50, 0.9);
+    filter: contrast(1.5);
+}
+
+
+#devis_c_btns_grp {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.devis_c_btn {
+    position: relative;
+    height: 40px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    margin: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0.25;
+    transition: 350ms all;
+}
+
+.devis_c_btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.devis_c_btn:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+#devis_c_save {
+    background-color: rgba(66, 124, 58, 1);
+}
+
+#devis_c_send {
+    background-color: rgba(58, 85, 124, 1);
+}
+
+#devis_c_print {
+    background-color: rgb(175, 95, 29);
+}
+
+#devis_c_background {
+    position: absolute;
+    width: 707px !important;
+    height: 1000px !important;
+    bottom: 0px;
+    opacity: 0.15;
+    transform: rotateZ(-49deg) scale(2.6);
+    filter: hue-rotate(-45deg);
+    pointer-events: none;
+    background-image: url('../images/d_bg.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+
+@media (max-width: 1100px) {
+    #devis_c_content {
+      transform: translate(-50%, -50%) scale(0.85);
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    #devis_c_content {
+      transform: translate(-50%, -50%) scale(0.75);
+    }
+  
+    .devis_c_btn {
+      height: 35px;
+      border: none;
+      color: #ffffff;
+      font-size: 14px;
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    #devis_c_content {
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+  }
+  
+  @media (max-width: 750px) {
+    #devis_c_content {
+      transform: translate(-50%, -50%) scale(0.6);
+    }
+  
+    .devis_c_btn {
+      height: 35px;
+  
+      font-size: 10px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    #devis_c_content {
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+  
+    .devis_c_btn {
+      height: 30px;
+      font-size: 8px;
+      margin: 0px 5px 0px 5px;
+    }
+  }
+  

@@ -2,10 +2,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
     path('', include('index.urls')),
+    path('home/', TemplateView.as_view(template_name='index.html')),
+    
+    path('api/', include('api.urls')),
     path('inbox/', include('inbox.urls')),
     path('fiches/', include('fiches.urls')),
     path('users/', include('users.urls')),

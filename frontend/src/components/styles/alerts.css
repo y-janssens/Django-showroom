@@ -1,0 +1,78 @@
+ .alert {
+     position: fixed;
+     left: 50%;
+     top: 150px;
+     width: max-content;
+     transform: translate(-50%, -50%);
+     z-index: 99999;
+     display: inline-flex;
+     gap: 3rem;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1rem 2rem;
+     border-radius: 5px;
+     border: 1px solid #f3f3f3;
+     font-family: "Share Tech Mono", monospace;
+     box-shadow: rgb(0 0 0 / 25%) 0px 13px 15px -10px, rgb(0 0 0 / 25%) 0px 8px 5px -10px;
+ }
+
+ .alert,
+ .alert>.alert__message {
+     background-color: #e6faff;
+     color: #5aa5b9;
+     font-size: 20px;
+     font-weight: 400;
+ }
+
+ .alert.alert--error,
+ .alert.alert--error>.alert__message {
+     background-color: #fff2ee;
+     color: #fc4b0b;
+ }
+
+ .alert.alert--success,
+ .alert.alert--success>.alert__message {
+     background-color: #def8e8;
+     color: #359e64;
+ }
+
+ .alert>.alert__close {
+     background: transparent;
+     cursor: pointer;
+     border: none;
+     outline: transparent;
+     font-size: 32px;
+     transition: 250ms all;
+ }
+
+ .alert>.alert__close:hover {
+     opacity: 0.85;
+ }
+
+ @media (max-width: 700px) {
+
+    .alert,
+    .alert>.alert__message {
+        font-size: 15px;
+    }
+
+    .alert {
+        gap: 2rem;
+        padding: 0.5rem 1rem;
+    }
+
+ }
+
+ @media (max-width: 500px) {
+
+    .alert,
+    .alert>.alert__message {
+        font-size: 13px;
+    }
+
+    .alert {
+        gap: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+ }

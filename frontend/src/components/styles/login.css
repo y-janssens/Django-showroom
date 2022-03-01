@@ -1,0 +1,209 @@
+#loginwrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 500px;
+  margin-top: 25px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f1f4f7;
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#registerwrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 600px;
+  margin-top: 25px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f1f4f7;
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#loginwrapper form, #registerwrapper form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginwrapper input, #registerwrapper input {
+  width: 90%;
+  height: 64px;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 16px;
+  letter-spacing: 3px;
+  background-color: transparent !important;
+  text-indent: 25px;
+}
+
+#loginwrapper ::placeholder, #registerwrapper ::placeholder {
+  color: #3a557c;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #3a557c;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+#loginwrapper button, #registerwrapper button {
+  width: 60%;
+  height: 64px;
+  margin-top: 50px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 3px;
+  background-color: rgba(58, 85, 124, 1);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#loginheader {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(58, 85, 124, 1);
+  margin-bottom: 30px;
+}
+
+.title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 40px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 6px;
+  text-align: center;
+  justify-content: center;
+}
+
+.login_links_grp {
+  display: flex;
+  flex-direction: row;
+}
+
+.login_links_grp .link {
+  margin: 12px 10px 0px 10px;
+}
+
+.link {
+  text-decoration: none;
+  color: #3a557c;
+  font-size: 14px;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+  #loginwrapper {
+    width: 350px;
+    height: 400px;
+  }
+
+  #registerwrapper {
+    width: 350px;
+    height: 500px;
+  }
+
+  #loginwrapper .title, #registerwrapper .title {
+    font-size: 25px;
+  }
+
+  #loginheader {
+    height: 75px;
+    margin-bottom: 10px;
+  }
+
+  #loginwrapper form input, #loginwrapper form .label::placeholder {
+    font-size: 14px !important;
+  }
+
+  #registerwrapper form input, #registerwrapper form .label::placeholder {
+    font-size: 14px !important;
+  }
+
+  #loginwrapper form button, #registerwrapper form button {
+    font-size: 16px;
+    height: 50px;
+    margin-top: 15px;
+  }
+
+  #loginwrapper form a, #registerwrapper form a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  #loginwrapper {
+    width: 275px;
+    height: 340px;
+  }
+
+  #registerwrapper {
+    width: 275px;
+    height: 435px;
+  }
+
+  #registerwrapper .label, #loginwrapper .label{
+    margin-top: 0px;
+  }
+
+  #loginwrapper .title, #registerwrapper .title {
+    font-size: 20px;
+  }
+
+  #loginheader {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  #loginwrapper form input, #loginwrapper form .label::placeholder {
+    font-size: 12px !important;
+  }
+
+  #registerwrapper form input, #registerwrapper form .label::placeholder {
+    font-size: 12px !important;
+  }
+
+  #loginwrapper form button, #registerwrapper form button {
+    font-size: 14px;
+    height: 40px;
+    margin-top: 15px;
+  }
+
+  #loginwrapper form a, #registerwrapper form a {
+    font-size: 10px;
+  }
+}

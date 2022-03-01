@@ -1,0 +1,128 @@
+#profil_title {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #3a557c;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#company_form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 800px;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  align-items: center;
+  background-color: #f1f4f7;
+  box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+    rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+  z-index: 10;
+}
+
+#company_form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#company_form .input {
+  width: 90%;
+  height: 44px;
+  border: none;
+  outline: none;
+  color: #3a557c;
+  font-size: 14px;
+  letter-spacing: 3px;
+  background-color: transparent;
+  font-family: "Share Tech Mono", monospace;
+}
+
+#company_form_header {
+  width: 100%;
+  height: 75px;
+  background-color: rgba(58, 85, 124, 1);
+  margin-bottom: 30px;
+}
+
+#company_form button {
+  width: 60%;
+  height: 64px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 3px;
+  border-radius: 4px;
+  background-color: rgba(58, 85, 124, 1);
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  #company_form {
+    width: 350px;
+      height: 700px;
+    }
+
+  #company_form_header {
+    height: 50px;
+  }
+
+  #company_form_header .title {
+    font-size: 25px;
+  }
+
+  #company_form .input {
+    height: 38px;
+    font-size: 12px;
+  }
+
+  #company_form input::placeholder {
+    font-size: 12px;
+  }
+
+  #company_form button {
+    font-size: 16px;
+    height: 45px;
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 450px) {
+  #company_form {
+    width: 275px;
+      height: 580px;
+    }
+
+  #company_form_header {
+    height: 45px;
+  }
+
+  #company_form_header .title {
+    font-size: 20px;
+  }
+
+  #company_form .input {
+    height: 30px;
+    font-size: 10px;
+    margin-bottom: -5px;
+  }
+
+  #company_form input::placeholder {
+    font-size: 10px;
+  }
+
+  #company_form button {
+    font-size: 14px;
+    height: 40px;
+    margin-top: -5px;
+  }
+}

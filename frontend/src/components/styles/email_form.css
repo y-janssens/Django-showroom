@@ -1,0 +1,179 @@
+#fiche_send_form, #devis_send_form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 700px;
+    transform: translate(-50%, -50%);
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #E3EAF0;    
+    box-shadow: rgb(0 0 0 / 25%) 0px 26px 30px -10px,
+        rgb(0 0 0 / 50%) 0px 16px 10px -10px;
+    z-index: 10;
+    visibility: hidden;
+}
+
+#fiche_send_form *, #devis_send_form * {
+    font-family: "Share Tech Mono", monospace; 
+}
+
+#fiche_send_form form, #devis_send_form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fiche_send_form input, #devis_send_form input {
+    width: 90%;
+    height: 64px;
+    border: none;
+    outline: none;
+    color: #3a557c;
+    font-size: 16px;
+    letter-spacing: 3px;
+    background-color: transparent !important;
+}
+
+#fiche_send_form_header, #devis_send_form_header {
+    width: 100%;
+    height: 100px;
+    background-color: rgba(58, 85, 124, 1);
+    margin-bottom: 30px;
+}
+
+#fiche_send_form button, #devis_send_form button {
+    width: 60%;
+    height: 64px;
+    margin-top: 50px;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 3px;
+    background-color: rgba(58, 85, 124, 1);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form_label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 35px;
+    color: #3a557c;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+#form_message {
+    height: 170px;
+    width: 335px;
+    color: #3a557c;
+    margin-right: 35px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+#form_receiver {
+    position: relative;
+    height: 64px;
+    margin-left: 60px;
+}
+
+#form_receiver select {
+    height: 40px;
+    width: auto;
+    color: #3a557c;
+    font-size: 16px;
+    letter-spacing: 3px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.attachment {
+    position: relative;
+    width: 400px; 
+    font-size: 12px;
+    margin-left: 60px;
+    color: #737373;
+}
+
+.attachment span {
+    position: relative;
+    font-size: 14px;
+    color: #3a557c;
+}
+
+@media (max-width: 500px) {
+
+    #fiche_send_form, #devis_send_form {
+        width: 300px;
+        height: 540px;
+    }
+
+    #fiche_send_form_header, #devis_send_form_header {
+        height: 50px;
+    }
+
+    #fiche_send_form_header .title, #devis_send_form_header .title {
+        font-size: 25px;
+    }
+
+    #fiche_send_form .form_label, #devis_send_form .form_label {
+        height: 50px;
+        font-size: 14px !important;
+        margin-top: 0;
+    }
+
+    #fiche_send_form .form_label::placeholder, #devis_send_form .form_label::placeholder {
+        font-size: 12px !important;
+    }
+
+    #form_message {
+        height: 150px !important;
+        width: 250px;
+        font-size: 12px !important;
+    }
+
+    #form_receiver select {
+        font-size: 12px !important;
+    }
+
+    .attachment {
+        font-size: 10px;
+        margin-left: 30px;
+        width: 300px;
+    }
+
+    .attachment span{
+        font-size: 12px !important;
+    }
+
+    #fiche_send_form button, #devis_send_form button {
+        font-size: 16px;
+        height: 45px;
+        margin-top: 30px;
+      }
+      
+}
+
+@media (max-width: 350px) {
+
+    #fiche_send_form, #devis_send_form {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+}

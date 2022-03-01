@@ -1,0 +1,133 @@
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  height: 75px;
+  background-color: rgba(58, 85, 124, 1);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  z-index: 100;
+}
+
+.nav_title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 22px;
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 6px;
+  text-align: center;
+  justify-content: center;
+}
+
+#nav_group {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#home {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+#home-icon {
+  position: relative;
+  width: 65px;
+  height: 65px;
+  filter: invert(1);
+  transition: 250ms all;
+}
+
+#home-icon:hover {
+  transform: scale(1.1);
+}
+
+#current {
+  position: relative;
+  margin: 0 10px 0 10px;
+  color: #fff;
+  font-family: "Share Tech Mono", monospace;
+  text-decoration: none;
+}
+
+#back {
+  position: relative;
+  margin: 0 10px 0 10px;
+  color: #fff;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-family: "Share Tech Mono", monospace;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#links_group {
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header_link {
+  margin: 0 10px 0 10px;
+  color: #fff;
+  font-family: "Share Tech Mono", monospace;
+  text-decoration: none;
+}
+
+#home:hover,
+.header_link:hover,
+#back:hover,
+#current:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .nav_title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav_title {
+    font-size: 14px;
+    margin-top: -10px;
+    margin-left: 45px;
+  }
+
+  #links_group *,
+  #nav_group * {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 450px) {
+  #links_group *,
+  #nav_group * {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav_title {
+    font-size: 12px;
+    margin-top: -10px;
+    margin-left: 60px;
+  }
+
+  #links_group *,
+  #nav_group * {
+    font-size: 8px !important;
+  }
+}
