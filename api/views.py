@@ -13,6 +13,7 @@ from inbox.models import Message
 from dashboard.models import Societe
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getRoutes(request):
 
     routes = [
@@ -34,54 +35,63 @@ def getRoutes(request):
     return Response(routes)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getFiches(request):
     fiches = Fiche.objects.all()
     serializer = FicheSerializer(fiches, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getFiche(request, pk):
     fiche = Fiche.objects.get(id=pk)
     serializer = FicheSerializer(fiche, many=False)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getFactures(request):
     factures = Facture.objects.all()
     serializer = FactureSerializer(factures, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getFacture(request, pk):
     facture = Facture.objects.get(id=pk)
     serializer = FactureSerializer(facture, many=False)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getDevis(request):
     devis = Devi.objects.all()
     serializer = DeviSerializer(devis, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getDevi(request, pk):
     devis = Devi.objects.get(id=pk)
     serializer = DeviSerializer(devis, many=False)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getClients(request):
     clients = Client.objects.all()
     serializer = ClientSerializer(clients, many=True)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getClient(request, pk):
     client = Client.objects.get(id=pk)
     serializer = ClientSerializer(client, many=False)
     return Response(serializer.data)
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def getCompany(request):
     societe = Societe.objects.get(id=1)
     serializer = SocieteSerializer(societe, many=False)
