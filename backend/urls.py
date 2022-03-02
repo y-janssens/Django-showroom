@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', include('index.urls')),
-    path('home/', TemplateView.as_view(template_name='index.html')),
+    #path('home/', TemplateView.as_view(template_name='index.html')),
     
     path('api/', include('api.urls')),
     path('inbox/', include('inbox.urls')),
